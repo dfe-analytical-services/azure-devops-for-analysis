@@ -1,0 +1,19 @@
+Package: placeholder
+Title: Git with VSTS
+Version: 0.0.1
+Imports:
+  bookdown (>= 0.6)
+Suggests:
+    knitr (>= 1.19),
+    rmarkdown (>= 1.8),
+    devtools (>= 1.12.0)
+Depends:
+    R (>= 3.4.2)
+URL: https://github.com/DFEAGILEDEVOPS/git-with-vsts
+BugReports: https://github.com/mammykins/rap-companion/issues
+Authors@R: c(
+    person("Adam", "Robinson", email = "adam.robinson@education.gov.uk", role = c("aut", "cre")),
+    person("Zach", "Waller", email = "zachary.waller@education.gov.uk", role = c("aut", "cre")))
+Description: An introduction to using Git and VSTS for Analytical Projects
+License: MIT + file LICENSE
+LazyData: TRUE

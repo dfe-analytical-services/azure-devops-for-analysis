@@ -1,0 +1,12 @@
+--- 
+title: "Git With VSTS"
+author: "Teachers Analysis Division"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Data Science Projects."
+---
+
+# Preface {-}
