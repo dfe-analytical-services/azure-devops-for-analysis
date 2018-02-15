@@ -1,0 +1,5 @@
+book_filename: "git-with-vsts"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
