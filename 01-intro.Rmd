@@ -1,2 +1,91 @@
 # Introduction {#intro}
 
+## Background
+
+Version control is an important part of any project. It allows you to reactively respond to request for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made. 
+
+Most people would recognise this and probably are doing some form of their own version control to ensure they are able to, albeit not immeditately, respond to these situations. 
+
+As analytical functions move away from software such as Excel, SPSS etc. towards fully code based solutions using lanaugaes such as R, Python, SQL etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices. 
+
+Git is the most recognised software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you to easily adapt its use to your needs.
+
+## Manual Version Control
+
+Any book illustrating the usefulness of git will start with an example similar to as follows.
+
+![](www/manual_version_control.png)
+
+This approach creates *versioned* files using suffixes with some sort of convention. This can work if you have a small number of iterations but the following questions need to be answered:
+
+1. **Which is the final version!** - Although conventions attempt to remain standard you will get to a stage when you think you are final, another change will come and your previous convention will be broken. 
+
+2. **What files actually constitute this analysis?** - Folder structure changes over time. Scritps merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed. 
+
+3. **What are the differences between these versions?** - Although these versions have different numbers we cant easily tell what the difference between them are and would have to manually compare differences to see whats going on. There is no indication that these are linked to specific items of work.
+
+4. **How do you collaborate using this structure?** - Collaborating using this sort of versioning means you are going to have to introduce others to this structure and/ or manage the process of adding pieces of code, likely passed accross via email. Keeping track of this adds to the challenge.
+
+The main take home points from this is that there are lots of challenges that come with this and these challenges can take away from the task at hand. The bigger your project grows, the more challenging this will be. 
+
+## Git
+
+Git is the [most commonly used version control system](https://insights.stackoverflow.com/survey/2015#tech-sourcecontrol) for code development in the world today. 
+
+It is command line software, language agnostic and at its route, just looks at differences between plain text files.
+
+At its most basic level git allows the following:
+
+1. **Commits** - Create checkpoints in your code development process that you can go back to if required. 
+
+2. **Branch** - Create exact replicas of your project folder in which you can try out particular ideas without editing the main version. 
+
+3. **Merge** - Systematically merge these changes back into the main version of the code.
+
+Git works in a way such that each time you make a change it is not a new version of the code is stored but the differences between itself and the previous version. 
+
+This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:
+
+*What changed since the last working version, was that done right and does that change impact anywhere else?*.
+
+**Note:** Git is command line software but many development environment (including R Studio) provide the functionality via in the graphical user interface.
+
+## Collaboration
+
+So far we have only looked at local version control. This is great for yourself to go back to previous versions of your work but doesn't really offer a solution to collaborative coding. 
+
+What is needed is a visual platform where central versions of the code can be stored with the following functinoality:
+
+1. Users can take copies of the code on their local machine 
+
+2. Users can make changes to the code locally and submit those changes for review
+
+3. The review process can be managed and if any changes are required they can be made in a systemised manner.
+
+You can think of these sort of systems as wrappers git where merges into the main version of the code are safeguarded. 
+
+One of the most well known systems for this is [GitHub](https://github.com) which is popular with open source projects. 
+
+For the purposes of this book we are looking at using Visual Studio Team Services. This is a common tool in enterprise for software development and the reason we use it over GitHub is that it is secure. 
+
+## Visual Studio Team Services
+
+Visual Studio Team Services (VSTS) is a code collaboration tool for managing projects consisting of multiple developers 
+
+This is not a natural tool to use with Open Source Statistical Programming tools such as R and there isn't too much guidance around on using it for the specific purpose of R projects. 
+
+That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any git controlled project effectively. 
+
+On top of this it provides project management functionality that when coupled with a git workflow encourages well planned and executed projects where each commit is a specific item of work. This functinoality is optional but is encouraged.
+
+## Ways of working 
+
+At its heart this resource is advocating the following new way of working for analytical projects:
+
+1. **Plan your workload up front** - may not always be possible during exploration phase but once you have got your head around what you are looking to do you need to decouple this into individual code based tasks. This will help you not only better understad the project but write less, better code to get the job done.
+
+2. **Take one task at a time** - Focus on one specifc item of work at a time (substantial enough that it warrants being its own task but not so large that its not clear what has change). Once its complete get it reviewed and move onto the next one. e.g. create a script that imports and cleans all of the data sources.
+
+3. **Collaborate** - Distribute distinct items of work accross analysts and bring these together to build the final product and enforce code review when there is a proposal to change the main version of the code.
+
+4. **Do this in a systemised manner** - Utilise the defacto tools for the job so that doing this is not a big overhead and can be effectively managed.
