@@ -4,9 +4,9 @@
 
 Version control is an important part of any project. It allows you to reactively respond to request for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made. 
 
-Most people would recognise this and probably are doing some form of their own version control to ensure they are able to, albeit not immeditately, respond to these situations. 
+Most people would recognise this and probably are doing some form of their own version control to ensure they are able to, albeit not immediately, respond to these situations. 
 
-As analytical functions move away from software such as Excel, SPSS etc. towards fully code based solutions using lanaugaes such as R, Python, SQL etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices. 
+As analytical functions move away from software such as Excel, SPSS etc. towards fully code based solutions using languages such as R, Python, SQL etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices. 
 
 Git is the most recognised software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you to easily adapt its use to your needs.
 
@@ -20,11 +20,11 @@ This approach creates *versioned* files using suffixes with some sort of convent
 
 1. **Which is the final version!** - Although conventions attempt to remain standard you will get to a stage when you think you are final, another change will come and your previous convention will be broken. 
 
-2. **What files actually constitute this analysis?** - Folder structure changes over time. Scritps merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed. 
+2. **What files actually constitute this analysis?** - Folder structure changes over time. Scripts merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed. 
 
-3. **What are the differences between these versions?** - Although these versions have different numbers we cant easily tell what the difference between them are and would have to manually compare differences to see whats going on. There is no indication that these are linked to specific items of work.
+3. **What are the differences between these versions?** - Although these versions have different numbers we cant easily tell what the difference between them are and would have to manually compare differences to see what's going on. There is no indication that these are linked to specific items of work.
 
-4. **How do you collaborate using this structure?** - Collaborating using this sort of versioning means you are going to have to introduce others to this structure and/ or manage the process of adding pieces of code, likely passed accross via email. Keeping track of this adds to the challenge.
+4. **How do you collaborate using this structure?** - Collaborating using this sort of versioning means you are going to have to introduce others to this structure and/ or manage the process of adding pieces of code, likely passed across via email. Keeping track of this adds to the challenge.
 
 The main take home points from this is that there are lots of challenges that come with this and these challenges can take away from the task at hand. The bigger your project grows, the more challenging this will be. 
 
@@ -54,7 +54,7 @@ This is invaluable information and means that rather than checking the whole pro
 
 So far we have only looked at local version control. This is great for yourself to go back to previous versions of your work but doesn't really offer a solution to collaborative coding. 
 
-What is needed is a visual platform where central versions of the code can be stored with the following functinoality:
+What is needed is a visual platform where central versions of the code can be stored with the following functionality:
 
 1. Users can take copies of the code on their local machine 
 
@@ -76,16 +76,4 @@ This is not a natural tool to use with Open Source Statistical Programming tools
 
 That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any git controlled project effectively. 
 
-On top of this it provides project management functionality that when coupled with a git workflow encourages well planned and executed projects where each commit is a specific item of work. This functinoality is optional but is encouraged.
-
-## Ways of working 
-
-At its heart this resource is advocating the following new way of working for analytical projects:
-
-1. **Plan your workload up front** - may not always be possible during exploration phase but once you have got your head around what you are looking to do you need to decouple this into individual code based tasks. This will help you not only better understad the project but write less, better code to get the job done.
-
-2. **Take one task at a time** - Focus on one specifc item of work at a time (substantial enough that it warrants being its own task but not so large that its not clear what has change). Once its complete get it reviewed and move onto the next one. e.g. create a script that imports and cleans all of the data sources.
-
-3. **Collaborate** - Distribute distinct items of work accross analysts and bring these together to build the final product and enforce code review when there is a proposal to change the main version of the code.
-
-4. **Do this in a systemised manner** - Utilise the defacto tools for the job so that doing this is not a big overhead and can be effectively managed.
+On top of this it provides project management functionality that when coupled with a git workflow encourages well planned and executed projects where each commit is a specific item of work. This functionality is optional but is encouraged.
