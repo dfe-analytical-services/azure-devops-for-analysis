@@ -2,11 +2,11 @@
 
 ## Background
 
-Version control is an important part of any project. It allows you to reactively respond to request for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made. 
+Version control is an important part of any project. It allows you to respond reactively to requests for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made. 
 
-Most people would recognise this and probably are doing some form of their own version control to ensure they are able to, albeit not immediately, respond to these situations. 
+Most people would recognise this and probably are doing some form of their own version control to ensure they are able to respond, albeit not immediately, to these situations. 
 
-As analytical functions move away from software such as Excel, SPSS etc. towards fully code based solutions using languages such as R, Python, SQL etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices. 
+As analytical functions move away from software such as Excel, SPSS, etc. towards fully code-based solutions using languages such as R, Python, SQ,L etc, there is a wealth of pre-established expertise that can be lifted from traditional software development practices. 
 
 Git is the most recognised software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you to easily adapt its use to your needs.
 
