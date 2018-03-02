@@ -1,0 +1,63 @@
+# Visual Studio Team Services
+
+## What is VSTS?
+
+VSTS is an interactive platform in which you can effectively manage git based projects in an interactive manner....
+
+## How does it differ from a local project?
+
+VSTS project is in effect a server where central copies of code are stored in a secure manner. It includes functionality for project management, code approval and makes collaboration on code by multiple people simple.
+
+Git projects on VSTS should be considered as the main copy of the project and should negate the need to work on shared drives. 
+
+Analysts will take a local copy of the VSTS project and make changes their, pushing and pulling changes such that they update and keep up to date with changes on the VSTS version.
+
+## Setting up a Repository
+
+The general workflow for using VSTS is that you start a project locally and then create a blank project on VSTS which you push your changes up to.
+
+Different users will have different create projects permissions. You may need to ask your VSTS admin to create you a project. 
+
+[Insert how to start a vsts project clip]
+
+## Adding users to a project
+
+Users will only see and be able to contribute to projects that they have access to.
+
+To add users to a project ....
+
+[Insert clip on how to add users to a project]
+
+## Cloning a repository
+
+If you have joined an existing project where code already exists on VSTS you will need to clone the repository to get a local copy. 
+
+What this will do is create a local copy and establish the connections for pushing and pulling for you.
+
+[Insert clip on cloning a repository]
+
+## Updating VSTS with local changes
+
+At this stage you are back working with a local project as you were in Chapter 2. To make changes you simply commit the files with a helpful message as you would normally. 
+
+For the purpose of this most basic example we will make a change on the master branch.
+
+[Insert example clip checking in some files]
+
+In order to get those changes updated on the server you simply *push* them up. 
+
+[Insert clip pushing them up and sowing the updated files on the server]
+
+## Branching / Pull Requests
+
+You would only work on master if you are at an early stage in project or if you are working alone.
+
+The workflow promoted in the resource is to utilise git branching and code review to QA small chunks of analytical projects throughout their development. 
+
+
+
+
+
+
+
+
