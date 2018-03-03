@@ -1,4 +1,4 @@
-# Git with VSTS
+# Git with VSTS [![Build Status](https://travis-ci.org/DFEAGILEDEVOPS/git-with-vsts.svg?branch=master)](https://travis-ci.org/DFEAGILEDEVOPS/git-with-vsts)
 
 ## Background
 
