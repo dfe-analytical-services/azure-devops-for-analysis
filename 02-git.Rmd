@@ -1,0 +1,160 @@
+# Introduction {#intro}
+
+Git is a program used to version control your files - it can be used for any files, but works best of all for flat text files (anything that you can open in Notepad or Notepad++ that will show actual text) including .txt, .csv, .sql, .R, .Rmd...
+
+There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default your installation of Git will include a command prompt called Git BASH from where you can use Git. You can also use Command Prompt of Powershell, but Git BASH has a colour scheme that highlights the important Git features. 
+
+You can also install a GUI with the installation of Git, use RStudio, Sourcetree or
+a whole host of other GUIs with Git. 
+
+The most versatile way to use Git is through the command line and it also provides the most powerful way to solve problems you might encounter - and at some point you probably will encounter a problem!
+
+# Setting up Git
+
+When you first install Git it is advised to perform some set up steps - they aren't necessary, but will be useful. Open up Git BASH (press the Windows key then just type "git bash" and you should see it).
+This will open up a black window with green and purple text. 
+
+First of all type
+```
+git config --global user.name <Your Name>
+```
+and then 
+```
+git config --global user.email <You Email>
+```
+
+This will add your name and email to each commit you make, which will prove useful when collaborating.
+
+You can also set the default 
+```
+git config --global core.editor "C:Windows/system32/notepad.exe"
+```
+
+```
+git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
+
+#Version Control Using Git - The Basics
+
+Git is a piece of software that can be used to version control your code. 
+You can use it to take snapshots of your project at any time and go back to previous 
+snapshots at any time. This allows you to return to previous versions of your code 
+if a bug suddenly appears and experiment freely with new ideas without worrying about 
+ruining anything. You can download and install Git here https://git-for-windows.github.io/ 
+(for some reason you can only download it through Chrome, not Internet Explorer).
+
+Git might seem to have a steep learning curve but, with a small amount of practice, you can work very quickly and  benefit from using it. 
+
+##Opening Git
+Open up the program “Git BASH”. This will open up a black command window with green and magenta text.
+
+##Setting up a Git repository
+A Git repository is simply a folder that Git is tracking the changes in.
+Use 
+```
+cd <path>
+```
+to navigate Git to a folder of your choice (cd = change directory).
+Next, 
+```
+git init
+```
+will turn this normal folder into a Git Repository. 
+
+##Adding File to Git
+Add files to your repository and save them as usual. Next you need to tell Git about the files you’ve added.
+Back in Git BASH type
+```
+git add <file1> <file2> … <fileN>
+```
+to add the files, or to add all the files use
+```
+git add .
+```
+
+##Committing Changes
+Committing tells Git that you want to take a snapshot of all the files that you’ve added in the step above.
+```
+git commit --m “This is your commit message”
+```
+Make sure your commit message is nicely descriptive – you will thank yourself when you look back on it in the future.
+
+
+##Viewing the history
+```
+git log
+```
+Will show you the history of the files in the Git repository. It will show the date, time, commit message and hash (the long list of characters in yellow) for each commit made.
+
+##Returning to old versions
+Use the command
+```
+git checkout <hash> -- <filename>
+```
+to return to the version of a file with the given hash. You don’t need to copy the whole hash, just the first 10 or characters.
+To restore the most recent version use 
+```
+git checkout master
+```
+
+##Viewing Differences
+View the difference between the current version of a file and a previous one using 
+```
+git diff <hash1> <hash2> -- <filename>
+```
+
+##Good practice advice
+Make commits frequently and for small, logical changes. Some examples include:
+-Adding a new file
+-Adding a new function
+-Fixing a bug
+
+Your commits can be as small as you want, so long as they accomplish something: correcting a one-character typo that broke your code could be worth a commit!
+You don’t have to commit at regular times: if you’re half way through fixing a bug but are heading home for the day, don’t just commit for the sake of it.
+
+##That’s it, kind of…
+You should be able to dip your toes into using Git for solo projects. Working with others requires a little more conceptual understanding and learning some more commands, but it’s fundamentally the same idea. 
+I’ve written a presentation for using Git when collaborating and it’s on the Sharepoint here. 
+For more info on Git, https://www.atlassian.com/git has lots of well-presented and in depth tutorials.
+
+##Pro Tips
+
+
+###Log
+To get a better view of the log from git type:
+```
+git config --global alias.hist = log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
+```
+From now on you can use 
+```
+git hist
+```
+to give a nicer (in my opinion) view of the log.
+
+###Difftool
+If you put in a request to IT to install WinMerge you can use it to view differences between old and new versions of your files side-by-side. You can also edit from within Winmerge - this is useful just before you commit to make sure that everything you changed is something you wanted to change!
+
+Open your .gitconfig file 
+```
+git config --global -e
+```
+(this is a lot easier if you've set up Notepad, or Notepad++ as your core editor) and copy this in:
+```
+[diff]
+  tool = winmerge
+
+[difftool "winmerge"]
+  name = WinMerge
+  trustExitCode = true
+  cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
+
+[difftool]
+  prompt = false
+  ```
+  save and exit.
+  
+  From now on you can type
+  ```
+  git difftool
+  ```
+  when you have uncommitted changes to view the difference between them and the last commit.
