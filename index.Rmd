@@ -1,12 +1,11 @@
 --- 
-title: "Git With VSTS"
-author: "Teachers Analysis Division"
+title: "VSTS for Analysis"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Data Science Projects."
+description: "This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects."
 ---
 
 # Preface {-}
@@ -30,3 +29,4 @@ On a high level this resource is advocating a new way of working for analytical 
 3. **Collaborate** - Distribute distinct items of work accross analysts and bring these together to build the final product and enforce code review when there is a proposal to change the main version of the code.
 
 4. **Do this in a systemised manner** - Utilise the defacto tools for the job so that doing this is not a big overhead and can be effectively managed.
+
