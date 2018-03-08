@@ -39,8 +39,7 @@ Git is a piece of software that can be used to version control your code.
 You can use it to take snapshots of your project at any time and go back to previous 
 snapshots at any time. This allows you to return to previous versions of your code 
 if a bug suddenly appears and experiment freely with new ideas without worrying about 
-ruining anything. You can download and install Git here https://git-for-windows.github.io/ 
-(for some reason you can only download it through Chrome, not Internet Explorer).
+ruining anything. You can download and install Git here https://git-for-windows.github.io/.
 
 Git might seem to have a steep learning curve but, with a small amount of practice, you can work very quickly and  benefit from using it. 
 
@@ -48,21 +47,22 @@ Git might seem to have a steep learning curve but, with a small amount of practi
 Open up the program Git BASH. This will open up a black command window with green and magenta text.
 
 ##Navigating with Git BASH
-You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". Git will then be "pointed" at your current folder. Once in Git you can also navigate from the command line - your current directory will display in yellow text.
+You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". The folder that Git is "pointed" at will appear in Git BASH in yellow text. 
 
-Use 
+Once in Git you can also navigate through folders from the command line. Typing 
 ```
 cd <path>
 ```
-to navigate to a folder path - use doubles quotes for files paths with a space in. You can use 
-```
-ls
-```
-to list all the files and folders in the current directory and 
+and pressing enter will navigate to a folder path - use doubles quotes for files paths with spaces in. You can use 
 ```
 cd ..
 ```
-to move one folder "up".
+to move "up" one folder and 
+
+```
+ls
+```
+to list everyhing in your current folder. 
 
 
 ##Setting up a Git repository
@@ -134,5 +134,5 @@ You should be able to dip your toes into using Git for solo projects. Working wi
 I've written a presentation for using Git when collaborating and it's on the Sharepoint here. 
 For more info on Git, https://www.atlassian.com/git has lots of well-presented and in depth tutorials.
 
+#Example Project
 
-  
