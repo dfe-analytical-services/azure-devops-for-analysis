@@ -20,7 +20,7 @@ git clone -b gh-pages \
 
 # Copy locally built *.html files into 
 
-cp -r /home/travis/build/DFEAGILEDEVOPS/git-with-vsts/docs/* book-output
+cp -r /home/travis/build/DFEAGILEDEVOPS/vsts-for-analysis/docs/* book-output
 
 # Create .nojekyll file to prevent git from trying to build
 # html pages with jekyll.
