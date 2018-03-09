@@ -1,4 +1,6 @@
-# Introduction
+#Version Control Using Git - The Basics
+
+##Background
 
 Git is a program used to version control your files - it can be used for any files, but works best of all for flat text files (anything that you can open in Notepad that will show actual text - including .txt, .csv, .sql, .R, .Rmd etc.) instead of binary files (anything that shows gibberish when opened in Notepad - .docx, .xlsx etc.)
 
@@ -7,14 +9,12 @@ There are many ways to use Git, but they fall into two main categories, command 
 You can also install a GUI with the installation of Git, use RStudio, Sourcetree or
 a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line because it is the most versatile (and will get you out of trouble when things mess up!) and, once you learn it by command line, all you'll be able to apply you skills to any GUI pretty easily.
 
-#Version Control Using Git - The Basics
-
 ##Opening Git BASH
 You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in yellow text - this is the folder that Git is "pointed" at.
 
 You run commands in Git BASH by typing them in and pressing enter.
 
-# Setting up Git
+##Setting up Git
 
 When you first install Git it is advised to perform some set up steps - they aren't necessary, but will be useful. 
 
@@ -73,7 +73,7 @@ Let's create a code to plot the stopping distance of cars at different speeds - 
 
 The code should look something like this:
 
-```{r}
+```
 library(ggplot2)
 
 data <- cars
