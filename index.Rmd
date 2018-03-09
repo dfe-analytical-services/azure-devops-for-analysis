@@ -9,3 +9,24 @@ description: "This is a learning resource for using Git and Visual Studio Team S
 ---
 
 # Preface {-}
+
+## Overview
+
+This book aims act as a resource for analysts on how and why they should use version control.
+
+It is in the context of the Department for Education Corporate environment and focusses on using Git and Visual Studio Team Services (the departments existing code version control tool of choice). 
+
+R and R Studio are used as code base we are version controlling and IDE and the examples will be a mix of using R studio and the command line. 
+
+## Ways of Working
+
+On a high level this resource is advocating a new way of working for analytical projects which can be summarised as follows:
+  
+1. **Plan your workload up front** - This will help you not only better understand the project but write less, better code to get the job done.
+
+2. **Take one task at a time** - Focus on one specific item of work at a time (substantial enough that it warrants being its own task but not so large that its not clear what has change). Once its complete get it reviewed and move onto the next one. e.g. create a script that imports and cleans all of the data sources.
+
+3. **Collaborate** - Distribute distinct items of work across analysts and bring these together to build the final product and enforce code review when there is a proposal to change the main version of the code.
+
+4. **Do this in a systemised manner** - Utilise the de facto tools for the job so that doing this is not a big overhead and can be effectively managed.
+
