@@ -1,34 +1,101 @@
 # Visual Studio Team Services
 
-## What is VSTS?
+## Background
 
-VSTS is an interactive platform in which you can effectively manage git based projects in an interactive manner....
+So far we have only looked at git in the context of local projects and command line software. This alone doesn't make collaborating on code easy. 
 
-## How does it differ from a local project?
+What is needed is a central platform where people can request for changes to be made to the code base and update their code based on changes by others.  
 
-VSTS project is in effect a server where central copies of code are stored in a secure manner. It includes functionality for project management, code approval and makes collaboration on code by multiple people simple.
+This concept in git is known as [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes). The following are examples of interactive services that allow you to manage git projects effectively:
 
-Git projects on VSTS should be considered as the main copy of the project and should negate the need to work on shared drives. 
+- [GitHub](github.com)
+- [Bitbucket](https://bitbucket.org)
+- [GitLab](gitlab.com/)
+- [Visual Studio Team Services](https://www.visualstudio.com/team-services/).
 
-Analysts will take a local copy of the VSTS project and make changes their, pushing and pulling changes such that they update and keep up to date with changes on the VSTS version.
+We are using **Visual Studio Team Services** as this is the Department's tool of choice for internal version control. We would use platorms such as GitHub for our more publically facing projects (such as this book).
+
+## Theory 
+
+At a high level when you are using VSTS (or any type of remote) you are creating a central copy of your code on a server (the VSTS site). 
+
+The aim of any project is to get your final complete code on to the master branch of the server copy. Analysts will still make and run all their changes locally but will then use the concepts of *pushing*, *pulling* and *pull requesting* to get the VSTS version up to date.
+
+Having this central repository and the approval processes that VSTS provides means that multiple analysts can work on a project at the same time and systematically merge all their changes into the final version after code review.
+
+The following diagram illustrates the concept of server and local copies. 
+
+![](www/distributed_version_control.png)
+
+## Generating Git Credentials
+
+Before we get started we can create some credentials that we will be asked for later on to log your local git into VSTS.
+
+To do this you need do the following:
+
+1. Click on your user icon on the top right
+2. Hit Security
+3. Hit Personal Access Tokens 
+4. Create Credentials
+
+The following clip outlines the process:
+
+![](www/generate_credentials.gif)
 
 ## Setting up a Repository
 
-The general workflow for using VSTS is that you start a project locally and then create a blank project on VSTS which you push your changes up to.
+To set up a repository on VSTS you simply hit new project on the hompage and fill in the project details. 
 
-Different users will have different create projects permissions. You may need to ask your VSTS admin to create you a project. 
+This will create you an empty git repo on VSTS.
 
-[Insert how to start a vsts project clip]
+The following clip outlines the process:
+
+![](www/new_project.gif)
+
+**Note:** Not all users will have permissions to create projects on VSTS. They will instead ask for them to be created by their VSTS admin.
+
+## Adding an Existing Project
+
+When you first create a VSTS project it will create a blank repo. You then have mutiple options on what to do from there. 
+
+The Two main options are 
+
+1. Clone to your computer (cloning will be exlpained in *Cloning a repository*)
+2. Push an Existing repository (Will go into detail later)
+
+Most likely you will have started your work locally so will be opting for the 2nd option. 
+
+In order to Push an existing repository you need to do the following:
+
+1. Select the *or push an existing repository from the command line option*
+2. Git Bash in your local git repo
+3. Copy the code and run it
+
+This will set up the connection to VSTS and push an entire copy of the repo up to VSTS.
+
+The following clip outlines this process:
+
+![](www/push_existing.gif)
+
+**Note:** The first time you do this you will be asked for VSTS credentials created previously.
 
 ## Adding users to a project
 
-Users will only see and be able to contribute to projects that they have access to.
+VSTS is a locked down code environment where users need to first be given permission to access the site as a whole and then individual projects. 
 
-To add users to a project ....
+To add users to a project you simply do the following on a project home page:
 
-[Insert clip on how to add users to a project]
+1. Click + button under members
+2. Search for user
+3. Hit Add
 
-## Cloning a repository
+The user will then get a welcome email inviting them to the project.
+
+The following clip outlines this process:
+
+![](www/add_user.gif)
+
+## Clone
 
 If you have joined an existing project where code already exists on VSTS you will need to clone the repository to get a local copy. 
 
@@ -36,23 +103,15 @@ What this will do is create a local copy and establish the connections for pushi
 
 [Insert clip on cloning a repository]
 
-## Updating VSTS with local changes
+## Push 
 
-At this stage you are back working with a local project as you were in Chapter 2. To make changes you simply commit the files with a helpful message as you would normally. 
+## Pull
 
-For the purpose of this most basic example we will make a change on the master branch.
+## Fetch
 
-[Insert example clip checking in some files]
+## Work Items 
 
-In order to get those changes updated on the server you simply *push* them up. 
-
-[Insert clip pushing them up and sowing the updated files on the server]
-
-## Branching / Pull Requests
-
-You would only work on master if you are at an early stage in project or if you are working alone.
-
-The workflow promoted in the resource is to utilise git branching and code review to QA small chunks of analytical projects throughout their development. 
+## Pull Requests
 
 
 
