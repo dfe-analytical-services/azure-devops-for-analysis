@@ -1,4 +1,4 @@
-# Visual Studio Team Services
+# VSTS Getting Started
 
 ## Background
 
@@ -95,28 +95,8 @@ The following clip outlines this process:
 
 ![](www/add_user.gif)
 
-## Clone
+## Work Items
 
-If you have joined an existing project where code already exists on VSTS you will need to clone the repository to get a local copy. 
-
-What this will do is create a local copy and establish the connections for pushing and pulling for you.
-
-[Insert clip on cloning a repository]
-
-## Push 
-
-## Pull
-
-## Fetch
-
-## Work Items 
-
-## Pull Requests
-
-
-
-
-
-
+VSTS has rich project management functionality that can be used to manage projects of all sizes. 
 
 

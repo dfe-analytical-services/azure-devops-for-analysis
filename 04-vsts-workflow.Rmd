@@ -1,0 +1,70 @@
+# VSTS Workflow
+
+## Clone
+
+The first step in working on an existing project on VSTS is to make a local copy of the project. This is knowing as taking a *clone*.
+
+To clone a repository you need to run the following in git bash where example-project is the name of the project you are looking to clone.
+
+```sh
+git clone teachers-analysis-unit.visaulstudio.com/_git/example-project
+```
+
+**Note:** To get this address from VSTS you can go to the project home page then to code. This is different to GitHub where the git repo is the project home page.
+
+## Local Branch
+
+Once you have cloned the repo you need to decide your way of working. 
+
+The two different ways of working you could follow are as follows:
+
+1. Working directly on master
+2. Branching for distrinct pieces of work and merging back into master when complete
+ 
+Although working on master can be acceptable for projects in which you are working alone, this book advocates the 2nd methedology. 
+
+In conjunction with VSTS this methedology allows you to make use of pull requests were changes from one branch are reviewed and merged into anoter. 
+
+Utilising work items outlined in the previous chapter you should create a branch for each work item, complete the work in that branch and pull request it back into master. 
+
+At a high level you can use the following convention for naming your branches:
+
+1. **feature/short_name**: This is for items of work that you have defined as individual features.
+
+2. **bug/short_name**: This is for applying fixes to your code.
+
+As per the local git chapter you can create a branch as follows:
+
+```sh
+git branch feature/short_name
+```
+
+and then check the branch out as follows:
+
+```sh
+git checkout feature/short_name
+```
+
+## Push 
+
+After making the required changes for a work item in a branch and committing them locally you can then *Push* the changes up to VSTS. 
+
+The following will push your code to the remote:
+
+```sh
+git push
+```
+
+If the branch is new git will provide you with the code to create a new branch on VSTS and then push. You can copy it and hit enter. 
+
+If it is an existing branch the above code will sufice.
+
+## Pull Request
+
+## Pull
+
+## Fetch
+
+## Work Items 
+
+## Pull Requests
