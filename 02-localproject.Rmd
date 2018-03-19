@@ -1,0 +1,347 @@
+#Version Control Using Git - The Basics
+
+##Background
+
+Git is a program used to version control your files - it can be used for any files, but works best for flat text files (anything that you can open in Notepad that will show actual text - .txt, .csv, .sql, .R, .Rmd etc.) instead of binary files (anything that shows gibberish when opened in Notepad - .docx, .xlsx etc.).
+
+There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default your installation of Git will include a command line interface called Git BASH that you can use Git from. You can also use Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features.
+
+You can also install a GUI with the installation of Git, use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically.) This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
+
+##Installing Git
+
+You can download the Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
+
+##Opening Git BASH
+You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in yellow text - this is the folder that Git is "pointed" at.
+
+You run commands in Git BASH by typing them in and pressing enter.
+
+##Setting up Git
+
+When you first install Git it is advised to perform some set up steps - they aren't necessary, but will be useful. 
+
+First of all type
+```sh
+git config --global user.name <Your Name>
+```
+and then 
+```sh
+git config --global user.email <You Email>
+```
+
+This will add your name and email to each commit you make, which will prove useful when collaborating.
+
+You can also set the default text editor to Notepad by copying in
+```sh
+git config --global core.editor "C:Windows/system32/notepad.exe"
+```
+
+Or, if you have Notepad++ installed you could use that instead by copying in
+```sh
+git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
+
+Note, Ctrl+C and Ctrl+V don't work for copy/pasting in Git BASH, but you can still right click to copy/paste.
+
+##Navigating with Git BASH
+Once in Git you can navigate through folders from the command line. Typing 
+```sh
+cd <path>
+```
+and pressing enter will navigate to a folder path of your choice. Use doubles quotes for files paths with spaces in. You can use 
+```sh
+cd ..
+```
+to move "up" one folder and 
+
+```sh
+ls
+```
+to list everything in your current folder. 
+
+When navigating with Git BASH you can press TAB to autocomplete a folder or file.
+
+##Setting up a Git repository
+A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some cyan text after the file path. Open Git in a folder you would like to make a project in.
+
+Next type:
+```sh
+git init
+```
+This will turn this normal folder into a Git Repository - some cyan text saying "master" will appear after the yellow file path. This folder is now ready to start a version controlled project!
+
+##Applying Git to a Project
+Let's make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we'll get to this later).
+
+Let's create some code to plot the stopping distance of cars at different speeds - this data is pre-installed in a data set called "cars". 
+
+The code should look something like this:
+
+```r
+library(ggplot2)
+
+data <- cars
+
+cars_plot <- ggplot(data, 
+  aes(x = speed, y = dist)) +
+  geom_point()
+  
+cars_plot
+```
+This will make a simple scatter plot (and hopefully convince you not to speed...). This seems like a good place to record our progress: save your file as "speed_dist.R" in your project folder. Now we can use Git to take a record of this save lest we need it in the future. 
+
+##Adding and committing files
+In Git BASH type
+```sh
+git add .
+```
+This tells Git that we want to record the changes to the folder. We could type all the file names that we want to keep track of, but the dot after add adds everything.
+
+Next we actually commit the change:
+```sh
+git commit -m "Added speed_dist.R"
+```
+Here ```-m``` means we want to add a comment and ```"Added speed_dist.R"``` is our comment to tell us what the commit involved - you could write anything you wanted for the comment.
+
+Let's make a change to the code. Add
+```r
+ggsave("cars_plot.png", cars_plot)
+```
+
+to the end of your code in speed_dist.R. When run, this will save your plot as cars_plot.png in your project folder. 
+
+Let's use Git to record these changes.
+First type
+```sh
+git status
+```
+this will show us all the files that have changed, or been created since your last commit. It should say that speed_dist.R has been modified and cars_plot.png is "untracked".
+
+As mentioned earlier, Git deals best with flat text files, of which a .png file is not. Because of this, we won't tell Git about the .png file, only the changes to the speed_dist.R code. This is okay though, because so long as we have the code we can always recreate the image.
+
+Use 
+```sh
+git add speed_dist.R
+```
+to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file here). 
+
+As before we want to commit these changes:
+```sh
+git commit -m "Added save feature to speed_dist.R"
+```
+
+The workflow for making changes is as follows:
+
+- Change you files
+
+- Save your files
+
+- Add the files you changed in Git
+
+- Commit the changes in Git
+
+
+##Viewing the history
+So far we've made two commits. These commits start building up a history in Git. We can view a log of this history using:
+```sh
+git log
+```
+
+It will show the date, time, commit message, author and hash (the long list of characters in yellow) for each commit made.
+
+##Making branches
+There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don't get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.
+
+Let's say we want to make two changes at once to the code above:
+
+- Currently the speed is in mph and the distance in feet, let's change it to kmp and meters.
+
+- Let's add some labels to the axes on the plot and a title.
+
+We could just make these changes one at a time as before, but if we want someone to review just each change at once it's easier if we use branches.
+
+So far we've just been working on the "master" branch - that's what the cyan text is all about - which you can think of as more of a trunk than a branch, it's what we'd regard of as the most up to date and complete version of the code. Let's make a new branch for our unit conversion work.
+
+To create a new branch type in
+```sh
+git branch unit_conversion
+```
+We can type ```git branch``` again to see all the available branches. There should now be two, "master" and "unit_conversion". 
+To switch branches type:
+```sh
+git checkout unit_conversion
+```
+The cyan text should now say "unit_conversion".
+
+Here we can make changes for converting units and commit them without changing the master branch. 
+
+After the line
+```r
+data <- cars
+```
+copy in the following code:
+```r
+# convert speed to lph
+data$speed <- data$speed*1.609344
+
+# convert distance to meters
+data$dist <- data$dist*0.3048
+```
+
+We can now add and commit these changes as before.
+
+Use 
+```sh
+git log
+```
+to see the log with these new changes.
+
+Let's switch back to the master branch:
+```sh
+git checkout master
+```
+and look at the log
+```sh
+git log
+```
+Our unit_conversion changes aren't there! Don't worry this is what we want - we'll come back to this later.
+
+For now, let's make a new branch for the plot labels. 
+```sh
+git branch plot_labels
+git checkout plot_labels
+```
+
+After the ```geom_point()``` line add
+```r
+  + labs(x = "Speed (mph)",
+       y = "Stopping Distance (m)",
+       title = "Stopping distance against speed") +
+       theme_minimal()
+```
+ and add and commit these changes (remember, only add speed_dist.R!).
+
+
+We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.
+
+##Merging branches
+Once someone has QA'd our code we can merge our branches into the master branch. 
+Checkout the master branch. Merge the branches one at a time like this
+
+```sh
+git merge unit_conversion
+git merge plot_labels
+```
+
+If we look at the log all the changes from both of these branches should be visible. 
+
+Note, you log might be getting long enough to run off the page. If so you can go up and down the log with the arrow keys and pressing "q" will allow to you begin typing again.
+
+You can now delete the other branches.
+```sh
+git branch -d plot_labels
+git branch -d unit_conversions
+```
+
+##Branching Workflow
+The branching workflow goes like this:
+
+- For each large scale change make a branch
+
+- Checkout the branch
+
+- Change/save/add/commit as usual 
+
+- Checkout the master branch
+
+- Merge changes from working branch into master branch
+
+- Delete the working branch
+
+- Start all over again for the next change
+
+
+##Merge conflicts
+Sometimes, after trying to merge two branches Git will say there are "merge conflicts". This means that both branches changed the same line of code and Git doesn't know which one to keep.
+
+To understand how to handle merge conflicts we'll create one!
+
+Make a new branch called "blue_is_great" and another called "red_is_great".
+
+Checkout out the "blue_is_great" branch and change the line with ```geom_point()``` in to
+```r
+geom_points(colour = "blue")
+```
+Save, add and commit these changes.
+
+Checkout the "red_is_great" branch and change the same line to
+```r
+geom_points(colour = "red")
+```
+Save, add and commit these changes.
+
+Let's try to merge these into the master branch
+```sh
+git checkout master
+git merge red_is_great
+```
+So far so good.
+```sh
+git merge blue_is_great
+```
+
+You'll get some kind of error. Something along the lines of ```CONFLICT... automatic merge failed...``` and the cyan branch text will say ```master|MERGING```.
+
+If we open speed_dist.R there'll be a line saying ```<<<<<<< HEAD``` then one version of our changed line then a bunch of equals after which we'll see the other version of our line and then ```>>>>>>> blue_is_great```.
+
+Thankfully, when Git finds a merge conflict it keeps both versions of the line in question so we can decide which one is right.
+
+I think red is better than blue, so let's get rid of the line that makes the colour blue and all the other extraneous lines.
+
+Now all we do the usual git add and git commit. Make note of the merge conflict in the commit message, something like "Fixed merge conflict between blue and red".
+
+For very large and complex merge conflicts it's worth searching for ```< HEAD``` to find all the instances of a conflict.
+
+##.gitignore
+As the number of files in our project increases it will become tiresome typing in each file we would like to track.
+
+```sh
+git add file1.txt file2.txt ... file37.txt ...
+```
+
+We could just use 
+```sh
+git add .
+```
+but that would include files that we don't want to track (like the .png we saved). The .gitignore file is a list of files that Git will ignore (hence the name), no matter how they change, allowing us to use ```git add .``` without worrying about files we don't want to add.
+
+As mentioned earlier, a .gitignore file was created with our R Project. You can view this file in any text editor (including RStudio) and, if you do, you will see something like this: 
+
+```
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+```
+
+These are files that RStudio creates that are of little interest in the long run - they change very frequently and aren't necessary for someone else to run your code.
+
+Let's add to this to tell Git to ignore the image we saved earlier. There are a few ways to do this: 
+
+- We could list the file exactly as it is: car_plot.png
+
+- We could use a wildcard for the file name so all .png files are ignored: *.png
+
+Using the second method will be more robust in the long run because we won't need to update it if new images are added. 
+
+Add a new line to .gitignore that says "*.png" and save it.
+
+In Git BASH, typing 
+```sh
+git status
+```
+will no longer show the image!
+
+In non-R projects you can create your own .gitignore file in a text editor and save it in your project folder.
+
