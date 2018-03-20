@@ -1,4 +1,4 @@
-# VSTS Getting Started
+# VSTS - The Basics
 
 ## Background
 
@@ -15,6 +15,8 @@ This concept in git is known as [remotes](https://git-scm.com/book/en/v2/Git-Bas
 
 We are using **Visual Studio Team Services** as this is the Department's tool of choice for internal version control. We would use platforms such as GitHub for our more publicly facing projects (such as this book).
 
+VSTS offers unlimitted private repositories for 5 users. If you sign up via your corporate email you can create a site that is secure within the organisations active directory and store your code securely.
+
 ## Theory 
 
 At a high level when you are using VSTS (or any type of remote) you are creating a central copy of your code on a server (the VSTS site). 
@@ -29,7 +31,7 @@ The following diagram illustrates the concept of server and local copies.
 
 ## Generating Git Credentials
 
-Before we get started we can create some credentials that we will be asked for later on to log your local git into VSTS.
+Before we get started we can create some credentials to log our local git client into VSTS. We will be prompted for these when we first try to push to VSTS.
 
 To do this you need do the following:
 
@@ -42,7 +44,7 @@ The following clip outlines the process:
 
 ![](www/generate_credentials.gif)
 
-## Setting up a Repository
+## Creating a VSTS Project
 
 To set up a repository on VSTS you simply hit new project on the homepage and fill in the project details. 
 
@@ -54,14 +56,28 @@ The following clip outlines the process:
 
 **Note:** Not all users will have permissions to create projects on VSTS. They will instead ask for them to be created by their VSTS admin.
 
-## Adding an Existing Project
+## Project Setup
 
 When you first create a VSTS project it will create a blank repo. You then have multiple options on what to do from there. 
 
 The Two main options are 
 
 1. Clone to your computer (cloning will be explained in *Cloning a repository*)
-2. Push an Existing repository (Will go into detail later)
+2. Push an Existing repository
+
+### Clone to your computer
+
+To clone the blank repository to your computer you can simply copy the VSTS git repo address from the project start page. 
+
+e.g.
+
+```sh
+git clone teachers-analysis-unit.visaulstudio.com/_git/example-project
+```
+
+**Note:** If the project you have joined is already in progress you can get the git repo link from the files section under the code tab. This is different to GitHub where the git repo is the project home page.
+
+### Push an Existing Repository
 
 If you have already been working on a project locally you may wish to push this up and use this as the starting point for the collaborative workflow.
 
@@ -95,27 +111,6 @@ The following clip outlines this process:
 
 ![](www/add_user.gif)
 
-## Work Items
-
-VSTS has rich project management functionality that can be used to manage projects of all sizes. At it's most complex you can utilise a mix of Epics, Stories, Features, Tasks, Issues and User stories to manage your project. 
-
-These terms and planning stages for a project come from traditional software development and are likely not neccesary when using the platform for Data Analysis. 
-
-Instead we recommend treating features as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues. 
-
-With Features you can again add lots of metadata but the most useful will be the following:
-
-1. Name
-2. Description
-3. Assigned to
-
-There are then numerous ways to visualise work allocations accross VSTS ranging from individaul task assignments to project boards (similar to trello boards).
-By utilsing work items you take out the need for tracking tasks manually and can use them in future sections to appr
-
-The following outlines adding a work item to the example project:
-
-![](www/work_items.gif)
-
 ## Branch Policies
 
 At this point you will have a project that anyone who is a member of has the ability to push directly to the master branch. 
@@ -140,4 +135,38 @@ The following clip outlines setting branching policies:
 
 ![](www/branch_policies.gif)
 
+## Work Items
 
+VSTS has rich project management functionality that can be used to manage projects of all sizes. At it's most complex you can utilise a mix of **Epics**, **Stories**, **Features**, **Tasks**, **Issues** and **User stories** to manage your project. 
+
+These terms and planning stages for a project come from traditional software development and are likely not neccesary when using the platform for Data Analysis. 
+
+Instead we recommend treating **features** as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues. 
+
+With **features** you can again add lots of metadata but the most useful will be the following:
+
+1. Name
+2. Description
+3. Assigned to
+
+There are then numerous ways to visualise work allocations accross VSTS ranging from individaul task assignments to project boards (similar to trello boards).
+By utilsing work items you take out the need for tracking tasks manually and can use them in future sections to appr
+
+The following outlines adding a work item to the example project:
+
+![](www/work_items.gif)
+
+## Pull Requests
+
+A pull request is the final, and probably most important, part of VSTS functionality that we are going to cover.
+
+A pull request in effect provides a wrapper for the ```git merge``` command outlined in Chapter 2. The visual interface allows you to do the following:
+
+1. Give background to the changes made and link any work items (can be enforced as recommended previosuly).
+2. Allow you to assign a colleague to conduct a code review on the changes made
+3. Provide a platform for you to discuss the changes and resolve any requests for changes.
+4. Presents the differences between the two branches in a visual manner (added/removed) so that you can easily see exatly what has been changed.
+
+The following clip outlines the process of opening a pull request:
+
+[Insert Clip]
