@@ -1,16 +1,4 @@
-# VSTS Workflow
-
-## Clone
-
-The first step in working on an existing project on VSTS is to make a local copy of the project. This is knowing as taking a *clone*.
-
-To clone a repository you need to run the following in git bash where example-project is the name of the project you are looking to clone.
-
-```sh
-git clone teachers-analysis-unit.visaulstudio.com/_git/example-project
-```
-
-**Note:** To get this address from VSTS you can go to the project home page then to code. This is different to GitHub where the git repo is the project home page.
+# Recommended Workflow
 
 ## Local Branch
 
