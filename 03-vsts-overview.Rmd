@@ -15,7 +15,7 @@ This concept in git is known as [remotes](https://git-scm.com/book/en/v2/Git-Bas
 
 We are using **Visual Studio Team Services** as this is the Department's tool of choice for internal version control. We would use platforms such as GitHub for our more publicly facing projects (such as this book).
 
-VSTS offers unlimitted private repositories for 5 users. If you sign up via your corporate email you can create a site that is secure within the organisations active directory and store your code securely.
+VSTS offers unlimited private repositories for 5 users. If you sign up via your corporate email you can create a site that is secure within the organisations active directory and store your code securely.
 
 ## Theory 
 
@@ -139,7 +139,7 @@ The following clip outlines setting branching policies:
 
 VSTS has rich project management functionality that can be used to manage projects of all sizes. At it's most complex you can utilise a mix of **Epics**, **Stories**, **Features**, **Tasks**, **Issues** and **User stories** to manage your project. 
 
-These terms and planning stages for a project come from traditional software development and are likely not neccesary when using the platform for Data Analysis. 
+These terms and planning stages for a project come from traditional software development and are likely not necessary when using the platform for Data Analysis. 
 
 Instead we recommend treating **features** as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues. 
 
@@ -149,8 +149,9 @@ With **features** you can again add lots of metadata but the most useful will be
 2. Description
 3. Assigned to
 
-There are then numerous ways to visualise work allocations accross VSTS ranging from individaul task assignments to project boards (similar to trello boards).
-By utilsing work items you take out the need for tracking tasks manually and can use them in future sections to appr
+There are then numerous ways to visualise work allocations across VSTS ranging from individual task assignments to project boards (similar to trello boards).
+
+By utilsing work items you take out the need for tracking tasks manually and can link them to later as will be illustrated later.s
 
 The following outlines adding a work item to the example project:
 
@@ -162,10 +163,10 @@ A pull request is the final, and probably most important, part of VSTS functiona
 
 A pull request in effect provides a wrapper for the ```git merge``` command outlined in Chapter 2. The visual interface allows you to do the following:
 
-1. Give background to the changes made and link any work items (can be enforced as recommended previosuly).
+1. Give background to the changes made and link any work items (can be enforced as recommended previously).
 2. Allow you to assign a colleague to conduct a code review on the changes made
 3. Provide a platform for you to discuss the changes and resolve any requests for changes.
-4. Presents the differences between the two branches in a visual manner (added/removed) so that you can easily see exatly what has been changed.
+4. Presents the differences between the two branches in a visual manner (added/removed) so that you can easily see exactly what has been changed.
 
 The following clip outlines the process of opening a pull request:
 
