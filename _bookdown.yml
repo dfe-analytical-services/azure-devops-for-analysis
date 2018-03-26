@@ -4,3 +4,5 @@ language:
   ui:
     chapter_name: "Chapter "
 output_dir: "docs"
+includes:
+    in_header: google_analytics.html
