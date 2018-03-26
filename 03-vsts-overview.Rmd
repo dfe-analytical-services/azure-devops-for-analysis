@@ -170,4 +170,4 @@ A pull request in effect provides a wrapper for the ```git merge``` command outl
 
 The following clip outlines the process of opening a pull request:
 
-[Insert Clip]
+![](www/pull_request.gif)
