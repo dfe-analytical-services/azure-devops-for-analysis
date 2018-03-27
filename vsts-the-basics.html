@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VSTS for Analysis</title>
+  <meta name="description" content="This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects.">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="VSTS for Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="VSTS for Analysis" />
+  
+  <meta name="twitter:description" content="This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="version-control-using-git-the-basics.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100821064-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100821064-4');
+</script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">VSTS for Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#ways-of-working"><i class="fa fa-check"></i><b>0.2</b> Ways of Working</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#manual-version-control"><i class="fa fa-check"></i><b>1.2</b> Manual Version Control</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#git"><i class="fa fa-check"></i><b>1.3</b> Git</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#collaboration"><i class="fa fa-check"></i><b>1.4</b> Collaboration</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#visual-studio-team-services"><i class="fa fa-check"></i><b>1.5</b> Visual Studio Team Services</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html"><i class="fa fa-check"></i><b>2</b> Version Control Using Git - The Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#background-1"><i class="fa fa-check"></i><b>2.1</b> Background</a></li>
+<li class="chapter" data-level="2.2" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#installing-git"><i class="fa fa-check"></i><b>2.2</b> Installing Git</a></li>
+<li class="chapter" data-level="2.3" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#opening-git-bash"><i class="fa fa-check"></i><b>2.3</b> Opening Git BASH</a></li>
+<li class="chapter" data-level="2.4" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#setting-up-git"><i class="fa fa-check"></i><b>2.4</b> Setting up Git</a></li>
+<li class="chapter" data-level="2.5" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#navigating-with-git-bash"><i class="fa fa-check"></i><b>2.5</b> Navigating with Git BASH</a></li>
+<li class="chapter" data-level="2.6" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#setting-up-a-git-repository"><i class="fa fa-check"></i><b>2.6</b> Setting up a Git repository</a></li>
+<li class="chapter" data-level="2.7" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#applying-git-to-a-project"><i class="fa fa-check"></i><b>2.7</b> Applying Git to a Project</a></li>
+<li class="chapter" data-level="2.8" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#adding-and-committing-files"><i class="fa fa-check"></i><b>2.8</b> Adding and committing files</a></li>
+<li class="chapter" data-level="2.9" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#viewing-the-history"><i class="fa fa-check"></i><b>2.9</b> Viewing the history</a></li>
+<li class="chapter" data-level="2.10" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#making-branches"><i class="fa fa-check"></i><b>2.10</b> Making branches</a></li>
+<li class="chapter" data-level="2.11" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#merging-branches"><i class="fa fa-check"></i><b>2.11</b> Merging branches</a></li>
+<li class="chapter" data-level="2.12" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#branching-workflow"><i class="fa fa-check"></i><b>2.12</b> Branching Workflow</a></li>
+<li class="chapter" data-level="2.13" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#merge-conflicts"><i class="fa fa-check"></i><b>2.13</b> Merge conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html"><i class="fa fa-check"></i><b>3</b> VSTS - The Basics</a><ul>
+<li class="chapter" data-level="3.1" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#background-2"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#theory"><i class="fa fa-check"></i><b>3.2</b> Theory</a></li>
+<li class="chapter" data-level="3.3" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#generating-git-credentials"><i class="fa fa-check"></i><b>3.3</b> Generating Git Credentials</a></li>
+<li class="chapter" data-level="3.4" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#creating-a-vsts-project"><i class="fa fa-check"></i><b>3.4</b> Creating a VSTS Project</a></li>
+<li class="chapter" data-level="3.5" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#project-setup"><i class="fa fa-check"></i><b>3.5</b> Project Setup</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#clone-to-your-computer"><i class="fa fa-check"></i><b>3.5.1</b> Clone to your computer</a></li>
+<li class="chapter" data-level="3.5.2" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#push-an-existing-repository"><i class="fa fa-check"></i><b>3.5.2</b> Push an Existing Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#adding-users-to-a-project"><i class="fa fa-check"></i><b>3.6</b> Adding users to a project</a></li>
+<li class="chapter" data-level="3.7" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#branch-policies"><i class="fa fa-check"></i><b>3.7</b> Branch Policies</a></li>
+<li class="chapter" data-level="3.8" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#work-items"><i class="fa fa-check"></i><b>3.8</b> Work Items</a></li>
+<li class="chapter" data-level="3.9" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#pull-requests"><i class="fa fa-check"></i><b>3.9</b> Pull Requests</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">VSTS for Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vsts---the-basics" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> VSTS - The Basics</h1>
+<div id="background-2" class="section level2">
+<h2><span class="header-section-number">3.1</span> Background</h2>
+<p>So far we have only looked at git in the context of local projects and command line software. This alone doesn’t make collaborating on code easy.</p>
+<p>What is needed is a central platform where people can request for changes to be made to the code base and update their code based on changes by others.</p>
+<p>This concept in git is known as <a href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">remotes</a>. The following are examples of interactive services that allow you to manage git projects effectively:</p>
+<ul>
+<li><a href="github.com">GitHub</a></li>
+<li><a href="https://bitbucket.org">Bitbucket</a></li>
+<li><a href="gitlab.com/">GitLab</a></li>
+<li><a href="https://www.visualstudio.com/team-services/">Visual Studio Team Services</a>.</li>
+</ul>
+<p>We are using <strong>Visual Studio Team Services</strong> as this is the Department’s tool of choice for internal version control. We would use platforms such as GitHub for our more publicly facing projects (such as this book).</p>
+<p>VSTS offers unlimited private repositories for 5 users. If you sign up via your corporate email you can create a site that is secure within the organisations active directory and store your code securely.</p>
+</div>
+<div id="theory" class="section level2">
+<h2><span class="header-section-number">3.2</span> Theory</h2>
+<p>At a high level when you are using VSTS (or any type of remote) you are creating a central copy of your code on a server (the VSTS site).</p>
+<p>The aim of any project is to get your final complete code on to the master branch of the server copy. Analysts will still make and run all their changes locally but will then use the concepts of <em>pushing</em>, <em>pulling</em> and <em>pull requesting</em> to get the VSTS version up to date.</p>
+<p>Having this central repository and the approval processes that VSTS provides means that multiple analysts can work on a project at the same time and systematically merge all their changes into the final version after code review.</p>
+<p>The following diagram illustrates the concept of server and local copies.</p>
+<div class="figure">
+<img src="www/distributed_version_control.png" alt="" />
+
+</div>
+</div>
+<div id="generating-git-credentials" class="section level2">
+<h2><span class="header-section-number">3.3</span> Generating Git Credentials</h2>
+<p>Before we get started we can create some credentials to log our local git client into VSTS. We will be prompted for these when we first try to push to VSTS.</p>
+<p>To do this you need do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Click on your user icon on the top right</li>
+<li>Hit Security</li>
+<li>Hit Personal Access Tokens</li>
+<li>Create Credentials</li>
+</ol>
+<p>The following clip outlines the process:</p>
+<div class="figure">
+<img src="www/generate_credentials.gif" alt="" />
+
+</div>
+</div>
+<div id="creating-a-vsts-project" class="section level2">
+<h2><span class="header-section-number">3.4</span> Creating a VSTS Project</h2>
+<p>To set up a repository on VSTS you simply hit new project on the homepage and fill in the project details.</p>
+<p>This will create you an empty git repo on VSTS.</p>
+<p>The following clip outlines the process:</p>
+<div class="figure">
+<img src="www/new_project.gif" alt="" />
+
+</div>
+<p><strong>Note:</strong> Not all users will have permissions to create projects on VSTS. They will instead ask for them to be created by their VSTS admin.</p>
+</div>
+<div id="project-setup" class="section level2">
+<h2><span class="header-section-number">3.5</span> Project Setup</h2>
+<p>When you first create a VSTS project it will create a blank repo. You then have multiple options on what to do from there.</p>
+<p>The Two main options are</p>
+<ol style="list-style-type: decimal">
+<li>Clone to your computer (cloning will be explained in <em>Cloning a repository</em>)</li>
+<li>Push an Existing repository</li>
+</ol>
+<div id="clone-to-your-computer" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> Clone to your computer</h3>
+<p>To clone the blank repository to your computer you can simply copy the VSTS git repo address from the project start page.</p>
+<p>e.g.</p>
+<pre class="sh"><code>git clone teachers-analysis-unit.visaulstudio.com/_git/example-project</code></pre>
+<p><strong>Note:</strong> If the project you have joined is already in progress you can get the git repo link from the files section under the code tab. This is different to GitHub where the git repo is the project home page.</p>
+</div>
+<div id="push-an-existing-repository" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> Push an Existing Repository</h3>
+<p>If you have already been working on a project locally you may wish to push this up and use this as the starting point for the collaborative workflow.</p>
+<p>In order to Push an existing repository you need to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Select the <em>or push an existing repository from the command line option</em></li>
+<li>Git Bash in your local git repo</li>
+<li>Copy the code and run it</li>
+</ol>
+<p>This will set up the connection to VSTS and push an entire copy of the repo up to VSTS.</p>
+<p>The following clip outlines this process:</p>
+<div class="figure">
+<img src="www/push_existing.gif" alt="" />
+
+</div>
+<p><strong>Note:</strong> The first time you do this you will be asked for VSTS credentials created previously.</p>
+</div>
+</div>
+<div id="adding-users-to-a-project" class="section level2">
+<h2><span class="header-section-number">3.6</span> Adding users to a project</h2>
+<p>VSTS is a locked down code environment where users need to first be given permission to access the site as a whole and then individual projects.</p>
+<p>To add users to a project you simply do the following on a project home page:</p>
+<ol style="list-style-type: decimal">
+<li>Click + button under members</li>
+<li>Search for user</li>
+<li>Hit Add</li>
+</ol>
+<p>The user will then get a welcome email inviting them to the project.</p>
+<p>The following clip outlines this process:</p>
+<div class="figure">
+<img src="www/add_user.gif" alt="" />
+
+</div>
+</div>
+<div id="branch-policies" class="section level2">
+<h2><span class="header-section-number">3.7</span> Branch Policies</h2>
+<p>At this point you will have a project that anyone who is a member of has the ability to push directly to the master branch.</p>
+<p>This resource is promoting a workflow in which code is reviewed throughout the development life cycle. Pushing to master doesn’t allow this directly.</p>
+<p>Instead what we do is set <strong>Branch Policies</strong> which force code to be reviewed in VSTS before it can be merged into master.</p>
+<p>This comes with various options which are summarised below:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Requiring a minimum number of reviewers</strong> - how many people need to approve the code before it can be merged.</li>
+<li><strong>Checking for linked work items</strong> - Does the pull request need to have a work item linked</li>
+<li><strong>Checking for comment resolution</strong> - Do all of the comments on the pull request need to be resolved before merging is approved</li>
+<li><strong>Merge Strategy</strong> - Do you want to enforce a merge strategy.</li>
+<li><strong>Build testing</strong> - not currently explored.</li>
+</ol>
+<p>It is recommended that you <strong>enforce all of the first 3 options</strong> and <strong>set the Merge Strategy to Squash</strong>.</p>
+<p>A <strong>squash merge stategy</strong> squashes all commits you made in a branch on your pull request into one for the whole pull request when merged. This ensures a clean working history rather than lots of minor changes.</p>
+<p>The following clip outlines setting branching policies:</p>
+<div class="figure">
+<img src="www/branch_policies.gif" alt="" />
+
+</div>
+</div>
+<div id="work-items" class="section level2">
+<h2><span class="header-section-number">3.8</span> Work Items</h2>
+<p>VSTS has rich project management functionality that can be used to manage projects of all sizes. At it’s most complex you can utilise a mix of <strong>Epics</strong>, <strong>Stories</strong>, <strong>Features</strong>, <strong>Tasks</strong>, <strong>Issues</strong> and <strong>User stories</strong> to manage your project.</p>
+<p>These terms and planning stages for a project come from traditional software development and are likely not necessary when using the platform for Data Analysis.</p>
+<p>Instead we recommend treating <strong>features</strong> as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues.</p>
+<p>With <strong>features</strong> you can again add lots of metadata but the most useful will be the following:</p>
+<ol style="list-style-type: decimal">
+<li>Name</li>
+<li>Description</li>
+<li>Assigned to</li>
+</ol>
+<p>There are then numerous ways to visualise work allocations across VSTS ranging from individual task assignments to project boards (similar to trello boards).</p>
+<p>By utilsing work items you take out the need for tracking tasks manually and can link them to later as will be illustrated later.s</p>
+<p>The following outlines adding a work item to the example project:</p>
+<div class="figure">
+<img src="www/work_items.gif" alt="" />
+
+</div>
+</div>
+<div id="pull-requests" class="section level2">
+<h2><span class="header-section-number">3.9</span> Pull Requests</h2>
+<p>A pull request is the final, and probably most important, part of VSTS functionality that we are going to cover.</p>
+<p>A pull request in effect provides a wrapper for the <code>git merge</code> command outlined in Chapter 2. The visual interface allows you to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Give background to the changes made and link any work items (can be enforced as recommended previously).</li>
+<li>Allow you to assign a colleague to conduct a code review on the changes made</li>
+<li>Provide a platform for you to discuss the changes and resolve any requests for changes.</li>
+<li>Presents the differences between the two branches in a visual manner (added/removed) so that you can easily see exactly what has been changed.</li>
+</ol>
+<p>The following clip outlines the process of opening a pull request:</p>
+<div class="figure">
+<img src="www/pull_request.gif" alt="" />
+
+</div>
+
+<div id="refs" class="references">
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="version-control-using-git-the-basics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

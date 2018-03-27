@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VSTS for Analysis</title>
+  <meta name="description" content="This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects.">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="VSTS for Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="VSTS for Analysis" />
+  
+  <meta name="twitter:description" content="This is a learning resource for using Git and Visual Studio Team Services (VSTS) for managing Analytical Projects." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="vsts-the-basics.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100821064-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100821064-4');
+</script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">VSTS for Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#ways-of-working"><i class="fa fa-check"></i><b>0.2</b> Ways of Working</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#manual-version-control"><i class="fa fa-check"></i><b>1.2</b> Manual Version Control</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#git"><i class="fa fa-check"></i><b>1.3</b> Git</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#collaboration"><i class="fa fa-check"></i><b>1.4</b> Collaboration</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#visual-studio-team-services"><i class="fa fa-check"></i><b>1.5</b> Visual Studio Team Services</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html"><i class="fa fa-check"></i><b>2</b> Version Control Using Git - The Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#background-1"><i class="fa fa-check"></i><b>2.1</b> Background</a></li>
+<li class="chapter" data-level="2.2" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#installing-git"><i class="fa fa-check"></i><b>2.2</b> Installing Git</a></li>
+<li class="chapter" data-level="2.3" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#opening-git-bash"><i class="fa fa-check"></i><b>2.3</b> Opening Git BASH</a></li>
+<li class="chapter" data-level="2.4" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#setting-up-git"><i class="fa fa-check"></i><b>2.4</b> Setting up Git</a></li>
+<li class="chapter" data-level="2.5" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#navigating-with-git-bash"><i class="fa fa-check"></i><b>2.5</b> Navigating with Git BASH</a></li>
+<li class="chapter" data-level="2.6" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#setting-up-a-git-repository"><i class="fa fa-check"></i><b>2.6</b> Setting up a Git repository</a></li>
+<li class="chapter" data-level="2.7" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#applying-git-to-a-project"><i class="fa fa-check"></i><b>2.7</b> Applying Git to a Project</a></li>
+<li class="chapter" data-level="2.8" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#adding-and-committing-files"><i class="fa fa-check"></i><b>2.8</b> Adding and committing files</a></li>
+<li class="chapter" data-level="2.9" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#viewing-the-history"><i class="fa fa-check"></i><b>2.9</b> Viewing the history</a></li>
+<li class="chapter" data-level="2.10" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#making-branches"><i class="fa fa-check"></i><b>2.10</b> Making branches</a></li>
+<li class="chapter" data-level="2.11" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#merging-branches"><i class="fa fa-check"></i><b>2.11</b> Merging branches</a></li>
+<li class="chapter" data-level="2.12" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#branching-workflow"><i class="fa fa-check"></i><b>2.12</b> Branching Workflow</a></li>
+<li class="chapter" data-level="2.13" data-path="version-control-using-git-the-basics.html"><a href="version-control-using-git-the-basics.html#merge-conflicts"><i class="fa fa-check"></i><b>2.13</b> Merge conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html"><i class="fa fa-check"></i><b>3</b> VSTS - The Basics</a><ul>
+<li class="chapter" data-level="3.1" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#background-2"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#theory"><i class="fa fa-check"></i><b>3.2</b> Theory</a></li>
+<li class="chapter" data-level="3.3" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#generating-git-credentials"><i class="fa fa-check"></i><b>3.3</b> Generating Git Credentials</a></li>
+<li class="chapter" data-level="3.4" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#creating-a-vsts-project"><i class="fa fa-check"></i><b>3.4</b> Creating a VSTS Project</a></li>
+<li class="chapter" data-level="3.5" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#project-setup"><i class="fa fa-check"></i><b>3.5</b> Project Setup</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#clone-to-your-computer"><i class="fa fa-check"></i><b>3.5.1</b> Clone to your computer</a></li>
+<li class="chapter" data-level="3.5.2" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#push-an-existing-repository"><i class="fa fa-check"></i><b>3.5.2</b> Push an Existing Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#adding-users-to-a-project"><i class="fa fa-check"></i><b>3.6</b> Adding users to a project</a></li>
+<li class="chapter" data-level="3.7" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#branch-policies"><i class="fa fa-check"></i><b>3.7</b> Branch Policies</a></li>
+<li class="chapter" data-level="3.8" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#work-items"><i class="fa fa-check"></i><b>3.8</b> Work Items</a></li>
+<li class="chapter" data-level="3.9" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#pull-requests"><i class="fa fa-check"></i><b>3.9</b> Pull Requests</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">VSTS for Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="version-control-using-git---the-basics" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Version Control Using Git - The Basics</h1>
+<div id="background-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Background</h2>
+<p>Git is a program used to version control your files - it can be used for any files, but works best for flat text files (anything that you can open in Notepad that will show actual text - .txt, .csv, .sql, .R, .Rmd etc.) instead of binary files (anything that shows gibberish when opened in Notepad - .docx, .xlsx etc.).</p>
+<p>There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default your installation of Git will include a command line interface called Git BASH that you can use Git from. You can also use Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features.</p>
+<p>You can also install a GUI with the installation of Git, use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically.) This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you’ll be able to apply your skills to any GUI pretty easily.</p>
+</div>
+<div id="installing-git" class="section level2">
+<h2><span class="header-section-number">2.2</span> Installing Git</h2>
+<p>You can download the Git from here <a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a> by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.</p>
+</div>
+<div id="opening-git-bash" class="section level2">
+<h2><span class="header-section-number">2.3</span> Opening Git BASH</h2>
+<p>You can open up Git BASH from File Explorer by right clicking in a folder and clicking “Git Bash Here”. This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in yellow text - this is the folder that Git is “pointed” at.</p>
+<p>You run commands in Git BASH by typing them in and pressing enter.</p>
+</div>
+<div id="setting-up-git" class="section level2">
+<h2><span class="header-section-number">2.4</span> Setting up Git</h2>
+<p>When you first install Git it is advised to perform some set up steps - they aren’t necessary, but will be useful.</p>
+<p>First of all type</p>
+<pre class="sh"><code>git config --global user.name &lt;Your Name&gt;</code></pre>
+<p>and then</p>
+<pre class="sh"><code>git config --global user.email &lt;You Email&gt;</code></pre>
+<p>This will add your name and email to each commit you make, which will prove useful when collaborating.</p>
+<p>You can also set the default text editor to Notepad by copying in</p>
+<pre class="sh"><code>git config --global core.editor &quot;C:Windows/system32/notepad.exe&quot;</code></pre>
+<p>Or, if you have Notepad++ installed you could use that instead by copying in</p>
+<pre class="sh"><code>git config --global core.editor &quot;&#39;C:/Program Files (x86)/Notepad++/notepad++.exe&#39; -multiInst -notabbar -nosession -noPlugin&quot;</code></pre>
+<p>Note, Ctrl+C and Ctrl+V don’t work for copy/pasting in Git BASH, but you can still right click to copy/paste.</p>
+</div>
+<div id="navigating-with-git-bash" class="section level2">
+<h2><span class="header-section-number">2.5</span> Navigating with Git BASH</h2>
+<p>Once in Git you can navigate through folders from the command line. Typing</p>
+<pre class="sh"><code>cd &lt;path&gt;</code></pre>
+<p>and pressing enter will navigate to a folder path of your choice. Use doubles quotes for files paths with spaces in. You can use</p>
+<pre class="sh"><code>cd ..</code></pre>
+<p>to move “up” one folder and</p>
+<pre class="sh"><code>ls</code></pre>
+<p>to list everything in your current folder.</p>
+<p>When navigating with Git BASH you can press TAB to autocomplete a folder or file.</p>
+</div>
+<div id="setting-up-a-git-repository" class="section level2">
+<h2><span class="header-section-number">2.6</span> Setting up a Git repository</h2>
+<p>A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some cyan text after the file path. Open Git in a folder you would like to make a project in.</p>
+<p>Next type:</p>
+<pre class="sh"><code>git init</code></pre>
+<p>This will turn this normal folder into a Git Repository - some cyan text saying “master” will appear after the yellow file path. This folder is now ready to start a version controlled project!</p>
+</div>
+<div id="applying-git-to-a-project" class="section level2">
+<h2><span class="header-section-number">2.7</span> Applying Git to a Project</h2>
+<p>Let’s make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we’ll get to this later).</p>
+<p>Let’s create some code to plot the stopping distance of cars at different speeds - this data is pre-installed in a data set called “cars”.</p>
+<p>The code should look something like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+data &lt;-<span class="st"> </span>cars
+
+cars_plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, 
+  <span class="kw">aes</span>(<span class="dt">x =</span> speed, <span class="dt">y =</span> dist)) +
+<span class="st">  </span><span class="kw">geom_point</span>()
+  
+cars_plot</code></pre></div>
+<p>This will make a simple scatter plot (and hopefully convince you not to speed…). This seems like a good place to record our progress: save your file as “speed_dist.R” in your project folder. Now we can use Git to take a record of this save lest we need it in the future.</p>
+</div>
+<div id="adding-and-committing-files" class="section level2">
+<h2><span class="header-section-number">2.8</span> Adding and committing files</h2>
+<p>In Git BASH type</p>
+<pre class="sh"><code>git add .</code></pre>
+<p>This tells Git that we want to record the changes to the folder. We could type all the file names that we want to keep track of, but the dot after add adds everything.</p>
+<p>Next we actually commit the change:</p>
+<pre class="sh"><code>git commit -m &quot;Added speed_dist.R&quot;</code></pre>
+<p>Here <code>-m</code> means we want to add a comment and <code>&quot;Added speed_dist.R&quot;</code> is our comment to tell us what the commit involved - you could write anything you wanted for the comment.</p>
+<p>Let’s make a change to the code. Add</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="st">&quot;cars_plot.png&quot;</span>, cars_plot)</code></pre></div>
+<p>to the end of your code in speed_dist.R. When run, this will save your plot as cars_plot.png in your project folder.</p>
+<p>Let’s use Git to record these changes. First type</p>
+<pre class="sh"><code>git status</code></pre>
+<p>this will show us all the files that have changed, or been created since your last commit. It should say that speed_dist.R has been modified and cars_plot.png is “untracked”.</p>
+<p>As mentioned earlier, Git deals best with flat text files, of which a .png file is not. Because of this, we won’t tell Git about the .png file, only the changes to the speed_dist.R code. This is okay though, because so long as we have the code we can always recreate the image.</p>
+<p>Use</p>
+<pre class="sh"><code>git add speed_dist.R</code></pre>
+<p>to add just speed_dist.R (notice how last time we used <code>git add .</code> to add everything, but explicitly named the file here).</p>
+<p>As before we want to commit these changes:</p>
+<pre class="sh"><code>git commit -m &quot;Added save feature to speed_dist.R&quot;</code></pre>
+<p>The workflow for making changes is as follows:</p>
+<ul>
+<li><p>Change you files</p></li>
+<li><p>Save your files</p></li>
+<li><p>Add the files you changed in Git</p></li>
+<li><p>Commit the changes in Git</p></li>
+</ul>
+</div>
+<div id="viewing-the-history" class="section level2">
+<h2><span class="header-section-number">2.9</span> Viewing the history</h2>
+<p>So far we’ve made two commits. These commits start building up a history in Git. We can view a log of this history using:</p>
+<pre class="sh"><code>git log</code></pre>
+<p>It will show the date, time, commit message, author and hash (the long list of characters in yellow) for each commit made.</p>
+</div>
+<div id="making-branches" class="section level2">
+<h2><span class="header-section-number">2.10</span> Making branches</h2>
+<p>There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don’t get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.</p>
+<p>Let’s say we want to make two changes at once to the code above:</p>
+<ul>
+<li><p>Currently the speed is in mph and the distance in feet, let’s change it to kmp and meters.</p></li>
+<li><p>Let’s add some labels to the axes on the plot and a title.</p></li>
+</ul>
+<p>We could just make these changes one at a time as before, but if we want someone to review just each change at once it’s easier if we use branches.</p>
+<p>So far we’ve just been working on the “master” branch - that’s what the cyan text is all about - which you can think of as more of a trunk than a branch, it’s what we’d regard of as the most up to date and complete version of the code. Let’s make a new branch for our unit conversion work.</p>
+<p>To create a new branch type in</p>
+<pre class="sh"><code>git branch unit_conversion</code></pre>
+<p>We can type <code>git branch</code> again to see all the available branches. There should now be two, “master” and “unit_conversion”. To switch branches type:</p>
+<pre class="sh"><code>git checkout unit_conversion</code></pre>
+<p>The cyan text should now say “unit_conversion”.</p>
+<p>Here we can make changes for converting units and commit them without changing the master branch.</p>
+<p>After the line</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data &lt;-<span class="st"> </span>cars</code></pre></div>
+<p>copy in the following code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># convert speed to lph</span>
+data$speed &lt;-<span class="st"> </span>data$speed*<span class="fl">1.609344</span>
+
+<span class="co"># convert distance to meters</span>
+data$dist &lt;-<span class="st"> </span>data$dist*<span class="fl">0.3048</span></code></pre></div>
+<p>We can now add and commit these changes as before.</p>
+<p>Use</p>
+<pre class="sh"><code>git log</code></pre>
+<p>to see the log with these new changes.</p>
+<p>Let’s switch back to the master branch:</p>
+<pre class="sh"><code>git checkout master</code></pre>
+<p>and look at the log</p>
+<pre class="sh"><code>git log</code></pre>
+<p>Our unit_conversion changes aren’t there! Don’t worry this is what we want - we’ll come back to this later.</p>
+<p>For now, let’s make a new branch for the plot labels.</p>
+<pre class="sh"><code>git branch plot_labels
+git checkout plot_labels</code></pre>
+<p>After the <code>geom_point()</code> line add</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  +<span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Speed (mph)&quot;</span>,
+       <span class="dt">y =</span> <span class="st">&quot;Stopping Distance (m)&quot;</span>,
+       <span class="dt">title =</span> <span class="st">&quot;Stopping distance against speed&quot;</span>) +
+<span class="st">       </span><span class="kw">theme_minimal</span>()</code></pre></div>
+<p>and add and commit these changes (remember, only add speed_dist.R!).</p>
+<p>We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.</p>
+</div>
+<div id="merging-branches" class="section level2">
+<h2><span class="header-section-number">2.11</span> Merging branches</h2>
+<p>Once someone has QA’d our code we can merge our branches into the master branch. Checkout the master branch. Merge the branches one at a time like this</p>
+<pre class="sh"><code>git merge unit_conversion
+git merge plot_labels</code></pre>
+<p>If we look at the log all the changes from both of these branches should be visible.</p>
+<p>Note, you log might be getting long enough to run off the page. If so you can go up and down the log with the arrow keys and pressing “q” will allow to you begin typing again.</p>
+<p>You can now delete the other branches.</p>
+<pre class="sh"><code>git branch -d plot_labels
+git branch -d unit_conversions</code></pre>
+</div>
+<div id="branching-workflow" class="section level2">
+<h2><span class="header-section-number">2.12</span> Branching Workflow</h2>
+<p>The branching workflow goes like this:</p>
+<ul>
+<li><p>For each large scale change make a branch</p></li>
+<li><p>Checkout the branch</p></li>
+<li><p>Change/save/add/commit as usual</p></li>
+<li><p>Checkout the master branch</p></li>
+<li><p>Merge changes from working branch into master branch</p></li>
+<li><p>Delete the working branch</p></li>
+<li><p>Start all over again for the next change</p></li>
+</ul>
+</div>
+<div id="merge-conflicts" class="section level2">
+<h2><span class="header-section-number">2.13</span> Merge conflicts</h2>
+<p>Sometimes, after trying to merge two branches Git will say there are “merge conflicts”. This means that both branches changed the same line of code and Git doesn’t know which one to keep.</p>
+<p>To understand how to handle merge conflicts we’ll create one!</p>
+<p>Make a new branch called “blue_is_great” and another called “red_is_great”.</p>
+<p>Checkout out the “blue_is_great” branch and change the line with <code>geom_point()</code> in to</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">geom_points</span>(<span class="dt">colour =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p>Save, add and commit these changes.</p>
+<p>Checkout the “red_is_great” branch and change the same line to</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">geom_points</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p>Save, add and commit these changes.</p>
+<p>Let’s try to merge these into the master branch</p>
+<pre class="sh"><code>git checkout master
+git merge red_is_great</code></pre>
+<p>So far so good.</p>
+<pre class="sh"><code>git merge blue_is_great</code></pre>
+<p>You’ll get some kind of error. Something along the lines of <code>CONFLICT... automatic merge failed...</code> and the cyan branch text will say <code>master|MERGING</code>.</p>
+<p>If we open speed_dist.R there’ll be a line saying <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> then one version of our changed line then a bunch of equals after which we’ll see the other version of our line and then <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; blue_is_great</code>.</p>
+<p>Thankfully, when Git finds a merge conflict it keeps both versions of the line in question so we can decide which one is right.</p>
+<p>I think red is better than blue, so let’s get rid of the line that makes the colour blue and all the other extraneous lines.</p>
+<p>Now all we do the usual git add and git commit. Make note of the merge conflict in the commit message, something like “Fixed merge conflict between blue and red”.</p>
+<p>For very large and complex merge conflicts it’s worth searching for <code>&lt; HEAD</code> to find all the instances of a conflict.</p>
+<p>##.gitignore As the number of files in our project increases it will become tiresome typing in each file we would like to track.</p>
+<pre class="sh"><code>git add file1.txt file2.txt ... file37.txt ...</code></pre>
+<p>We could just use</p>
+<pre class="sh"><code>git add .</code></pre>
+<p>but that would include files that we don’t want to track (like the .png we saved). The .gitignore file is a list of files that Git will ignore (hence the name), no matter how they change, allowing us to use <code>git add .</code> without worrying about files we don’t want to add.</p>
+<p>As mentioned earlier, a .gitignore file was created with our R Project. You can view this file in any text editor (including RStudio) and, if you do, you will see something like this:</p>
+<pre><code>.Rproj.user
+.Rhistory
+.RData
+.Ruserdata</code></pre>
+<p>These are files that RStudio creates that are of little interest in the long run - they change very frequently and aren’t necessary for someone else to run your code.</p>
+<p>Let’s add to this to tell Git to ignore the image we saved earlier. There are a few ways to do this:</p>
+<ul>
+<li><p>We could list the file exactly as it is: car_plot.png</p></li>
+<li><p>We could use a wildcard for the file name so all .png files are ignored: *.png</p></li>
+</ul>
+<p>Using the second method will be more robust in the long run because we won’t need to update it if new images are added.</p>
+<p>Add a new line to .gitignore that says “*.png&quot; and save it.</p>
+<p>In Git BASH, typing</p>
+<pre class="sh"><code>git status</code></pre>
+<p>will no longer show the image!</p>
+<p>In non-R projects you can create your own .gitignore file in a text editor and save it in your project folder.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vsts-the-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
