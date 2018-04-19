@@ -42,6 +42,8 @@ At its most basic level git allows the following:
 
 3. **Merge** - Systematically merge these changes back into the main version of the code.
 
+![](www/branching_diagram.png)
+
 Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:
 
 *What changed since the last working version, was that done right and does that change impact anywhere else?*.
