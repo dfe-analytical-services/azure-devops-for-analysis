@@ -4,9 +4,11 @@
 
 Git is a program used to version control your files - it can be used for any files, but works best for flat text files (anything that you can open in Notepad that will show actual text - .txt, .csv, .sql, .R, .Rmd etc.) instead of binary files (anything that shows gibberish when opened in Notepad - .docx, .xlsx etc.).
 
-There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default your installation of Git will include a command line interface called Git BASH that you can use Git from. You can also use Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features.
+There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default the Git installation includes a command line interface called Git BASH that you can use Git from. BASH is a command line interface originally for Unix based operating systems that uses a slightly different syntax to the Windows Command Prompt.
 
-You can also install a GUI with the installation of Git, use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically.) This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
+Once installed, you can also use Git from Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features and, in my opinion, more intuitive commands.
+
+If you would prefer to use a GUI you can choose to install one when installing Git. You can also use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically. This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
 
 ##Installing Git
 
