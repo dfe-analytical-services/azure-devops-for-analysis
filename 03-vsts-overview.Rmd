@@ -2,11 +2,11 @@
 
 ## Background
 
-So far we have only looked at git in the context of local projects and command line software. This alone doesn't make collaborating on code easy. 
+So far we have only looked at Git in the context of local projects and command line software. This alone doesn't make collaborating on code easy. 
 
 What is needed is a central platform where people can request for changes to be made to the code base and update their code based on changes by others.  
 
-This concept in git is known as [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes). The following are examples of interactive services that allow you to manage git projects effectively:
+This concept in Git is known as [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes). The following are examples of interactive services that allow you to manage Git projects effectively:
 
 - [GitHub](github.com)
 - [Bitbucket](https://bitbucket.org)
@@ -31,7 +31,7 @@ The following diagram illustrates the concept of server and local copies.
 
 ## Generating Git Credentials
 
-Before we get started we can create some credentials to log our local git client into VSTS. We will be prompted for these when we first try to push to VSTS.
+Before we get started we can create some credentials to log our local Git client into VSTS. We will be prompted for these when we first try to push to VSTS.
 
 To do this you need do the following:
 
@@ -48,7 +48,7 @@ The following clip outlines the process:
 
 To set up a repository on VSTS you simply hit new project on the homepage and fill in the project details. 
 
-This will create you an empty git repo on VSTS.
+This will create you an empty Git repo on VSTS.
 
 The following clip outlines the process:
 
@@ -67,7 +67,7 @@ The Two main options are
 
 ### Clone to your computer
 
-To clone the blank repository to your computer you can simply copy the VSTS git repo address from the project start page. 
+To clone the blank repository to your computer you can simply copy the VSTS Git repo address from the project start page. 
 
 e.g.
 
@@ -75,7 +75,7 @@ e.g.
 git clone teachers-analysis-unit.visaulstudio.com/_git/example-project
 ```
 
-**Note:** If the project you have joined is already in progress you can get the git repo link from the files section under the code tab. This is different to GitHub where the git repo is the project home page.
+**Note:** If the project you have joined is already in progress you can get the Git repo link from the files section under the code tab. This is different to GitHub where the Git repo is the project home page.
 
 ### Push an Existing Repository
 
@@ -84,7 +84,7 @@ If you have already been working on a project locally you may wish to push this 
 In order to Push an existing repository you need to do the following:
 
 1. Select the *or push an existing repository from the command line option*
-2. Git Bash in your local git repo
+2. Git Bash in your local Git repo
 3. Copy the code and run it
 
 This will set up the connection to VSTS and push an entire copy of the repo up to VSTS.
