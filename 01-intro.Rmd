@@ -12,7 +12,7 @@ Git is the most recognised software for ensuring version control is done in a st
 
 ## Manual Version Control
 
-Any book illustrating the usefulness of git will start with an example similar to the following.
+Any book illustrating the usefulness of Git will start with an example similar to the following.
 
 ![](www/manual_version_control.png)
 
@@ -34,7 +34,7 @@ Git is the [most commonly used version control system](https://insights.stackove
 
 It is command line software, language agnostic and at its root, just looks at differences between plain text files.
 
-At its most basic level git allows the following:
+At its most basic level Git allows the following:
 
 1. **Commits** - Create checkpoints in your code development process that you can go back to if required. 
 
@@ -62,7 +62,7 @@ What is needed is a visual platform where central versions of the code can be st
 
 3. The review process can be managed and if any changes are required they can be made in a systemised manner.
 
-You can think of these sort of systems as wrappers for git, where merges into the main version of the code are safeguarded. 
+You can think of these sort of systems as wrappers for Git, where merges into the main version of the code are safeguarded. 
 
 One of the most well known systems for this is [GitHub](https://github.com) which is popular with open source projects. 
 
@@ -74,6 +74,6 @@ Visual Studio Team Services (VSTS) is a code collaboration tool for managing pro
 
 This is not a natural tool to use with Open Source Statistical Programming tools such as R and there isn't too much guidance around on using it for the specific purpose of R projects. 
 
-That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any git-controlled project effectively. 
+That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively. 
 
-On top of this, it provides project management functionality that when coupled with a git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.
+On top of this, it provides project management functionality that when coupled with a Git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.
