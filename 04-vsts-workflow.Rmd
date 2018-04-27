@@ -1,0 +1,100 @@
+# VSTS - Workflow
+
+## Starting VSTS project
+
+- Make a project in VSTS
+
+- Clone repository
+```sh
+git clone <project_name>
+```
+
+OR if you have an existing local repository
+
+- Add the VSTS repository as your "remote"
+```sh
+git remote add origin <repo_URL>
+```
+
+- Push your local changes up to VSTS (make sure you've committed your changes first!)
+```sh
+git push -u origin --all <repo_URL>
+```
+
+## Making Branches
+
+- Work may be assigned to you as a "Work Item". In VSTS use the link to make new branch. To correct a bug, prefix the branch name with "bug/". To add new functionality, prefix the branch name with "feature/".
+
+- Make sure your master branch is up to date.
+```sh 
+git pull
+```
+Your local repository will now "know" about the branch you just made.
+
+- Checkout the branch you made on VSTS (make sure the branch names are the same).
+```sh 
+git checkout <your_branch_name>
+```
+
+## Making Changes
+
+- Make your code changes
+
+- Commit your changes. You can make as many commits as you need to. As ever, make 
+them roughly self-contained chunks that would be easy for someone to review piece by piece.
+```sh 
+git add <file_list>
+```
+
+```sh 
+git commit -m "Commit message"
+```
+
+## Merging
+- When you've made enough changes to complete your work item checkout the master 
+branch in your local repository do a pull in case anyone else had made changes.
+```sh 
+git checkout master
+```
+```sh 
+git pull
+```
+
+- Switch back to your working branch. Merge any changes from master.
+```sh 
+git checkout <your_branch_name>
+```
+```sh 
+git merge master
+```
+
+- Sort out any merge conflicts.
+```sh 
+git status
+``` will list the files that have merge conflicts. Open the files with 
+the conflicts, and search them for "<<<<". Everything from the next line up until 
+a line of "====" will be from the master branch. Everything from the "====" line 
+until ">>>>" will be from your working branch. Work through the code to make sure 
+that you keep all the necessary changes. There may be changes from master and your branch that you want to keep, so don't just idly delete things!
+Add and commit the changes.
+```sh 
+git add <file_to_be_merged>
+```
+```sh 
+git commit -m "Commit message (it's advised to mention the merge)"
+```
+
+## Push changes to VSTS
+
+- Push your changes to VSTS
+```sh 
+git push
+```
+
+- On VSTS make a pull request for your branch
+
+- Have someone review your work. If any changes are required, go back to [Making Changes](#making-changes) and work from there again.
+
+- Merge your branch into Master
+
+- Find some more work, go back to the top and start again, Sisyphus!
