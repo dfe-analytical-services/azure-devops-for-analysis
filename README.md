@@ -1,4 +1,4 @@
-# Git with VSTS [![Build Status](https://travis-ci.org/dfe-analytical-services/vsts-for-analysis.svg?branch=master)](https://travis-ci.org/dfe-analytical-services/vsts-for-analysis)
+# VSTS for Analysis [![Build Status](https://travis-ci.org/dfe-analytical-services/vsts-for-analysis.svg?branch=master)](https://travis-ci.org/dfe-analytical-services/vsts-for-analysis)
 
 ## Background
 
