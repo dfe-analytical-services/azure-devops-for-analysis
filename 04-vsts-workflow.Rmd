@@ -4,12 +4,12 @@
 
 - Make a project in VSTS
 
-- Clone repository
+- Clone the repository to a local directory. Open your desired folder in File Explorer, right click and select "Git Bash here".
 ```sh
 git clone <project_name>
 ```
 
-OR if you have an existing local repository
+We recommend that, to get the most from VSTS, you use it from the start of a project. This allows a continuous process of making small changes and having them QA'd, instead of doing a huge QA right at the end. However, you may have started a repository locally and wish to put it on VSTS. In that case you can push to VSTS.
 
 - Add the VSTS repository as your "remote"
 ```sh
