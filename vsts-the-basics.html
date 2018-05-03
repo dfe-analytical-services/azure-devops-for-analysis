@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="version-control-using-git-the-basics.html">
-
+<link rel="next" href="vsts-workflow.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -150,6 +150,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.8" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#work-items"><i class="fa fa-check"></i><b>3.8</b> Work Items</a></li>
 <li class="chapter" data-level="3.9" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#pull-requests"><i class="fa fa-check"></i><b>3.9</b> Pull Requests</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="vsts-workflow.html"><a href="vsts-workflow.html"><i class="fa fa-check"></i><b>4</b> VSTS - Workflow</a><ul>
+<li class="chapter" data-level="4.1" data-path="vsts-workflow.html"><a href="vsts-workflow.html#starting-vsts-project"><i class="fa fa-check"></i><b>4.1</b> Starting VSTS project</a></li>
+<li class="chapter" data-level="4.2" data-path="vsts-workflow.html"><a href="vsts-workflow.html#making-branches-1"><i class="fa fa-check"></i><b>4.2</b> Making Branches</a></li>
+<li class="chapter" data-level="4.3" data-path="vsts-workflow.html"><a href="vsts-workflow.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a></li>
+<li class="chapter" data-level="4.4" data-path="vsts-workflow.html"><a href="vsts-workflow.html#merging"><i class="fa fa-check"></i><b>4.4</b> Merging</a></li>
+<li class="chapter" data-level="4.5" data-path="vsts-workflow.html"><a href="vsts-workflow.html#push-changes-to-vsts"><i class="fa fa-check"></i><b>4.5</b> Push changes to VSTS</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -174,9 +181,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 3</span> VSTS - The Basics</h1>
 <div id="background-2" class="section level2">
 <h2><span class="header-section-number">3.1</span> Background</h2>
-<p>So far we have only looked at git in the context of local projects and command line software. This alone doesn’t make collaborating on code easy.</p>
+<p>So far we have only looked at Git in the context of local projects and command line software. This alone doesn’t make collaborating on code easy.</p>
 <p>What is needed is a central platform where people can request for changes to be made to the code base and update their code based on changes by others.</p>
-<p>This concept in git is known as <a href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">remotes</a>. The following are examples of interactive services that allow you to manage git projects effectively:</p>
+<p>This concept in Git is known as <a href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">remotes</a>. The following are examples of interactive services that allow you to manage Git projects effectively:</p>
 <ul>
 <li><a href="github.com">GitHub</a></li>
 <li><a href="https://bitbucket.org">Bitbucket</a></li>
@@ -199,7 +206,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="generating-git-credentials" class="section level2">
 <h2><span class="header-section-number">3.3</span> Generating Git Credentials</h2>
-<p>Before we get started we can create some credentials to log our local git client into VSTS. We will be prompted for these when we first try to push to VSTS.</p>
+<p>Before we get started we can create some credentials to log our local Git client into VSTS. We will be prompted for these when we first try to push to VSTS.</p>
 <p>To do this you need do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Click on your user icon on the top right</li>
@@ -216,7 +223,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="creating-a-vsts-project" class="section level2">
 <h2><span class="header-section-number">3.4</span> Creating a VSTS Project</h2>
 <p>To set up a repository on VSTS you simply hit new project on the homepage and fill in the project details.</p>
-<p>This will create you an empty git repo on VSTS.</p>
+<p>This will create you an empty Git repo on VSTS.</p>
 <p>The following clip outlines the process:</p>
 <div class="figure">
 <img src="www/new_project.gif" alt="" />
@@ -234,10 +241,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <div id="clone-to-your-computer" class="section level3">
 <h3><span class="header-section-number">3.5.1</span> Clone to your computer</h3>
-<p>To clone the blank repository to your computer you can simply copy the VSTS git repo address from the project start page.</p>
+<p>To clone the blank repository to your computer you can simply copy the VSTS Git repo address from the project start page.</p>
 <p>e.g.</p>
 <pre class="sh"><code>git clone teachers-analysis-unit.visaulstudio.com/_git/example-project</code></pre>
-<p><strong>Note:</strong> If the project you have joined is already in progress you can get the git repo link from the files section under the code tab. This is different to GitHub where the git repo is the project home page.</p>
+<p><strong>Note:</strong> If the project you have joined is already in progress you can get the Git repo link from the files section under the code tab. This is different to GitHub where the Git repo is the project home page.</p>
 </div>
 <div id="push-an-existing-repository" class="section level3">
 <h3><span class="header-section-number">3.5.2</span> Push an Existing Repository</h3>
@@ -245,7 +252,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In order to Push an existing repository you need to do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Select the <em>or push an existing repository from the command line option</em></li>
-<li>Git Bash in your local git repo</li>
+<li>Git Bash in your local Git repo</li>
 <li>Copy the code and run it</li>
 </ol>
 <p>This will set up the connection to VSTS and push an entire copy of the repo up to VSTS.</p>
@@ -329,9 +336,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </div>
 
-<div id="refs" class="references">
-
-</div>
 </div>
 </div>
             </section>
@@ -339,8 +343,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="version-control-using-git-the-basics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="version-control-using-git-the-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vsts-workflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

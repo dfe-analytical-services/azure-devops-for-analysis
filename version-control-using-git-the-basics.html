@@ -150,6 +150,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.8" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#work-items"><i class="fa fa-check"></i><b>3.8</b> Work Items</a></li>
 <li class="chapter" data-level="3.9" data-path="vsts-the-basics.html"><a href="vsts-the-basics.html#pull-requests"><i class="fa fa-check"></i><b>3.9</b> Pull Requests</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="vsts-workflow.html"><a href="vsts-workflow.html"><i class="fa fa-check"></i><b>4</b> VSTS - Workflow</a><ul>
+<li class="chapter" data-level="4.1" data-path="vsts-workflow.html"><a href="vsts-workflow.html#starting-vsts-project"><i class="fa fa-check"></i><b>4.1</b> Starting VSTS project</a></li>
+<li class="chapter" data-level="4.2" data-path="vsts-workflow.html"><a href="vsts-workflow.html#making-branches-1"><i class="fa fa-check"></i><b>4.2</b> Making Branches</a></li>
+<li class="chapter" data-level="4.3" data-path="vsts-workflow.html"><a href="vsts-workflow.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a></li>
+<li class="chapter" data-level="4.4" data-path="vsts-workflow.html"><a href="vsts-workflow.html#merging"><i class="fa fa-check"></i><b>4.4</b> Merging</a></li>
+<li class="chapter" data-level="4.5" data-path="vsts-workflow.html"><a href="vsts-workflow.html#push-changes-to-vsts"><i class="fa fa-check"></i><b>4.5</b> Push changes to VSTS</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -358,7 +365,7 @@ git merge red_is_great</code></pre>
 <p>If we open speed_dist.R there’ll be a line saying <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> then one version of our changed line then a bunch of equals after which we’ll see the other version of our line and then <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; blue_is_great</code>.</p>
 <p>Thankfully, when Git finds a merge conflict it keeps both versions of the line in question so we can decide which one is right.</p>
 <p>I think red is better than blue, so let’s get rid of the line that makes the colour blue and all the other extraneous lines.</p>
-<p>Now all we do the usual git add and git commit. Make note of the merge conflict in the commit message, something like “Fixed merge conflict between blue and red”.</p>
+<p>Now all we do the usual <code>sh git add</code> and <code>sh git commit</code>. Make note of the merge conflict in the commit message, something like “Fixed merge conflict between blue and red”.</p>
 <p>For very large and complex merge conflicts it’s worth searching for <code>&lt; HEAD</code> to find all the instances of a conflict.</p>
 <p>##.gitignore As the number of files in our project increases it will become tiresome typing in each file we would like to track.</p>
 <pre class="sh"><code>git add file1.txt file2.txt ... file37.txt ...</code></pre>

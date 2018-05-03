@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="version-control-using-git-the-basics.html">
+<link rel="prev" href="vsts-the-basics.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -177,69 +177,71 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<div id="background" class="section level2">
-<h2><span class="header-section-number">1.1</span> Background</h2>
-<p>Version control is an important part of any project. It allows you to respond reactively to requests for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made.</p>
-<p>Most people would recognise this and probably are doing some form of their own version control to ensure they are able to respond, albeit not immediately, to these situations.</p>
-<p>As analytical functions move away from software such as Excel, SPSS, etc. towards fully code-based solutions using languages such as R, Python, SQL, etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices.</p>
-<p>Git is the most recognised software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you easily to adapt its use to your needs.</p>
+<div id="vsts---workflow" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> VSTS - Workflow</h1>
+<div id="starting-vsts-project" class="section level2">
+<h2><span class="header-section-number">4.1</span> Starting VSTS project</h2>
+<ul>
+<li><p>Make a project in VSTS</p></li>
+<li><p>Clone the repository to a local directory. Open your desired folder in File Explorer, right click and select “Git Bash here”.</p>
+<pre class="sh"><code>git clone &lt;project_name&gt;</code></pre></li>
+</ul>
+<p>We recommend that, to get the most from VSTS, you use it from the start of a project. This allows a continuous process of making small changes and having them QA’d, instead of doing a huge QA right at the end. However, you may have started a repository locally and wish to put it on VSTS. In that case you can push to VSTS.</p>
+<ul>
+<li><p>Add the VSTS repository as your “remote”</p>
+<pre class="sh"><code>git remote add origin &lt;repo_URL&gt;</code></pre></li>
+<li><p>Push your local changes up to VSTS (make sure you’ve committed your changes first!)</p>
+<pre class="sh"><code>git push -u origin --all &lt;repo_URL&gt;</code></pre></li>
+</ul>
 </div>
-<div id="manual-version-control" class="section level2">
-<h2><span class="header-section-number">1.2</span> Manual Version Control</h2>
-<p>Any book illustrating the usefulness of Git will start with an example similar to the following.</p>
-<div class="figure">
-<img src="www/manual_version_control.png" alt="" />
+<div id="making-branches-1" class="section level2">
+<h2><span class="header-section-number">4.2</span> Making Branches</h2>
+<ul>
+<li><p>Work may be assigned to you as a “Work Item”. In VSTS use the link to make new branch. To correct a bug, prefix the branch name with “bug/”. To add new functionality, prefix the branch name with “feature/”.</p></li>
+<li><p>Make sure your master branch is up to date.</p>
+<pre class="sh"><code>git pull</code></pre>
+<p>Your local repository will now “know” about the branch you just made.</p></li>
+<li><p>Checkout the branch you made on VSTS (make sure the branch names are the same).</p>
+<pre class="sh"><code>git checkout &lt;your_branch_name&gt;</code></pre></li>
+</ul>
+</div>
+<div id="making-changes" class="section level2">
+<h2><span class="header-section-number">4.3</span> Making Changes</h2>
+<ul>
+<li><p>Make your code changes</p></li>
+<li><p>Commit your changes. You can make as many commits as you need to. As ever, make them roughly self-contained chunks that would be easy for someone to review piece by piece.</p>
+<pre class="sh"><code>git add &lt;file_list&gt;</code></pre></li>
+</ul>
+<pre class="sh"><code>git commit -m &quot;Commit message&quot;</code></pre>
+</div>
+<div id="merging" class="section level2">
+<h2><span class="header-section-number">4.4</span> Merging</h2>
+<ul>
+<li><p>When you’ve made enough changes to complete your work item checkout the master branch in your local repository do a pull in case anyone else had made changes.</p>
+<pre class="sh"><code>git checkout master</code></pre>
+<pre class="sh"><code>git pull</code></pre></li>
+<li><p>Switch back to your working branch. Merge any changes from master.</p>
+<pre class="sh"><code>git checkout &lt;your_branch_name&gt;</code></pre>
+<pre class="sh"><code>git merge master</code></pre></li>
+<li><p>Sort out any merge conflicts. <code>sh  git status</code> will list the files that have merge conflicts. Open the files with the conflicts, and search them for “&lt;&lt;&lt;&lt;”. Everything from the next line up until a line of “====” will be from the master branch. Everything from the “====” line until “&gt;&gt;&gt;&gt;” will be from your working branch. Work through the code to make sure that you keep all the necessary changes. There may be changes from master and your branch that you want to keep, so don’t just idly delete things! Add and commit the changes.</p>
+<pre class="sh"><code>git add &lt;file_to_be_merged&gt;</code></pre>
+<pre class="sh"><code>git commit -m &quot;Commit message (it&#39;s advised to mention the merge)&quot;</code></pre></li>
+</ul>
+</div>
+<div id="push-changes-to-vsts" class="section level2">
+<h2><span class="header-section-number">4.5</span> Push changes to VSTS</h2>
+<ul>
+<li><p>Push your changes to VSTS</p>
+<pre class="sh"><code>git push</code></pre></li>
+<li><p>On VSTS make a pull request for your branch</p></li>
+<li><p>Have someone review your work. If any changes are required, go back to <a href="vsts-workflow.html#making-changes">Making Changes</a> and work from there again.</p></li>
+<li><p>Merge your branch into Master</p></li>
+<li><p>Find some more work, go back to the top and start again, Sisyphus!</p></li>
+</ul>
+
+<div id="refs" class="references">
 
 </div>
-<p>This approach creates <em>versioned</em> files using suffixes with some sort of convention. This can work if you have a small number of iterations but the following questions need to be answered:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Which is the final version?!</strong> - Although conventions attempt to remain standard you will get to a stage when you think you are final, another change will come and your previous convention will be broken.</p></li>
-<li><p><strong>What files actually constitute this analysis?</strong> - Folder structure changes over time. Scripts merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed.</p></li>
-<li><p><strong>What are the differences between these versions?</strong> - Although these versions have different numbers we can’t easily tell what the difference between them are and would have to manually compare differences to see what’s going on. There is no indication that these are linked to specific items of work.</p></li>
-<li><p><strong>How do you collaborate using this structure?</strong> - Collaborating using this sort of versioning means you are going to have to introduce others to this structure and/or manage the process of adding pieces of code, likely passed across via email. Keeping track of this adds to the challenge.</p></li>
-</ol>
-<p>The main take home points from this is that there are lots of challenges that come with this, and these challenges can take away from the task at hand. The bigger your project grows, the more challenging this will be.</p>
-</div>
-<div id="git" class="section level2">
-<h2><span class="header-section-number">1.3</span> Git</h2>
-<p>Git is the <a href="https://insights.stackoverflow.com/survey/2015#tech-sourcecontrol">most commonly used version control system</a> for code development in the world today.</p>
-<p>It is command line software, language agnostic and at its root, just looks at differences between plain text files.</p>
-<p>At its most basic level Git allows the following:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Commits</strong> - Create checkpoints in your code development process that you can go back to if required.</p></li>
-<li><p><strong>Branch</strong> - Create exact replicas of your project folder in which you can try out particular ideas without editing the main version.</p></li>
-<li><p><strong>Merge</strong> - Systematically merge these changes back into the main version of the code.</p></li>
-</ol>
-<div class="figure">
-<img src="www/branching_diagram.png" alt="" />
-
-</div>
-<p>Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:</p>
-<p><em>What changed since the last working version, was that done right and does that change impact anywhere else?</em>.</p>
-<p><strong>Note:</strong> Git is command line software but many development environments (including R Studio) provide the functionality via the graphical user interface.</p>
-</div>
-<div id="collaboration" class="section level2">
-<h2><span class="header-section-number">1.4</span> Collaboration</h2>
-<p>So far we have only looked at local version control. This is great for yourself to go back to previous versions of your work but doesn’t really offer a solution to collaborative coding.</p>
-<p>What is needed is a visual platform where central versions of the code can be stored with the following functionality:</p>
-<ol style="list-style-type: decimal">
-<li><p>Users can take copies of the code on their local machine.</p></li>
-<li><p>Users can make changes to the code locally and submit those changes for review.</p></li>
-<li><p>The review process can be managed and if any changes are required they can be made in a systemised manner.</p></li>
-</ol>
-<p>You can think of these sort of systems as wrappers for Git, where merges into the main version of the code are safeguarded.</p>
-<p>One of the most well known systems for this is <a href="https://github.com">GitHub</a> which is popular with open source projects.</p>
-<p>For the purposes of this book we are looking at using Visual Studio Team Services. This is a common tool in enterprise for software development and the reason we use it over GitHub is that it is secure.</p>
-</div>
-<div id="visual-studio-team-services" class="section level2">
-<h2><span class="header-section-number">1.5</span> Visual Studio Team Services</h2>
-<p>Visual Studio Team Services (VSTS) is a code collaboration tool for managing projects consisting of multiple developers.</p>
-<p>This is not a natural tool to use with Open Source Statistical Programming tools such as R and there isn’t too much guidance around on using it for the specific purpose of R projects.</p>
-<p>That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively.</p>
-<p>On top of this, it provides project management functionality that when coupled with a Git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.</p>
-
 </div>
 </div>
             </section>
@@ -247,8 +249,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="version-control-using-git-the-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vsts-the-basics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
