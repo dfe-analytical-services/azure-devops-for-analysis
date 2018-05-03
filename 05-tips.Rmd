@@ -1,0 +1,135 @@
+#Pro Tips
+
+This section outlines some useful commands to make Git a little more user friendly.
+
+##Log Customisation and Aliases
+
+You can customise the log by adding extra arguments. For example, adding the `--oneline` argument the log is cut down to one line per commit.
+```sh
+git log --oneline
+```
+
+There are a lot of possible argument to add to the log. This example will show the latest commit on each branch, give a rough branching diagram and put the date in a specified format.
+
+```sh
+git log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
+```
+All the possible arguments to add to `git log` are in the documentation [here](https://www.git-scm.com/docs/git-log).
+
+Eventually you'll have too many arguments to sensibly type, so you can use an alias. An alias allows you to define a new command based on an old command. You define one like this:
+```sh
+git config --global alias.<your_alias_name> = <your_command>
+```
+
+After this you can type 
+```sh
+git <your_alias_name>
+```
+to carry out the command.
+
+For example, using the long, customised log from above we can define a new command, "hist".
+
+```sh
+git config --global alias.hist = log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
+```
+
+Allowing us to type: 
+```sh
+git hist
+```
+to view a fancy version of the log, without having to type out a huge command!
+
+##Difftool
+
+If you put in a request to IT to install WinMerge you can use it to view differences between old and new versions of your files side-by-side. You can also edit from within Winmerge - this is useful just before you commit to make sure that everything you changed is something you wanted to change.
+
+Open your .gitconfig file 
+```sh
+git config --global -e
+```
+
+(this is a lot easier if you've set up Notepad, or Notepad++ as your core editor) and copy this in:
+
+```sh
+[diff]
+  tool = winmerge
+
+[difftool "winmerge"]
+  name = WinMerge
+  trustExitCode = true
+  cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
+
+[difftool]
+  prompt = false
+```
+save and exit.
+
+From now on you can type
+```sh
+git difftool
+```
+when you have uncommitted changes to view the difference between them and the last commit.
+
+To view the differences between your current version and an old commit, type
+```sh
+git difftool HEAD~<n>
+```
+where <n> is the number of commits back to want to compare to.
+
+To view the differences between your current branch and another branch type
+```sh
+git difftool <other branch name>
+```
+  
+##Amend
+
+If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
+
+To amend the the commit, correct the file, add the file in Git and then use:
+```sh
+git commit --amend
+```
+to combine the correction into the previous commit (technically this combines both commits into a new commit that overwrites the last one).
+
+If your Git history looks like this:
+```
+51d070b Some User | 2018/01/27 11:08 Corrected more mistakes
+eacd280 Some User | 2018/01/27 11:07 Corrected mistake in last commit
+909246a Some User | 2018/01/27 10:50 Corrected typos in last change
+00286d6 Some User | 2018/01/27 10:44 Added new feature
+```
+
+If you've made a typo in your commit message you can also correct it with amend. Say your last commit looks like this:
+```
+109563e Some User | 2018/01/27 10:44 Added mew featuere
+```
+
+Adding the `-m` flag to your amend allows you to add a new comment.
+```sh
+git commit --amend -m "Added new feature"
+```
+
+```
+23237f1 Some User | 2018/01/27 10:44 Added new feature
+```
+
+## Stash
+
+If you start making changes in the wrong branch and haven't committed them yet, Git won't allow you to change branches. 
+
+The stash command allows you to store your file changes away, allowing you to change branch, so you can bring them back up when you want.
+
+```sh
+git stash
+```
+Will store away any changes. If you check `git status` you'll see that your file changes no longer appear.
+
+After you switch branch
+```sh
+git checkout <your_branch>
+```
+you can then type 
+```sh
+git stash pop
+```
+to bring your changes back.

@@ -1,4 +1,4 @@
-# VSTS - Workflow
+# Overall Workflow
 
 ## Starting VSTS project
 
@@ -42,11 +42,10 @@ git checkout <your_branch_name>
 
 - Commit your changes. You can make as many commits as you need to. As ever, make 
 them roughly self-contained chunks that would be easy for someone to review piece by piece.
-```sh 
+```sh
 git add <file_list>
 ```
-
-```sh 
+```sh
 git commit -m "Commit message"
 ```
 
