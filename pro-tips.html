@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="version-control-using-git-the-basics.html">
+<link rel="prev" href="overall-workflow.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -183,69 +183,85 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<div id="background" class="section level2">
-<h2><span class="header-section-number">1.1</span> Background</h2>
-<p>Version control is an important part of any project. It allows you to respond reactively to requests for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made.</p>
-<p>Most people would recognise this and probably are doing some form of their own version control to ensure they are able to respond, albeit not immediately, to these situations.</p>
-<p>As analytical functions move away from software such as Excel, SPSS, etc. towards fully code-based solutions using languages such as R, Python, SQL, etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices.</p>
-<p>Git is the most recognised software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you easily to adapt its use to your needs.</p>
+<div id="pro-tips" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Pro Tips</h1>
+<p>This section outlines some useful commands to make Git a little more user friendly.</p>
+<div id="log-customisation-and-aliases" class="section level2">
+<h2><span class="header-section-number">5.1</span> Log Customisation and Aliases</h2>
+<p>You can customise the log by adding extra arguments. For example, adding the <code>--oneline</code> argument the log is cut down to one line per commit.</p>
+<pre class="sh"><code>git log --oneline</code></pre>
+<p>There are a lot of possible argument to add to the log. This example will show the latest commit on each branch, give a rough branching diagram and put the date in a specified format.</p>
+<pre class="sh"><code>git log --pretty=format:&#39;%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d&#39; --graph --all --date=format:&#39;%Y/%m/%d %H:%M&#39;</code></pre>
+<p>All the possible arguments to add to <code>git log</code> are in the documentation <a href="https://www.git-scm.com/docs/git-log">here</a>.</p>
+<p>Eventually you’ll have too many arguments to sensibly type, so you can use an alias. An alias allows you to define a new command based on an old command. You define one like this:</p>
+<pre class="sh"><code>git config --global alias.&lt;your_alias_name&gt; = &lt;your_command&gt;</code></pre>
+<p>After this you can type</p>
+<pre class="sh"><code>git &lt;your_alias_name&gt;</code></pre>
+<p>to carry out the command.</p>
+<p>For example, using the long, customised log from above we can define a new command, “hist”.</p>
+<pre class="sh"><code>git config --global alias.hist = log --pretty=format:&#39;%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d&#39; --graph --all --date=format:&#39;%Y/%m/%d %H:%M&#39;</code></pre>
+<p>Allowing us to type:</p>
+<pre class="sh"><code>git hist</code></pre>
+<p>to view a fancy version of the log, without having to type out a huge command!</p>
 </div>
-<div id="manual-version-control" class="section level2">
-<h2><span class="header-section-number">1.2</span> Manual Version Control</h2>
-<p>Any book illustrating the usefulness of Git will start with an example similar to the following.</p>
-<div class="figure">
-<img src="www/manual_version_control.png" alt="" />
+<div id="difftool" class="section level2">
+<h2><span class="header-section-number">5.2</span> Difftool</h2>
+<p>If you put in a request to IT to install WinMerge you can use it to view differences between old and new versions of your files side-by-side. You can also edit from within Winmerge - this is useful just before you commit to make sure that everything you changed is something you wanted to change.</p>
+<p>Open your .gitconfig file</p>
+<pre class="sh"><code>git config --global -e</code></pre>
+<p>(this is a lot easier if you’ve set up Notepad, or Notepad++ as your core editor) and copy this in:</p>
+<pre class="sh"><code>[diff]
+  tool = winmerge
+
+[difftool &quot;winmerge&quot;]
+  name = WinMerge
+  trustExitCode = true
+  cmd = &quot;&#39;C:/Program Files (x86)/WinMerge/WinMergeU.exe&#39;&quot; -e &quot;$LOCAL&quot; &quot;$REMOTE&quot;
+
+[difftool]
+  prompt = false</code></pre>
+<p>save and exit.</p>
+<p>From now on you can type</p>
+<pre class="sh"><code>git difftool</code></pre>
+<p>when you have uncommitted changes to view the difference between them and the last commit.</p>
+<p>To view the differences between your current version and an old commit, type</p>
+<pre class="sh"><code>git difftool HEAD~&lt;n&gt;</code></pre>
+<p>where <n> is the number of commits back to want to compare to.</p>
+<p>To view the differences between your current branch and another branch type</p>
+<pre class="sh"><code>git difftool &lt;other branch name&gt;</code></pre>
+</div>
+<div id="amend" class="section level2">
+<h2><span class="header-section-number">5.3</span> Amend</h2>
+<p>If you’ve just committed some changes but realised a mistake in them you can “amend” the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.</p>
+<p>To amend the the commit, correct the file, add the file in Git and then use:</p>
+<pre class="sh"><code>git commit --amend</code></pre>
+<p>to combine the correction into the previous commit (technically this combines both commits into a new commit that overwrites the last one).</p>
+<p>If your Git history looks like this:</p>
+<pre><code>51d070b Some User | 2018/01/27 11:08 Corrected more mistakes
+eacd280 Some User | 2018/01/27 11:07 Corrected mistake in last commit
+909246a Some User | 2018/01/27 10:50 Corrected typos in last change
+00286d6 Some User | 2018/01/27 10:44 Added new feature</code></pre>
+<p>If you’ve made a typo in your commit message you can also correct it with amend. Say your last commit looks like this:</p>
+<pre><code>109563e Some User | 2018/01/27 10:44 Added mew featuere</code></pre>
+<p>Adding the <code>-m</code> flag to your amend allows you to add a new comment.</p>
+<pre class="sh"><code>git commit --amend -m &quot;Added new feature&quot;</code></pre>
+<pre><code>23237f1 Some User | 2018/01/27 10:44 Added new feature</code></pre>
+</div>
+<div id="stash" class="section level2">
+<h2><span class="header-section-number">5.4</span> Stash</h2>
+<p>If you start making changes in the wrong branch and haven’t committed them yet, Git won’t allow you to change branches.</p>
+<p>The stash command allows you to store your file changes away, allowing you to change branch, so you can bring them back up when you want.</p>
+<pre class="sh"><code>git stash</code></pre>
+<p>Will store away any changes. If you check <code>git status</code> you’ll see that your file changes no longer appear.</p>
+<p>After you switch branch</p>
+<pre class="sh"><code>git checkout &lt;your_branch&gt;</code></pre>
+<p>you can then type</p>
+<pre class="sh"><code>git stash pop</code></pre>
+<p>to bring your changes back.</p>
+
+<div id="refs" class="references">
 
 </div>
-<p>This approach creates <em>versioned</em> files using suffixes with some sort of convention. This can work if you have a small number of iterations but the following questions need to be answered:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Which is the final version?!</strong> - Although conventions attempt to remain standard you will get to a stage when you think you are final, another change will come and your previous convention will be broken.</p></li>
-<li><p><strong>What files actually constitute this analysis?</strong> - Folder structure changes over time. Scripts merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed.</p></li>
-<li><p><strong>What are the differences between these versions?</strong> - Although these versions have different numbers we can’t easily tell what the difference between them are and would have to manually compare differences to see what’s going on. There is no indication that these are linked to specific items of work.</p></li>
-<li><p><strong>How do you collaborate using this structure?</strong> - Collaborating using this sort of versioning means you are going to have to introduce others to this structure and/or manage the process of adding pieces of code, likely passed across via email. Keeping track of this adds to the challenge.</p></li>
-</ol>
-<p>The main take home points from this is that there are lots of challenges that come with this, and these challenges can take away from the task at hand. The bigger your project grows, the more challenging this will be.</p>
-</div>
-<div id="git" class="section level2">
-<h2><span class="header-section-number">1.3</span> Git</h2>
-<p>Git is the <a href="https://insights.stackoverflow.com/survey/2015#tech-sourcecontrol">most commonly used version control system</a> for code development in the world today.</p>
-<p>It is command line software, language agnostic and at its root, just looks at differences between plain text files.</p>
-<p>At its most basic level Git allows the following:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Commits</strong> - Create checkpoints in your code development process that you can go back to if required.</p></li>
-<li><p><strong>Branch</strong> - Create exact replicas of your project folder in which you can try out particular ideas without editing the main version.</p></li>
-<li><p><strong>Merge</strong> - Systematically merge these changes back into the main version of the code.</p></li>
-</ol>
-<div class="figure">
-<img src="www/branching_diagram.png" alt="" />
-
-</div>
-<p>Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:</p>
-<p><em>What changed since the last working version, was that done right and does that change impact anywhere else?</em>.</p>
-<p><strong>Note:</strong> Git is command line software but many development environments (including R Studio) provide the functionality via the graphical user interface.</p>
-</div>
-<div id="collaboration" class="section level2">
-<h2><span class="header-section-number">1.4</span> Collaboration</h2>
-<p>So far we have only looked at local version control. This is great for yourself to go back to previous versions of your work but doesn’t really offer a solution to collaborative coding.</p>
-<p>What is needed is a visual platform where central versions of the code can be stored with the following functionality:</p>
-<ol style="list-style-type: decimal">
-<li><p>Users can take copies of the code on their local machine.</p></li>
-<li><p>Users can make changes to the code locally and submit those changes for review.</p></li>
-<li><p>The review process can be managed and if any changes are required they can be made in a systemised manner.</p></li>
-</ol>
-<p>You can think of these sort of systems as wrappers for Git, where merges into the main version of the code are safeguarded.</p>
-<p>One of the most well known systems for this is <a href="https://github.com">GitHub</a> which is popular with open source projects.</p>
-<p>For the purposes of this book we are looking at using Visual Studio Team Services. This is a common tool in enterprise for software development and the reason we use it over GitHub is that it is secure.</p>
-</div>
-<div id="visual-studio-team-services" class="section level2">
-<h2><span class="header-section-number">1.5</span> Visual Studio Team Services</h2>
-<p>Visual Studio Team Services (VSTS) is a code collaboration tool for managing projects consisting of multiple developers.</p>
-<p>This is not a natural tool to use with Open Source Statistical Programming tools such as R and there isn’t too much guidance around on using it for the specific purpose of R projects.</p>
-<p>That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively.</p>
-<p>On top of this, it provides project management functionality that when coupled with a Git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.</p>
-
 </div>
 </div>
             </section>
@@ -253,8 +269,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="version-control-using-git-the-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="overall-workflow.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
