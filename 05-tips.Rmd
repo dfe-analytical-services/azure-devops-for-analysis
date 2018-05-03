@@ -1,8 +1,9 @@
 #Pro Tips
 
-This section outlines some useful commands to make Git a little more use fridendly.
+This section outlines some useful commands to make Git a little more user friendly.
 
 ##Log Customisation and Aliases
+
 You can customise the log by adding extra arguments. For example, adding the `--oneline` argument the log is cut down to one line per commit.
 ```sh
 git log --oneline
@@ -26,7 +27,7 @@ git <your_alias_name>
 ```
 to carry out the command.
 
-For example, using the long, customised log from above we can define a new commmand, "hist".
+For example, using the long, customised log from above we can define a new command, "hist".
 
 ```sh
 git config --global alias.hist = log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
@@ -82,7 +83,7 @@ git difftool <other branch name>
   
 ##Amend
 
-If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try ammending public commits.
+If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
 
 To amend the the commit, correct the file, add the file in Git and then use:
 ```sh
