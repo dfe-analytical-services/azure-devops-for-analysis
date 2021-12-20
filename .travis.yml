@@ -1,28 +1,16 @@
 language: r
 r: 
-  - 3.4.2
+  - 4.1.1
 sudo: required
 cache:
-  directories:
-    - $TRAVIS_BUILD_DIR/packrat/src
-    - $TRAVIS_BUILD_DIR/packrat/lib
-  packages: true
-
-git:
-  depth: 3
-
-env:
-  global:
-    - secure: GITHUB_PAT
-
-r_packages:
- - devtools
- - dplyr
- - ggplot2
- - futile.logger
+   directories:
+  - $HOME/.local/share/renv
+  - $TRAVIS_BUILD_DIR/renv/library
 
 install:
-  - R -e "0" --args --bootstrap-packrat
+  - Rscript -e "if (!requireNamespace('renv', quietly = TRUE)) install.packages('renv')"
+  - Rscript -e "renv::restore()"
+
 
 before_script:
   - chmod +x ./_build.sh
