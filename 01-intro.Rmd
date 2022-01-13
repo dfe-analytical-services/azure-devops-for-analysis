@@ -64,9 +64,9 @@ What is needed is a visual platform where central versions of the code can be st
 
 You can think of these sort of systems as wrappers for Git, where merges into the main version of the code are safeguarded. 
 
-One of the most well known systems for this is [GitHub](https://github.com) which is popular with open source projects. Some companies pay for business accounts. 
+One of the most well known systems for this is [GitHub](https://github.com). GitHub is popular with open source projects because it provides good functionality for sharing code publicly. Additionally, some companies pay for business accounts. 
 
-For the purposes of this book we look at using Azure DevOps. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice.
+For the purposes of this book we look at using Azure DevOps. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you undertaking work which could/should be public, you may wish to consider using GitHub.
 
 ## Azure DevOps
 
