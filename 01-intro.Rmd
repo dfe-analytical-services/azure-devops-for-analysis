@@ -8,7 +8,7 @@ Most people would recognise this and probably are doing some form of their own v
 
 As analytical functions move away from software such as Excel, SPSS, etc. towards fully code-based solutions using languages such as R, Python, SQL, etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices. 
 
-Git is the most recognised software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you easily to adapt its use to your needs.
+Git is widely used software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you easily to adapt its use to your needs.
 
 ## Manual Version Control
 
@@ -30,7 +30,7 @@ The main take home points from this is that there are lots of challenges that co
 
 ## Git
 
-Git is the [most commonly used version control system](https://insights.stackoverflow.com/survey/2015#tech-sourcecontrol) for code development in the world today. 
+Git is the [widely used version control system](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-other-tools) for code development in the world today. 
 
 It is command line software, language agnostic and at its root, just looks at differences between plain text files.
 
@@ -46,9 +46,9 @@ At its most basic level Git allows the following:
 
 Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:
 
-*What changed since the last working version, was that done right and does that change impact anywhere else?*.
+*What changed since the last working version, was that done right and does that change impact anywhere else?*
 
-**Note:** Git is command line software but many development environments (including R Studio) provide the functionality via the graphical user interface.
+**Note:** Git is command line software but many development environments (including RStudio) provide the functionality via the graphical user interface.
 
 ## Collaboration
 
@@ -64,16 +64,14 @@ What is needed is a visual platform where central versions of the code can be st
 
 You can think of these sort of systems as wrappers for Git, where merges into the main version of the code are safeguarded. 
 
-One of the most well known systems for this is [GitHub](https://github.com) which is popular with open source projects. 
+One of the most well known systems for this is [GitHub](https://github.com). GitHub is popular with open source projects because it provides good functionality for sharing code publicly. Additionally, some companies pay for business accounts. 
 
-For the purposes of this book we are looking at using Visual Studio Team Services. This is a common tool in enterprise for software development and the reason we use it over GitHub is that it is secure. 
+For the purposes of this book we look at using Azure DevOps. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you undertaking work which could/should be public, you may wish to consider using GitHub.
 
-## Visual Studio Team Services
+## Azure DevOps
 
-Visual Studio Team Services (VSTS) is a code collaboration tool for managing projects consisting of multiple developers. 
+Azure DevOps (DevOps) is a code collaboration tool for managing projects consisting of multiple developers. 
 
-This is not a natural tool to use with Open Source Statistical Programming tools such as R and there isn't too much guidance around on using it for the specific purpose of R projects. 
-
-That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively. 
+DevOps is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively. 
 
 On top of this, it provides project management functionality that when coupled with a Git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.
