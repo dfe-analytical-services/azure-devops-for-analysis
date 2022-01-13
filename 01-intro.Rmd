@@ -46,9 +46,9 @@ At its most basic level Git allows the following:
 
 Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:
 
-*What changed since the last working version, was that done right and does that change impact anywhere else?*.
+*What changed since the last working version, was that done right and does that change impact anywhere else?*
 
-**Note:** Git is command line software but many development environments (including R Studio) provide the functionality via the graphical user interface.
+**Note:** Git is command line software but many development environments (including RStudio) provide the functionality via the graphical user interface.
 
 ## Collaboration
 
