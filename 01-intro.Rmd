@@ -66,14 +66,12 @@ You can think of these sort of systems as wrappers for Git, where merges into th
 
 One of the most well known systems for this is [GitHub](https://github.com) which is popular with open source projects. 
 
-For the purposes of this book we are looking at using Visual Studio Team Services. This is a common tool in enterprise for software development and the reason we use it over GitHub is that it is secure. 
+For the purposes of this book we are looking at using Azure DevOps. This is a common tool in enterprise for software development and the reason we use it over GitHub is that it is secure. 
 
-## Visual Studio Team Services
+## Azure DevOps
 
-Visual Studio Team Services (VSTS) is a code collaboration tool for managing projects consisting of multiple developers. 
+Azure DevOps (DevOps) is a code collaboration tool for managing projects consisting of multiple developers. 
 
-This is not a natural tool to use with Open Source Statistical Programming tools such as R and there isn't too much guidance around on using it for the specific purpose of R projects. 
-
-That said, VSTS is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively. 
+DevOps is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively. 
 
 On top of this, it provides project management functionality that when coupled with a Git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.
