@@ -69,7 +69,7 @@ One of the most well known systems for this is [GitHub](https://github.com). Git
 For the purposes of this book we look at using Azure DevOps. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you undertaking work which could/should be public, you may wish to consider using GitHub.
   
   
-::::{ .infobox}
+::::{ .infoboxblue .info}
 :::{ .infobox-header}
 **Git, Github and Azure DevOps (a.k.a. Git is not Github)**
 :::
