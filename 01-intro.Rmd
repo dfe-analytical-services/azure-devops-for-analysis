@@ -67,7 +67,26 @@ You can think of these sort of systems as wrappers for Git, where merges into th
 One of the most well known systems for this is [GitHub](https://github.com). GitHub is popular with open source projects because it provides good functionality for sharing code publicly. Additionally, some companies pay for business accounts. 
 
 For the purposes of this book we look at using Azure DevOps. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you undertaking work which could/should be public, you may wish to consider using GitHub.
+  
+  
+::::{ .infoboxblue .info}
+:::{ .infobox-header}
+**Git, GitHub and Azure DevOps (a.k.a. Git is not GitHub)**
+:::
+A common source of confusion is the assumption that Git and GitHub are somehow the same. They are not - although the confusion is understandable given the shared naming.
+  
+* **Git** is ***version control software***. It can either be used to manage code locally on a single machine or, much more commonly, to communicate with and manage code on a remote repository. (Other version control software exists, but is not used within DfE)
+  
+* **GitHub** is ***a remote repository and code collaboration tool***. It can be communicated with via Git to act as a central code store for a project.
+  
+* **Azure DevOps** is ***a remote repository and code collaboration tool***. It can be communicated with via Git to act as a central code store for a project.
+  
+Put another way, Azure DevOps and GitHub do the same job. Git does a different job, and can interact with either of them. In DfE we by default use the combination of Git and Azure DevOps, although Git and GitHub will sometimes be used where appropriate.
+  
+The most important difference between Azure DevOps and Github is that the former is hosted on a private DfE server and access can be controlled; the latter is hosted on public servers and by default code hosted there is publically available.
 
+::::
+  
 ## Azure DevOps
 
 Azure DevOps (DevOps) is a code collaboration tool for managing projects consisting of multiple developers. 
