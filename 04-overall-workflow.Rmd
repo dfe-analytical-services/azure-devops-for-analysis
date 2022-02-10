@@ -1,5 +1,15 @@
 # Overall Workflow
 
+## Before you start - a note on data storage
+
+- If possible, when working with Git and DevOps, store your data in SQL server and read just the data you need from the server.
+
+- If you store data files in your repo, Git will version control all your data as well. This means that:
+  + If you delete your data they will still be in your Git history and therefore recoverable. This is problematic if you have data which you need to be able to delete.
+  + If your data files are large, your git repository becomes large. This increases the time and internet needed to interact with your work on DevOps, particularly for `clone`, `push` and `pull` commands. It also makes R Shiny apps slow to deploy.
+  
+- If you add data to Git and DevOps you should also think about who else this gives data access to: anyone with access to the DevOps project will gain access to the data in your area and DevOps project access is managed centrally. Therefore it is a bad place for personal or sensitive data because you cannot control access to it.
+
 ## Starting a DevOps project
 
 - Make a project in DevOps
