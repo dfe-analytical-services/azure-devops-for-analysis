@@ -1,29 +1,29 @@
 # Overall Workflow
 
-## Starting VSTS project
+## Starting a DevOps project
 
-- Make a project in VSTS
+- Make a project in DevOps
 
 - Clone the repository to a local directory. Open your desired folder in File Explorer, right click and select "Git Bash here".
 ```sh
 git clone <project_name>
 ```
 
-We recommend that, to get the most from VSTS, you use it from the start of a project. This allows a continuous process of making small changes and having them QA'd, instead of doing a huge QA right at the end. However, you may have started a repository locally and wish to put it on VSTS. In that case you can push to VSTS.
+We recommend that, to get the most from DevOps, you use it from the start of a project. This allows a continuous process of making small changes and having them QA'd, instead of doing a huge QA right at the end. However, you may have started a repository locally and wish to put it on DevOps. In that case you can push to DevOps.
 
-- Add the VSTS repository as your "remote"
+- Add the DevOps repository as your "remote"
 ```sh
 git remote add origin <repo_URL>
 ```
 
-- Push your local changes up to VSTS (make sure you've committed your changes first!)
+- Push your local changes up to DevOps (make sure you've committed your changes first!)
 ```sh
 git push -u origin --all <repo_URL>
 ```
 
 ## Making Branches
 
-- Work may be assigned to you as a "Work Item". In VSTS use the link to make new branch. To correct a bug, prefix the branch name with "bug/". To add new functionality, prefix the branch name with "feature/".
+- Work may be assigned to you as a "Work Item". In DevOps use the link to make new branch. To correct a bug, prefix the branch name with "bug/". To add new functionality, prefix the branch name with "feature/".
 
 - Make sure your master branch is up to date.
 ```sh 
@@ -31,7 +31,7 @@ git pull
 ```
 Your local repository will now "know" about the branch you just made.
 
-- Checkout the branch you made on VSTS (make sure the branch names are the same).
+- Checkout the branch you made on DevOps (make sure the branch names are the same).
 ```sh 
 git checkout <your_branch_name>
 ```
@@ -83,14 +83,14 @@ git add <file_to_be_merged>
 git commit -m "Commit message (it's advised to mention the merge)"
 ```
 
-## Push changes to VSTS
+## Push changes to DevOps
 
-- Push your changes to VSTS
+- Push your changes to DevOps
 ```sh 
 git push
 ```
 
-- On VSTS make a pull request for your branch
+- On DevOps make a pull request for your branch
 
 - Have someone review your work. If any changes are required, go back to [Making Changes](#making-changes) and work from there again.
 
