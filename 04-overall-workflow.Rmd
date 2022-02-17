@@ -161,3 +161,16 @@ To create a tag on DevOps:
 - Choose what you want your tag to be based on using the drop down menu. If you choose a branch it will be the most recent commit on that branch. If you need an older commit you will need to find the commit reference (SHA) and search for it.
 
 - Add a description to explain why added the tag.
+
+If you want to use your tag to access a past version of your code:
+
+- On DevOps go to the "Tags" page and click on the tag you want to look at the code for. This will take you to a page showing a folder of files - these are the version of files that you applied your tag to.
+
+- If you wish to access the code on your computer, it is just like checking out a branch. Open git bash and run:
+```sh
+git checkout tag_name
+```
+- When you checkout a tag it sets all your local files to the version that was tagged. If you do this, you will get a warning message from git saying you are in "detached head state" which essentially means you are not on any branch. If you wish to continue working on these files you will need to put them on a branch: the warning message about "detached head state" explains this. However for reference, you will need a git switch command to put the work on to a new branch:
+```sh
+git switch -c new_branch_name
+```
