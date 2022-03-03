@@ -113,23 +113,117 @@ git commit --amend -m "Added new feature"
 23237f1 Some User | 2018/01/27 10:44 Added new feature
 ```
 
-## Stash
+## Common issues and how to fix them
 
-If you start making changes in the wrong branch and haven't committed them yet, Git won't allow you to change branches. 
+### I want to go back to an earlier commit {#reset-revert}
 
-The stash command allows you to store your file changes away, allowing you to change branch, so you can bring them back up when you want.
+You've made some changes that didn't work out for whatever reason, and now want to return your code to an earlier state. There are two ways to do this: _reset_ and _revert_.
 
+#### Reset
+
+This option will "roll back" your directory to its earlier state, essentially going back in time and removing any changes since the commit you go back to.
+
+Use
+```
+git reset --hard <commit-hash>
+```
+where <commit-hash> is the unique hash of the commit you want to go back to (you can find this via `git log`).
+  
+The `--hard` option in this command means that your working directory and staging area will also be reset, which is usually what you want, but **be careful as you will lose any uncommitted changes when you use this command**.
+
+#### Revert
+
+This option keeps all the changes you have made, but adds an extra commit with new changes that _reverse_ the previous changes.
+
+You will usually want to use
+```
+git revert HEAD
+```
+to revert the most recent commit (which is what the `HEAD` in this command refers to).
+  
+Reverting anything other than the most recent commit is **not recommended**. 
+  
+If you want to revert multiple commits at once, you can use something of the form
+```
+git revert --no-commit HEAD~2^..HEAD
+```
+followed by
+```
+git commit -m "Reverted last three commits"
+```
+
+Walking through this:
+  * The `--no-commit` part of the command means that the reversion will change the working directory and staged files, but not yet be committed. (You'll have seen that we commit it afterwards, which is the usual way to work when reverting multiple commits at once).
+  
+* `HEAD~2^` means the commit two commits before `HEAD` (and e.g. `HEAD~4^` would be the commit four commits before `HEAD`)
+  
+* `..` indicates to include all commits between the two specified
+  
+So the first command reverts the most recent commit and the two before it - three commits in all - but only makes those changes in the working directory and staging area rather than committing them. Then the second command is a standard commit command which commits them all with a message.
+
+#### When should I use reset vs revert?
+
+The two commands will result in a different git history. With `reset`, any changes you roll back will not appear, giving a shorter history; with `revert`, everything that happened will recorded and the history will be longer. So if it's not necessary for anyone to know about the rolled back changes, `reset` is probably better; if you need a record of what happened then `revert` is probably better.
+  
+There are a few other important considerations too:
+  
+* You need to be a bit more careful when using `reset`, as it will erase any uncommitted changes and you'll be unable to recover them.
+  
+* If any of the changes you want to reverse have been pushed to a remote server, you should use `revert` so that it's clear to others that changes have been rolled back. Using `reset` on a shared history will create confusion becaus it will not be clear what has happened.
+  
+* You can't (easily) `revert` past a merge because it's unclear which merged branch you want to revert to. `reset` is easier to use when the history you want to roll back includes a merge.
+
+
+### I've worked on the wrong branch (but haven't committed yet)
+
+You've made some changes to your code, saved them, but realised that you've been working on the wrong branch before committing. Fortunately, this is pretty easy to solve. The **git stash** command is your friend here: it allows you to store all your file changes away since the last commit away, and bring them back where you want - usually on a new branch.
+  
+The commands are: store away any changes with
 ```sh
 git stash
 ```
-Will store away any changes. If you check `git status` you'll see that your file changes no longer appear.
+(If you check `git status` at this point you'll see that your file changes since your last commit no longer appear.)
 
-After you switch branch
+Then switch branch with
 ```sh
 git checkout <your_branch>
 ```
-you can then type 
+and use 
 ```sh
 git stash pop
 ```
-to bring your changes back.
+to bring your changes back. That's it!
+
+Using the **pop** command does _not_ commit your changes - you have simply moved uncommitted changes from one branch to another - and once you have "popped" your changes they will be removed from the stash.
+  
+Occasionally popping changes from the stash will cause a merge conflict. You can resolve this in the same way as a usual merge conflict by editing the files, and then add the result to your next commit. (Note that when a pop causes a merge conflict, your changes will not be removed from the stash like normal so you will still have access to them if needed.)
+  
+::::{ .infoboxred .exclamation}
+:::{ .infobox-header}
+Using the stash
+:::
+
+The git stash can technically hold many different sets of changes at once, but it is _not_ good practice to store anything in the stash long-term. It is a temporary store and should only be used to quickly move changes around when needed.
+
+::::
+
+### I've worked on the wrong branch (and committed it)
+
+If you've only realised that you're working on the wrong branch after committing your code, then you'll need to do two things. The first is to get the code onto the correct branch, and the second is to remove it from the wrong branch you committed it to.
+  
+If you **forgot to create a new branch**, you can create one now that includes the commits you want using
+```
+git branch <new_branch_name>
+```
+then roll back the current branch as described [here](#reset-revert).
+  
+If you **already created a branch but forgot to switch to it**, you'll need to move the commits to the correct branch. You can do this by checking out the correct branch and copying the commits to it using **cherry-pick**:
+```
+git checkout <correct_branch>
+git cherry-pick <commit-hash>
+```
+where `<commit-hash>` is the commit you want to copy over. For multiple commits, you can copy them all over using
+```
+git cherry-pick <commit-hash-1>..<commit-hash-n>
+```
+where `<commit-hash-1>` is the earliest commit you want to copy and `<commit-hash-n>` is the most recent. Then check out the branch you accidentally committed them to and toll it back as described [here](#reset-revert).
