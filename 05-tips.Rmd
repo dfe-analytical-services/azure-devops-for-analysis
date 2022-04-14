@@ -1,8 +1,8 @@
-#Pro Tips
+# Pro Tips
 
 This section outlines some useful commands to make Git a little more user friendly.
 
-##Log Customisation and Aliases
+## Log Customisation and Aliases
 
 You can customise the log by adding extra arguments. For example, adding the `--oneline` argument the log is cut down to one line per commit.
 ```sh
@@ -39,7 +39,7 @@ git hist
 ```
 to view a fancy version of the log, without having to type out a huge command!
 
-##Difftool
+## Difftool
 
 If you put in a request to IT to install WinMerge you can use it to view differences between old and new versions of your files side-by-side. You can also edit from within Winmerge - this is useful just before you commit to make sure that everything you changed is something you wanted to change.
 
@@ -81,7 +81,7 @@ To view the differences between your current branch and another branch type
 git difftool <other branch name>
 ```
   
-##Amend
+## Amend
 
 If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
 
