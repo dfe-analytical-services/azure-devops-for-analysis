@@ -123,7 +123,7 @@ git push
 
 - Merge your branch into Master
 
-- Find some more work, go back to the top and start again, Sisyphus!
+- Find some more work, go back to the top and start again.
 
 ## Tags
 
