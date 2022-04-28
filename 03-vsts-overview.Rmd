@@ -21,7 +21,7 @@ VSTS offers unlimited private repositories for 5 users. If you sign up via your 
 
 At a high level when you are using VSTS (or any type of remote) you are creating a central copy of your code on a server (the VSTS site). 
 
-The aim of any project is to get your final complete code on to the master branch of the server copy. Analysts will still make and run all their changes locally but will then use the concepts of *pushing*, *pulling* and *pull requesting* to get the VSTS version up to date.
+The aim of any project is to get your final complete code on to the main/master branch of the server copy. Analysts will still make and run all their changes locally but will then use the concepts of *pushing*, *pulling* and *pull requesting* to get the VSTS version up to date.
 
 Having this central repository and the approval processes that VSTS provides means that multiple analysts can work on a project at the same time and systematically merge all their changes into the final version after code review.
 
@@ -113,11 +113,11 @@ The following clip outlines this process:
 
 ## Branch Policies
 
-At this point you will have a project that anyone who is a member of has the ability to push directly to the master branch. 
+At this point you will have a project that anyone who is a member of has the ability to push directly to the main/master branch. 
 
-This resource is promoting a workflow in which code is reviewed throughout the development life cycle. Pushing to master doesn't allow this directly. 
+This resource is promoting a workflow in which code is reviewed throughout the development life cycle. Pushing to main/master doesn't allow this directly. 
 
-Instead what we do is set **Branch Policies** which force code to be reviewed in VSTS before it can be merged into master. 
+Instead what we do is set **Branch Policies** which force code to be reviewed in VSTS before it can be merged into main/master. 
 
 This comes with various options which are summarised below:
 
