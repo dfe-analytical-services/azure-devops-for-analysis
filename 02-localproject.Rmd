@@ -1,6 +1,6 @@
-#Version Control Using Git - The Basics
+# Version Control Using Git - The Basics
 
-##Background
+## Background
 
 Git is a program used to version control your files - it can be used for any files, but works best for flat text files (anything that you can open in Notepad that will show actual text - .txt, .csv, .sql, .R, .Rmd etc.) instead of binary files (anything that shows gibberish when opened in Notepad - .docx, .xlsx etc.).
 
@@ -10,16 +10,16 @@ Once installed, you can also use Git from Command Prompt or Powershell, but Git 
 
 If you would prefer to use a GUI you can choose to install one when installing Git. You can also use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically. This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
 
-##Installing Git
+## Installing Git
 
 You can download the Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
 
-##Opening Git BASH
+## Opening Git BASH
 You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in yellow text - this is the folder that Git is "pointed" at.
 
 You run commands in Git BASH by typing them in and pressing enter.
 
-##Setting up Git
+## Setting up Git
 
 When you first install Git it is advised to perform some set up steps - they aren't necessary, but will be useful. 
 
@@ -46,7 +46,7 @@ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe
 
 Note, Ctrl+C and Ctrl+V don't work for copy/pasting in Git BASH, but you can still right click to copy/paste.
 
-##Navigating with Git BASH
+## Navigating with Git BASH
 Once in Git you can navigate through folders from the command line. Typing 
 ```sh
 cd <path>
@@ -64,7 +64,7 @@ to list everything in your current folder.
 
 When navigating with Git BASH you can press TAB to autocomplete a folder or file.
 
-##Setting up a Git repository
+## Setting up a Git repository
 A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some cyan text after the file path. Open Git in a folder you would like to make a project in.
 
 Next type:
@@ -73,7 +73,7 @@ git init
 ```
 This will turn this normal folder into a Git Repository - some cyan text saying "master" will appear after the yellow file path. This folder is now ready to start a version controlled project!
 
-##Applying Git to a Project
+## Applying Git to a Project
 Let's make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we'll get to this later).
 
 Let's create some code to plot the stopping distance of cars at different speeds - this data is pre-installed in a data set called "cars". 
@@ -93,7 +93,7 @@ cars_plot
 ```
 This will make a simple scatter plot (and hopefully convince you not to speed...). This seems like a good place to record our progress: save your file as "speed_dist.R" in your project folder. Now we can use Git to take a record of this save lest we need it in the future. 
 
-##Adding and committing files
+## Adding and committing files
 In Git BASH type
 ```sh
 git add .
@@ -144,7 +144,7 @@ The workflow for making changes is as follows:
 - Commit the changes in Git
 
 
-##Viewing the history
+## Viewing the history
 So far we've made two commits. These commits start building up a history in Git. We can view a log of this history using:
 ```sh
 git log
@@ -152,7 +152,7 @@ git log
 
 It will show the date, time, commit message, author and hash (the long list of characters in yellow) for each commit made.
 
-##Making branches
+## Making branches
 There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don't get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.
 
 Let's say we want to make two changes at once to the code above:
@@ -227,7 +227,7 @@ After the ```geom_point()``` line add
 
 We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.
 
-##Merging branches
+## Merging branches
 Once someone has QA'd our code we can merge our branches into the master branch. 
 Checkout the master branch. Merge the branches one at a time like this
 
@@ -246,7 +246,7 @@ git branch -d plot_labels
 git branch -d unit_conversions
 ```
 
-##Branching Workflow
+## Branching Workflow
 The branching workflow goes like this:
 
 - For each large scale change make a branch
@@ -264,7 +264,7 @@ The branching workflow goes like this:
 - Start all over again for the next change
 
 
-##Merge conflicts
+## Merge conflicts
 Sometimes, after trying to merge two branches Git will say there are "merge conflicts". This means that both branches changed the same line of code and Git doesn't know which one to keep.
 
 To understand how to handle merge conflicts we'll create one!
@@ -305,7 +305,7 @@ Now all we do the usual `sh git add` and `sh git commit`. Make note of the merge
 
 For very large and complex merge conflicts it's worth searching for ```< HEAD``` to find all the instances of a conflict.
 
-##.gitignore
+## .gitignore
 As the number of files in our project increases it will become tiresome typing in each file we would like to track.
 
 ```sh
