@@ -1,5 +1,6 @@
 # Overall Workflow
 
+
 ## Before you start - a note on data storage
 
 - If possible, when working with Git and DevOps, store your data in SQL server and read just the data you need from the server.
@@ -35,6 +36,8 @@ The above points apply to input data and output data from your code:
 ```sh
 git clone <project_name>
 ```
+
+Cloning is the git actions which makes a copy of your project from DevOps on your computer which allows you to work on the code. It also records the location of your DevOps repository on your computer which allows you to share (push) your changes back to DevOps once you have done some work. This is a bit like OneDrive syncing your files with the cloud apart from the fact it only happens when specifically tell it to.
 
 We recommend that, to get the most from DevOps, you use it from the start of a project. This allows a continuous process of making small changes and having them QA'd, instead of doing a huge QA right at the end. However, you may have started a repository locally and wish to put it on DevOps. In that case you can push to DevOps.
 
@@ -110,9 +113,10 @@ git add <file_to_be_merged>
 git commit -m "Commit message (it's advised to mention the merge)"
 ```
 
-## Push changes to DevOps
+## Getting your changes back on to DevOps
 
-- Push your changes to DevOps
+- Push (send) your changes to DevOps
+
 ```sh 
 git push
 ```
