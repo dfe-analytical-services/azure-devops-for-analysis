@@ -1,4 +1,4 @@
-# VSTS - The Basics
+# DevOps - The Basics
 
 ## Background
 
@@ -6,76 +6,77 @@ So far we have only looked at Git in the context of local projects and command l
 
 What is needed is a central platform where people can request for changes to be made to the code base and update their code based on changes by others.  
 
-This concept in Git is known as [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes). The following are examples of interactive services that allow you to manage Git projects effectively:
+This concept in Git is known as [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes) or remote repositories.
+The following are examples of interactive services that allow you to manage Git projects effectively:
 
 - [GitHub](github.com)
 - [Bitbucket](https://bitbucket.org)
 - [GitLab](gitlab.com/)
-- [Visual Studio Team Services](https://www.visualstudio.com/team-services/).
+- [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/).
 
-We are using **Visual Studio Team Services** as this is the Department's tool of choice for internal version control. We would use platforms such as GitHub for our more publicly facing projects (such as this book).
+We are using **Azure DevOps** as this is the Department's tool of choice for internal version control. We would use platforms such as GitHub for our more publicly facing projects (such as this book).
 
-VSTS offers unlimited private repositories for 5 users. If you sign up via your corporate email you can create a site that is secure within the organisations active directory and store your code securely.
+To work with internal DevOps Repos you will need an account with Basic access level.
+You will also need someone to give you permission to see the DevOps project that you're working on.
+There is a form to sort out DevOps account leevls and access on the IT service portal - search for DevOps.
 
 ## Theory 
 
-At a high level when you are using VSTS (or any type of remote) you are creating a central copy of your code on a server (the VSTS site). 
+At a high level when you are using DevOps (or any type of remote) you are creating a central copy of your code on a server (the DevOps site). 
 
-The aim of any project is to get your final complete code on to the master branch of the server copy. Analysts will still make and run all their changes locally but will then use the concepts of *pushing*, *pulling* and *pull requesting* to get the VSTS version up to date.
+The aim of any project is to get your final complete code on to the main branch of the server copy. Analysts will still make and run all their changes locally but will then use the concepts of *pushing*, *pulling* and *pull requesting* to get the DevOps version up to date.
 
-Having this central repository and the approval processes that VSTS provides means that multiple analysts can work on a project at the same time and systematically merge all their changes into the final version after code review.
+Having this central repository and the approval processes that DevOps provides means that multiple analysts can work on a project at the same time and systematically merge all their changes into the final version after code review.
 
 The following diagram illustrates the concept of server and local copies. 
 
 ![](www/distributed_version_control.png)
 
-## Generating Git Credentials
+## Creating a DevOps repository
 
-Before we get started we can create some credentials to log our local Git client into VSTS. We will be prompted for these when we first try to push to VSTS.
+To set up a repository on DevOps you need to:
 
-To do this you need do the following:
+1. Open the DevOps website.
+2. Navigate to repositories.
+3. Find the current repository name at the top of page and click on it to bring up a dropdown menu.
+4. Click "add respository" and give it a suitable name.
 
-1. Click on your user icon on the top right
-2. Hit Security
-3. Hit Personal Access Tokens 
-4. Create Credentials
+This will create you a Git repo on DevOps. By default it will give you a main branch and a README file.
 
-The following clip outlines the process:
-
-![](www/generate_credentials.gif)
-
-## Creating a VSTS Project
-
-To set up a repository on VSTS you simply hit new project on the homepage and fill in the project details. 
-
-This will create you an empty Git repo on VSTS.
-
-The following clip outlines the process:
-
-![](www/new_project.gif)
-
-**Note:** Not all users will have permissions to create projects on VSTS. They will instead ask for them to be created by their VSTS admin.
 
 ## Project Setup
 
-When you first create a VSTS project it will create a blank repo. You then have multiple options on what to do from there. 
-
-The Two main options are 
+Once you have created a DevOps repo, you have two key options: 
 
 1. Clone to your computer (cloning will be explained in *Cloning a repository*)
 2. Push an Existing repository
 
 ### Clone to your computer
 
-To clone the blank repository to your computer you can simply copy the VSTS Git repo address from the project start page. 
+Cloning a repository means that you:
 
-e.g.
+1. Get a copy of it on your computer.
+2. Your computer stores where to find the online copy so it can talk to the online one when you ask it to.
+
+To clone the blank repository to your computer you need to get the repo's URL.
+It is easiest to do this by:
+
+1. Going to "Files" in the "Repos" section of DevOps.
+2. Ensuring you are in the right repository by checking the name in the banner at the top of the screen.
+3. Clicking the clone button in the top right-hand corner.
+4. Copying the URL.
+
+Once you have copied the URL, you need to open git bash on your computer and clone the repository using the URLS.
+When you open git bash you should do so in the folder where you want the repo to be.
+Ideally this will be on your C drive, outside of OneDrive of Teams because git repositories don't work well if OneDrive
+or Teams are syncing them.
+THere is no need for the additional syncing from OneDrive or Teams because DevOps provides the online back-up that others can access.
+
+One you've got git bash open, the clone command will look as follows:
 
 ```sh
-git clone teachers-analysis-unit.visaulstudio.com/_git/example-project
+git clone git_repo_url
 ```
-
-**Note:** If the project you have joined is already in progress you can get the Git repo link from the files section under the code tab. This is different to GitHub where the Git repo is the project home page.
 
 ### Push an Existing Repository
 
@@ -91,8 +92,6 @@ This will set up the connection to VSTS and push an entire copy of the repo up t
 
 The following clip outlines this process:
 
-![](www/push_existing.gif)
-
 **Note:** The first time you do this you will be asked for VSTS credentials created previously.
 
 ## Adding users to a project
@@ -107,9 +106,6 @@ To add users to a project you simply do the following on a project home page:
 
 The user will then get a welcome email inviting them to the project.
 
-The following clip outlines this process:
-
-![](www/add_user.gif)
 
 ## Branch Policies
 
@@ -133,7 +129,7 @@ A **squash merge stategy** squashes all commits you made in a branch on your pul
 
 The following clip outlines setting branching policies:
 
-![](www/branch_policies.gif)
+
 
 ## Work Items
 
@@ -155,7 +151,7 @@ By utilsing work items you take out the need for tracking tasks manually and can
 
 The following outlines adding a work item to the example project:
 
-![](www/work_items.gif)
+
 
 ## Pull Requests
 
@@ -170,4 +166,4 @@ A pull request in effect provides a wrapper for the ```git merge``` command outl
 
 The following clip outlines the process of opening a pull request:
 
-![](www/pull_request.gif)
+
