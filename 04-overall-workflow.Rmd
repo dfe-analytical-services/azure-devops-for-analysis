@@ -55,7 +55,7 @@ git push -u origin --all <repo_URL>
 
 - Work may be assigned to you as a "Work Item". In DevOps use the link to make new branch. To correct a bug, prefix the branch name with "bug/". To add new functionality, prefix the branch name with "feature/".
 
-- Make sure your master branch is up to date.
+- Make sure your main branch is up to date.
 ```sh 
 git pull
 ```
@@ -80,21 +80,29 @@ git commit -m "Commit message"
 ```
 
 ## Merging
-- When you've made enough changes to complete your work item checkout the master 
+:::: {.infoboxblue .info data-latex=”info”}
+
+**Reminder: "master" branch vs "main" branch**
+
+Repositories usually have either a "main" or a "master" branch. The two terms refer to the same thing but "main" is considered more inclusive language. Our examples in this chapter will refer to a "main" branch rather than a "master" one.
+
+::::
+
+- When you've made enough changes to complete your work item checkout the main 
 branch in your local repository do a pull in case anyone else had made changes.
 ```sh 
-git checkout master
+git checkout main
 ```
 ```sh 
 git pull
 ```
 
-- Switch back to your working branch. Merge any changes from master.
+- Switch back to your working branch. Merge any changes from main.
 ```sh 
 git checkout <your_branch_name>
 ```
 ```sh 
-git merge master
+git merge main
 ```
 
 - Sort out any merge conflicts.
@@ -102,9 +110,9 @@ git merge master
 git status
 ``` will list the files that have merge conflicts. Open the files with 
 the conflicts, and search them for "<<<<". Everything from the next line up until 
-a line of "====" will be from the master branch. Everything from the "====" line 
+a line of "====" will be from the main branch. Everything from the "====" line 
 until ">>>>" will be from your working branch. Work through the code to make sure 
-that you keep all the necessary changes. There may be changes from master and your branch that you want to keep, so don't just idly delete things!
+that you keep all the necessary changes. There may be changes from main and your branch that you want to keep, so don't just idly delete things!
 Add and commit the changes.
 ```sh 
 git add <file_to_be_merged>
@@ -125,7 +133,7 @@ git push
 
 - Have someone review your work. If any changes are required, go back to [Making Changes](#making-changes) and work from there again.
 
-- Merge your branch into Master
+- Merge your branch into main
 
 - Find some more work, go back to the top and start again.
 
