@@ -32,7 +32,7 @@ The following diagram illustrates the concept of server and local copies.
 
 ![](www/distributed_version_control.png)
 
-## Creating a DevOps repository
+## Creating a DevOps repository for a new project
 
 To set up a repository on DevOps you need to:
 
@@ -42,14 +42,6 @@ To set up a repository on DevOps you need to:
 4. Click "add respository" and give it a suitable name.
 
 This will create you a Git repo on DevOps. By default it will give you a main branch and a README file.
-
-
-## Project Setup
-
-Once you have created a DevOps repo, you have two key options: 
-
-1. Clone to your computer (cloning will be explained in *Cloning a repository*)
-2. Push an Existing repository
 
 ### Clone to your computer
 
@@ -78,21 +70,21 @@ One you've got git bash open, the clone command will look as follows:
 git clone git_repo_url
 ```
 
-### Push an Existing Repository
+## Creating a git repository for a project you've been doing on your computer
 
 If you have already been working on a project locally you may wish to push this up and use this as the starting point for the collaborative workflow.
 
+In this case, create a new repository on DevOps but before you click the "Create" button after giving you repository a name, untick the "Add a README" box. This will give a truly blank repository.
+
+Once you click "Create" you will be take to a scree which sayd your new repository is empty.
+There will be an option to *Push an exsting repository from command line*.
+
 In order to Push an existing repository you need to do the following:
 
-1. Select the *or push an existing repository from the command line option*
-2. Git Bash in your local Git repo
-3. Copy the code and run it
+1. Open Git Bash in your local Git repo
+2. Copy the code from the DevOps section and run it
 
-This will set up the connection to VSTS and push an entire copy of the repo up to VSTS.
-
-The following clip outlines this process:
-
-**Note:** The first time you do this you will be asked for VSTS credentials created previously.
+This will set up the connection to DevOps and push an entire copy of the repo up to DevOps.
 
 ## Adding users to a project
 
