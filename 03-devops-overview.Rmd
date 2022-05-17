@@ -88,24 +88,24 @@ This will set up the connection to DevOps and push an entire copy of the repo up
 
 ## Adding users to a project
 
-VSTS is a locked down code environment where users need to first be given permission to access the site as a whole and then individual projects. 
+DevOps is a locked down code environment where users need to first be given permission to access the site as a whole and then individual projects. 
 
-To add users to a project you simply do the following on a project home page:
+To add users to a project:
 
-1. Click + button under members
+1. In the Overview section, go to the summary page 
+2. Click on the invite button in the top, right hand corner
 2. Search for user
-3. Hit Add
+3. Click Add
 
 The user will then get a welcome email inviting them to the project.
 
-
 ## Branch Policies
 
-At this point you will have a project that anyone who is a member of has the ability to push directly to the master branch. 
+At this point you will have a project that anyone who is a member of has the ability to push directly to the main/master branch. 
 
-This resource is promoting a workflow in which code is reviewed throughout the development life cycle. Pushing to master doesn't allow this directly. 
+This resource is promoting a workflow in which code is reviewed throughout the development life cycle. Pushing to main/master doesn't allow this directly. 
 
-Instead what we do is set **Branch Policies** which force code to be reviewed in VSTS before it can be merged into master. 
+Instead what we do is set **Branch Policies** which force code to be reviewed in DevOps before it can be merged into master. 
 
 This comes with various options which are summarised below:
 
@@ -119,43 +119,16 @@ It is recommended that you **enforce all of the first 3 options** and **set the 
 
 A **squash merge stategy** squashes all commits you made in a branch on your pull request into one for the whole pull request when merged. This ensures a clean working history rather than lots of minor changes.
 
-The following clip outlines setting branching policies:
-
-
-
-## Work Items
-
-VSTS has rich project management functionality that can be used to manage projects of all sizes. At it's most complex you can utilise a mix of **Epics**, **Stories**, **Features**, **Tasks**, **Issues** and **User stories** to manage your project. 
-
-These terms and planning stages for a project come from traditional software development and are likely not necessary when using the platform for Data Analysis. 
-
-Instead we recommend treating **features** as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues. 
-
-With **features** you can again add lots of metadata but the most useful will be the following:
-
-1. Name
-2. Description
-3. Assigned to
-
-There are then numerous ways to visualise work allocations across VSTS ranging from individual task assignments to project boards (similar to trello boards).
-
-By utilsing work items you take out the need for tracking tasks manually and can link them to later as will be illustrated later.s
-
-The following outlines adding a work item to the example project:
-
-
 
 ## Pull Requests
 
-A pull request is the final, and probably most important, part of VSTS functionality that we are going to cover.
+A pull request is a particularly useful bit of DevOps functionality.
 
 A pull request in effect provides a wrapper for the ```git merge``` command outlined in Chapter 2. The visual interface allows you to do the following:
 
-1. Give background to the changes made and link any work items (can be enforced as recommended previously).
+1. Give background to the changes made and link any work items
 2. Allow you to assign a colleague to conduct a code review on the changes made
-3. Provide a platform for you to discuss the changes and resolve any requests for changes.
+3. Provide a platform for you to discuss the changes and resolve any requests for changes
 4. Presents the differences between the two branches in a visual manner (added/removed) so that you can easily see exactly what has been changed.
-
-The following clip outlines the process of opening a pull request:
 
 

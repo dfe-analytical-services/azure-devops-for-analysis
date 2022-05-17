@@ -1,0 +1,17 @@
+## Work Items
+
+DevOps has rich project management functionality that can be used to manage projects of all sizes. At it's most complex you can utilise a mix of **Epics**, **Stories**, **Features**, **Tasks**, **Issues** and **User stories** to manage your project. 
+
+These terms and planning stages for a project come from software development. 
+
+Instead we recommend treating **features** as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues. 
+
+With **features** you can again add lots of metadata but the most useful will be the following:
+
+1. Name
+2. Description
+3. Assigned to
+
+There are then numerous ways to visualise work allocations across VSTS ranging from individual task assignments to project boards (similar to trello boards).
+
+By utilsing work items you take out the need for tracking tasks manually.
