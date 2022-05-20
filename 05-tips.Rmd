@@ -1,135 +1,197 @@
-# Pro Tips
+# Common issues & tips
 
-This section outlines some useful commands to make Git a little more user friendly.
 
-## Log Customisation and Aliases
+This section outlines some common issues you may run into, and how to fix them, as well as describing a few useful commands to make Git a little more user friendly.
+
+
+## Common issues and how to fix them
+
+### I've realised I made an error in my commit
+
+If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
+
+To amend the the commit, correct the file, add the file in Git and then use this command to combine the correction into the previous commit:
+
+``` sh
+git commit --amend
+```
+
+(Technically this combines both commits into a new commit that overwrites the last one).
+
+If you've made a typo in your commit message you can also correct it with amend. Say your last commit looks like this:
+
+    109563e Some User | 2018/01/27 10:44 Added mew featuere
+
+Adding the `-m` flag to your amend allows you to add a new comment.
+
+``` sh
+git commit --amend -m "Added new feature"
+```
+
+Your history will then look like this:
+
+
+    23237f1 Some User | 2018/01/27 10:44 Added new feature
+
+### I want to go back to an earlier commit {#reset-revert}
+
+You've made some changes that didn't work out for whatever reason, and now want to return your code to an earlier state. There are two ways to do this: *reset* and *revert*.
+
+#### Reset
+
+This option will "roll back" your directory to its earlier state, essentially going back in time and removing any changes since the commit you go back to.
+
+Use
+
+    git reset --hard <commit-hash>
+
+where <commit-hash> is the unique hash of the commit you want to go back to (you can find this via `git log`).
+
+The `--hard` option in this command means that your working directory and staging area will also be reset, which is usually what you want, but **be careful as you will lose any uncommitted changes when you use this command**.
+
+#### Revert
+
+This option keeps all the changes you have made, but adds an extra commit with new changes that *reverse* the previous changes.
+
+You will usually want to use
+
+    git revert HEAD
+
+to revert the most recent commit (which is what the `HEAD` in this command refers to).
+
+Reverting anything other than the most recent commit is **not recommended**.
+
+If you want to revert multiple commits at once, you can use something of the form
+
+    git revert --no-commit HEAD~2^..HEAD
+
+followed by
+
+    git commit -m "Reverted last three commits"
+
+Walking through this:
+
+-   The `--no-commit` part of the command means that the reversion will change the working directory and staged files, but not yet be committed. (You'll have seen that we commit it afterwards, which is the usual way to work when reverting multiple commits at once).
+
+-   `HEAD~2^` means the commit two commits before `HEAD` (and e.g. `HEAD~4^` would be the commit four commits before `HEAD`)
+
+-   `..` indicates to include all commits between the two specified
+
+So the first command reverts the most recent commit and the two before it - three commits in all - but only makes those changes in the working directory and staging area rather than committing them. Then the second command is a standard commit command which commits them all with a message.
+
+#### When should I use reset vs revert?
+
+The two commands will result in a different git history. With `reset`, any changes you roll back will not appear, giving a shorter history; with `revert`, everything that happened will be recorded and the history will be longer. So if it's not necessary for anyone to know about the rolled back changes, `reset` is probably better; if you need a record of what happened then `revert` is probably better.
+
+There are a few other important considerations too:
+
+-   You need to be a bit more careful when using `reset`, as it will erase any uncommitted changes and you'll be unable to recover them.
+
+-   If any of the changes you want to reverse have been pushed to a remote server, you should use `revert` so that it's clear to others that changes have been rolled back. Using `reset` on a shared history will create confusion because it will not be clear what has happened.
+
+-   You can't (easily) `revert` past a merge because it's unclear which merged branch you want to revert to. `reset` is easier to use when the history you want to roll back includes a merge.
+
+### I've worked on the wrong branch (but haven't committed yet)
+
+You've made some changes to your code, saved them, but realised that you've been working on the wrong branch before committing. Fortunately, this is pretty easy to solve. The **git stash** command is your friend here: it allows you to store all your file changes away since the last commit away, and bring them back where you want - usually on a new branch.
+
+The commands are: store away any changes with
+
+``` sh
+git stash
+```
+
+(If you check `git status` at this point you'll see that your file changes since your last commit no longer appear.)
+
+Then switch branch with
+
+``` sh
+git checkout <your_branch>
+```
+
+and use
+
+``` sh
+git stash pop
+```
+
+to bring your changes back. That's it!
+
+Using the **pop** command does *not* commit your changes - you have simply moved uncommitted changes from one branch to another - and once you have "popped" your changes they will be removed from the stash.
+
+Occasionally popping changes from the stash will cause a merge conflict. You can resolve this in the same way as a usual merge conflict by editing the files, and then add the result to your next commit. (Note that when a pop causes a merge conflict, your changes will not be removed from the stash like normal so you will still have access to them if needed.)
+
+::: {.infoboxred .exclamation}
+::: infobox-header
+Using the stash
+:::
+
+The git stash can technically hold many different sets of changes at once, but it is *not* good practice to store anything in the stash long-term. It is a temporary store and should only be used to quickly move changes around when needed.
+:::
+
+### I've worked on the wrong branch (and committed it)
+
+If you've only realised that you're working on the wrong branch after committing your code, then you'll need to do two things. The first is to get the code onto the correct branch, and the second is to remove it from the wrong branch you committed it to.
+
+If you **forgot to create a new branch**, you can create one now that includes the commits you want using
+
+    git branch <new_branch_name>
+
+then roll back the current branch as described [here](#reset-revert).
+
+If you **already created a branch but forgot to switch to it**, you'll need to move the commits to the correct branch. You can do this by checking out the correct branch and copying the commits to it using **cherry-pick**:
+
+    git checkout <correct_branch>
+    git cherry-pick <commit-hash>
+
+where `<commit-hash>` is the commit you want to copy over. For multiple commits, you can copy them all over using
+
+    git cherry-pick <commit-hash-1>..<commit-hash-n>
+
+where `<commit-hash-1>` is the earliest commit you want to copy and `<commit-hash-n>` is the most recent. Then check out the branch you accidentally committed them to and roll it back as described [here](#reset-revert).
+
+## Other tips
+
+### Log Customisation and Aliases
 
 You can customise the log by adding extra arguments. For example, adding the `--oneline` argument the log is cut down to one line per commit.
-```sh
+
+``` sh
 git log --oneline
 ```
 
 There are a lot of possible argument to add to the log. This example will show the latest commit on each branch, give a rough branching diagram and put the date in a specified format.
 
-```sh
+``` sh
 git log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
 ```
+
 All the possible arguments to add to `git log` are in the documentation [here](https://www.git-scm.com/docs/git-log).
 
 Eventually you'll have too many arguments to sensibly type, so you can use an alias. An alias allows you to define a new command based on an old command. You define one like this:
-```sh
+
+``` sh
 git config --global alias.<your_alias_name> = <your_command>
 ```
 
-After this you can type 
-```sh
+After this you can type
+
+``` sh
 git <your_alias_name>
 ```
+
 to carry out the command.
 
 For example, using the long, customised log from above we can define a new command, "hist".
 
-```sh
+``` sh
 git config --global alias.hist = log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
 ```
 
-Allowing us to type: 
-```sh
+Allowing us to type:
+
+``` sh
 git hist
 ```
+
 to view a fancy version of the log, without having to type out a huge command!
-
-## Difftool
-
-If you put in a request to IT to install WinMerge you can use it to view differences between old and new versions of your files side-by-side. You can also edit from within Winmerge - this is useful just before you commit to make sure that everything you changed is something you wanted to change.
-
-Open your .gitconfig file 
-```sh
-git config --global -e
-```
-
-(this is a lot easier if you've set up Notepad, or Notepad++ as your core editor) and copy this in:
-
-```sh
-[diff]
-  tool = winmerge
-
-[difftool "winmerge"]
-  name = WinMerge
-  trustExitCode = true
-  cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
-
-[difftool]
-  prompt = false
-```
-save and exit.
-
-From now on you can type
-```sh
-git difftool
-```
-when you have uncommitted changes to view the difference between them and the last commit.
-
-To view the differences between your current version and an old commit, type
-```sh
-git difftool HEAD~<n>
-```
-where <n> is the number of commits back to want to compare to.
-
-To view the differences between your current branch and another branch type
-```sh
-git difftool <other branch name>
-```
-  
-## Amend
-
-If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
-
-To amend the the commit, correct the file, add the file in Git and then use:
-```sh
-git commit --amend
-```
-to combine the correction into the previous commit (technically this combines both commits into a new commit that overwrites the last one).
-
-If your Git history looks like this:
-```
-51d070b Some User | 2018/01/27 11:08 Corrected more mistakes
-eacd280 Some User | 2018/01/27 11:07 Corrected mistake in last commit
-909246a Some User | 2018/01/27 10:50 Corrected typos in last change
-00286d6 Some User | 2018/01/27 10:44 Added new feature
-```
-
-If you've made a typo in your commit message you can also correct it with amend. Say your last commit looks like this:
-```
-109563e Some User | 2018/01/27 10:44 Added mew featuere
-```
-
-Adding the `-m` flag to your amend allows you to add a new comment.
-```sh
-git commit --amend -m "Added new feature"
-```
-
-```
-23237f1 Some User | 2018/01/27 10:44 Added new feature
-```
-
-## Stash
-
-If you start making changes in the wrong branch and haven't committed them yet, Git won't allow you to change branches. 
-
-The stash command allows you to store your file changes away, allowing you to change branch, so you can bring them back up when you want.
-
-```sh
-git stash
-```
-Will store away any changes. If you check `git status` you'll see that your file changes no longer appear.
-
-After you switch branch
-```sh
-git checkout <your_branch>
-```
-you can then type 
-```sh
-git stash pop
-```
-to bring your changes back.
