@@ -1,7 +1,6 @@
 # Common issues & tips
 
-This section outlines some common issues you may run into, and how to fi them, as well as describing a few useful commands to make Git a little more user friendly.
-
+This section outlines some common issues you may run into, and how to fix them, as well as describing a few useful commands to make Git a little more user friendly.
 
 ## Common issues and how to fix them
 
@@ -9,20 +8,13 @@ This section outlines some common issues you may run into, and how to fi them, a
 
 If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
 
-To amend the the commit, correct the file, add the file in Git and then use:
+To amend the the commit, correct the file, add the file in Git and then use this command to combine the correction into the previous commit:
 
 ``` sh
 git commit --amend
 ```
 
-to combine the correction into the previous commit (technically this combines both commits into a new commit that overwrites the last one).
-
-If your Git history looks like this:
-
-    51d070b Some User | 2018/01/27 11:08 Corrected more mistakes
-    eacd280 Some User | 2018/01/27 11:07 Corrected mistake in last commit
-    909246a Some User | 2018/01/27 10:50 Corrected typos in last change
-    00286d6 Some User | 2018/01/27 10:44 Added new feature
+(Technically this combines both commits into a new commit that overwrites the last one).
 
 If you've made a typo in your commit message you can also correct it with amend. Say your last commit looks like this:
 
@@ -33,6 +25,8 @@ Adding the `-m` flag to your amend allows you to add a new comment.
 ``` sh
 git commit --amend -m "Added new feature"
 ```
+
+Your history will then look like this:
 
     23237f1 Some User | 2018/01/27 10:44 Added new feature
 
