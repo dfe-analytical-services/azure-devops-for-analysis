@@ -1,10 +1,12 @@
 # Common issues & tips
 
+
 This section outlines some common issues you may run into, and how to fix them, as well as describing a few useful commands to make Git a little more user friendly.
+
 
 ## Common issues and how to fix them
 
-## I've realised I made an error in my commit
+### I've realised I made an error in my commit
 
 If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
 
@@ -27,6 +29,7 @@ git commit --amend -m "Added new feature"
 ```
 
 Your history will then look like this:
+
 
     23237f1 Some User | 2018/01/27 10:44 Added new feature
 
