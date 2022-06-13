@@ -10,6 +10,8 @@ Once installed, you can also use Git from Command Prompt or Powershell, but Git 
 
 If you would prefer to use a GUI you can choose to install one when installing Git. You can also use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically. This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
 
+There's some specific guidance on using RStudio to manage your git repositories [further down in this chapter](#working-with-git-in-rstudio).
+
 ## Installing Git
 
 You can download the Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
@@ -379,7 +381,7 @@ Assuming it's not entered already, you'll need to provide the location where the
 
 `C:/Program Files/Git/bin/git.exe`
 
-Whilst you've got the Global options open, another useful option to set is the default terminal to use in RStudio. The default is the Windows Command Prompt, but git bash is generally easier to use. To update this, keep Global options open and select the `Terminal` options panel just below Git/SVN.
+Whilst you've got the Global options open, another useful option to set is the default terminal to use in RStudio. The default is the Windows Command Prompt, but [Git BASH](#opening-git-bash) is generally easier to use. To update this, keep Global options open and select the `Terminal` options panel just below Git/SVN.
 
 Here you'll see an option labeled `New terminals open with:`. If it isn't already set to `Git Bash`, we recommend changing it to that, even if you're primarily planning on using the RStudio git GUI.
 
@@ -397,9 +399,9 @@ Once you've entered your repository URL and chosen a directory in which to clone
 
 There are three key areas within RStudio for accessing git functionality. The the Git Pane, the terminal and the RStudio menu bar.
 
-#### Terminal (git bash)
+#### Terminal ([Git BASH](#opening-git-bash))
 
-The terminal offers all the git bash command line functionality already described. It can be accessed via the terminal pane usually found next to the R console pane.
+The terminal offers all the [Git BASH](#opening-git-bash) command line functionality already described. It can be accessed via the terminal pane usually found next to the R console pane.
 
 #### Git pane
 
@@ -409,15 +411,15 @@ The Git pane offers an excellent quick look at the status of your repository, wh
 
 The elements in the git pane menu bar offer the following options:
 
-* ![RStudio git Diff Icon](www/images/chapter2_RStudio_gitpaneDiff.PNG)  Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing)
-* ![RStudio git commit Icon](www/images/chapter2_RStudio_gitpaneCommit.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing) (no this is not a typo that this does the same as the Diff button!)
-* ![RStudio git pull Icon](www/images/chapter2_RStudio_gitpanePull.png) Perform a pull
-* ![RStudio git push Icon](www/images/chapter2_RStudio_gitpanePush.png) Push the current commits
-* ![RStudio git history Icon](www/images/chapter2_RStudio_gitpaneHistory.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing), defaulting to the History panel
-* ![RStudio git Project Settings Icon](www/images/chapter2_RStudio_gitpaneProjectSettings.png) Open the project settings window
-* ![RStudio git new branch Icon](www/images/chapter2_RStudio_gitpaneNewBranch.png) Create a new branch
-* ![RStudio git select branch Icon](www/images/chapter2_RStudio_gitpaneSelectBranch.png) Shows the current branch and allows the user to switch branches via the drop down list
-* ![RStudio git refresh Icon](www/images/chapter2_RStudio_gitpaneRefresh.png) Open the commit window
+* <img src="www/images/chapter2_RStudio_gitpaneDiff.PNG" alt="Git diff icon" height="16"/>  Open the [RStudio review changes window](#branches-committing-and-pushing);
+* <img src="www/images/chapter2_RStudio_gitpaneCommit.png" alt="Git commit icon" height="16"/> Also opens the [RStudio review changes window](#branches-committing-and-pushing);
+* <img src="www/images/chapter2_RStudio_gitpanePull.png" alt="Git pull icon" height="16"/> Perform a pull;
+* <img src="www/images/chapter2_RStudio_gitpanePush.png" alt="Git push icon" height="16"/> Push the current commits;
+* <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="16"/> Open the [RStudio review changes window](#branches-committing-and-pushing), defaulting to the History panel;
+* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project seeings icon" height="16"/> Open the project settings window;
+* <img src="www/images/chapter2_RStudio_gitpaneNewBranch.png" alt="New branch icon" height="16"/> Create a new branch;
+* <img src="www/images/chapter2_RStudio_gitpaneSelectBranch.png" alt="Current branch" height="16"/> Shows the current branch and allows the user to switch branches via the drop down list;
+* <img src="www/images/chapter2_RStudio_gitpaneRefresh.png" alt="Refresh icon" height="16"/> Refresh the git pane preview.
 
 #### Menu bar access
 
@@ -425,9 +427,9 @@ To access the git functionality via the menu bar, navigate to `Tools` > `Version
 
 ![RStudio - Git in the menu bar](www/images/chapter2_RStudio_MenuBarAccess.PNG)
 
-#### Branches, committing, pushing and pushing
+#### Branches, committing and pushing
 
-The bulk of any adding, committing and pushing activities using the RStudio GUI is done using the Review changes window. This can be opened either by selecting `File` > `Commit...` from the RStudio menu bar, or clicking `Diff`, `Commit` or ![RStudio git history Icon](www/images/chapter2_RStudio_gitpaneHistory.png) in the RStudio git pane.
+The bulk of any adding, committing and pushing activities using the RStudio GUI is done using the Review changes window. This can be opened either by selecting `File` > `Commit...` from the RStudio menu bar, or clicking `Diff`, `Commit` or <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="16"/> in the RStudio git pane.
 
 The Review Changes window consists of 3 panes, the top left shows a preview of all files that have been added, modified or deleted, the top right pane allows you to add a commit message and the last pane shows the git diff result for any file selected in the file preview pane.
 
