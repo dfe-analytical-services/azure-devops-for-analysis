@@ -409,15 +409,15 @@ The Git pane offers an excellent quick look at the status of your repository, wh
 
 The elements in the git pane menu bar offer the following options:
 
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneDiff.PNG)  Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing)
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneCommit.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing) (no this is not a typo that this does the same as the Diff button!)
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpanePull.png) Perform a pull
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpanePush.png) Push the current commits
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneHistory.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing), defaulting to the History panel
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneProjectSettings.png) Open the project settings window
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneNewBranch.png) Create a new branch
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneSelectBranch.png) Shows the current branch and allows the user to switch branches via the drop down list
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneRefresh.png) Open the commit window
+* ![RStudio git Diff Icon](www/images/chapter2_RStudio_gitpaneDiff.PNG)  Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing)
+* ![RStudio git commit Icon](www/images/chapter2_RStudio_gitpaneCommit.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing) (no this is not a typo that this does the same as the Diff button!)
+* ![RStudio git pull Icon](www/images/chapter2_RStudio_gitpanePull.png) Perform a pull
+* ![RStudio git push Icon](www/images/chapter2_RStudio_gitpanePush.png) Push the current commits
+* ![RStudio git history Icon](www/images/chapter2_RStudio_gitpaneHistory.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing), defaulting to the History panel
+* ![RStudio git Project Settings Icon](www/images/chapter2_RStudio_gitpaneProjectSettings.png) Open the project settings window
+* ![RStudio git new branch Icon](www/images/chapter2_RStudio_gitpaneNewBranch.png) Create a new branch
+* ![RStudio git select branch Icon](www/images/chapter2_RStudio_gitpaneSelectBranch.png) Shows the current branch and allows the user to switch branches via the drop down list
+* ![RStudio git refresh Icon](www/images/chapter2_RStudio_gitpaneRefresh.png) Open the commit window
 
 #### Menu bar access
 
@@ -427,7 +427,9 @@ To access the git functionality via the menu bar, navigate to `Tools` > `Version
 
 #### Branches, committing, pushing and pushing
 
-The bulk of any adding, committing and pushing activities using the RStudio GUI is done using the Review changes window. It consists of 3 panes, the top left shows a preview of all files that have been added, modified or deleted, the top right pane allows you to add a commit message and the last pane shows the git diff result for any file selected in the file preview pane.
+The bulk of any adding, committing and pushing activities using the RStudio GUI is done using the Review changes window. This can be opened either by selecting `File` > `Commit...` from the RStudio menu bar, or clicking `Diff`, `Commit` or ![RStudio git history Icon](www/images/chapter2_RStudio_gitpaneHistory.png) in the RStudio git pane.
+
+The Review Changes window consists of 3 panes, the top left shows a preview of all files that have been added, modified or deleted, the top right pane allows you to add a commit message and the last pane shows the git diff result for any file selected in the file preview pane.
 
 ![RStudio Review changes window](www/images/chapter2_RStudio_ReviewChanges.PNG)
 
