@@ -21,13 +21,13 @@ You run commands in Git BASH by typing them in and pressing enter.
 
 ## Setting up Git
 
-When you first install Git it is advised to perform some set up steps - they aren't necessary, but will be useful. 
+When you first install Git it is advised to perform some set up steps - they aren't necessary, but will be useful.
 
 First of all type
 ```sh
 git config --global user.name <Your Name>
 ```
-and then 
+and then
 ```sh
 git config --global user.email <You Email>
 ```
@@ -47,20 +47,20 @@ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe
 Note, Ctrl+C and Ctrl+V don't work for copy/pasting in Git BASH, but you can still right click to copy/paste.
 
 ## Navigating with Git BASH
-Once in Git you can navigate through folders from the command line. Typing 
+Once in Git you can navigate through folders from the command line. Typing
 ```sh
 cd <path>
 ```
-and pressing enter will navigate to a folder path of your choice. Use doubles quotes for files paths with spaces in. You can use 
+and pressing enter will navigate to a folder path of your choice. Use doubles quotes for files paths with spaces in. You can use
 ```sh
 cd ..
 ```
-to move "up" one folder and 
+to move "up" one folder and
 
 ```sh
 ls
 ```
-to list everything in your current folder. 
+to list everything in your current folder.
 
 When navigating with Git BASH you can press TAB to autocomplete a folder or file.
 
@@ -76,7 +76,7 @@ This will turn this normal folder into a Git Repository - some cyan text saying 
 ## Applying Git to a Project
 Let's make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we'll get to this later).
 
-Let's create some code to plot the stopping distance of cars at different speeds - this data is pre-installed in a data set called "cars". 
+Let's create some code to plot the stopping distance of cars at different speeds - this data is pre-installed in a data set called "cars".
 
 The code should look something like this:
 
@@ -85,13 +85,13 @@ library(ggplot2)
 
 data <- cars
 
-cars_plot <- ggplot(data, 
+cars_plot <- ggplot(data,
   aes(x = speed, y = dist)) +
   geom_point()
-  
+
 cars_plot
 ```
-This will make a simple scatter plot (and hopefully convince you not to speed...). This seems like a good place to record our progress: save your file as "speed_dist.R" in your project folder. Now we can use Git to take a record of this save lest we need it in the future. 
+This will make a simple scatter plot (and hopefully convince you not to speed...). This seems like a good place to record our progress: save your file as "speed_dist.R" in your project folder. Now we can use Git to take a record of this save lest we need it in the future.
 
 ## Adding and committing files
 In Git BASH type
@@ -111,7 +111,7 @@ Let's make a change to the code. Add
 ggsave("cars_plot.png", cars_plot)
 ```
 
-to the end of your code in speed_dist.R. When run, this will save your plot as cars_plot.png in your project folder. 
+to the end of your code in speed_dist.R. When run, this will save your plot as cars_plot.png in your project folder.
 
 Let's use Git to record these changes.
 First type
@@ -122,11 +122,11 @@ this will show us all the files that have changed, or been created since your la
 
 As mentioned earlier, Git deals best with flat text files, of which a .png file is not. Because of this, we won't tell Git about the .png file, only the changes to the speed_dist.R code. This is okay though, because so long as we have the code we can always recreate the image.
 
-Use 
+Use
 ```sh
 git add speed_dist.R
 ```
-to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file here). 
+to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file here).
 
 As before we want to commit these changes:
 ```sh
@@ -183,14 +183,14 @@ To create a new branch type in
 ```sh
 git branch unit_conversion
 ```
-We can type ```git branch``` again to see all the available branches. There should now be two, "master" and "unit_conversion". 
+We can type ```git branch``` again to see all the available branches. There should now be two, "master" and "unit_conversion".
 To switch branches type:
 ```sh
 git checkout unit_conversion
 ```
 The cyan text should now say "unit_conversion".
 
-Here we can make changes for converting units and commit them without changing the master branch. 
+Here we can make changes for converting units and commit them without changing the master branch.
 
 After the line
 ```r
@@ -207,7 +207,7 @@ data$dist <- data$dist*0.3048
 
 We can now add and commit these changes as before.
 
-Use 
+Use
 ```sh
 git log
 ```
@@ -223,7 +223,7 @@ git log
 ```
 Our unit_conversion changes aren't there! Don't worry this is what we want - we'll come back to this later.
 
-For now, let's make a new branch for the plot labels. 
+For now, let's make a new branch for the plot labels.
 ```sh
 git branch plot_labels
 git checkout plot_labels
@@ -242,7 +242,7 @@ After the ```geom_point()``` line add
 We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.
 
 ## Merging branches
-Once someone has QA'd our code we can merge our branches into the master branch. 
+Once someone has QA'd our code we can merge our branches into the master branch.
 Checkout the master branch. Merge the branches one at a time like this
 
 ```sh
@@ -250,7 +250,7 @@ git merge unit_conversion
 git merge plot_labels
 ```
 
-If we look at the log all the changes from both of these branches should be visible. 
+If we look at the log all the changes from both of these branches should be visible.
 
 Note, you log might be getting long enough to run off the page. If so you can go up and down the log with the arrow keys and pressing "q" will allow to you begin typing again.
 
@@ -267,7 +267,7 @@ The branching workflow goes like this:
 
 - Checkout the branch
 
-- Change/save/add/commit as usual 
+- Change/save/add/commit as usual
 
 - Checkout the master branch
 
@@ -326,13 +326,13 @@ As the number of files in our project increases it will become tiresome typing i
 git add file1.txt file2.txt ... file37.txt ...
 ```
 
-We could just use 
+We could just use
 ```sh
 git add .
 ```
 but that would include files that we don't want to track (like the .png we saved). The .gitignore file is a list of files that Git will ignore (hence the name), no matter how they change, allowing us to use ```git add .``` without worrying about files we don't want to add.
 
-As mentioned earlier, a .gitignore file was created with our R Project. You can view this file in any text editor (including RStudio) and, if you do, you will see something like this: 
+As mentioned earlier, a .gitignore file was created with our R Project. You can view this file in any text editor (including RStudio) and, if you do, you will see something like this:
 
 ```
 .Rproj.user
@@ -343,17 +343,17 @@ As mentioned earlier, a .gitignore file was created with our R Project. You can 
 
 These are files that RStudio creates that are of little interest in the long run - they change very frequently and aren't necessary for someone else to run your code.
 
-Let's add to this to tell Git to ignore the image we saved earlier. There are a few ways to do this: 
+Let's add to this to tell Git to ignore the image we saved earlier. There are a few ways to do this:
 
 - We could list the file exactly as it is: car_plot.png
 
 - We could use a wildcard for the file name so all .png files are ignored: *.png
 
-Using the second method will be more robust in the long run because we won't need to update it if new images are added. 
+Using the second method will be more robust in the long run because we won't need to update it if new images are added.
 
 Add a new line to .gitignore that says "*.png" and save it.
 
-In Git BASH, typing 
+In Git BASH, typing
 ```sh
 git status
 ```
@@ -361,3 +361,68 @@ will no longer show the image!
 
 In non-R projects you can create your own .gitignore file in a text editor and save it in your project folder.
 
+## Working with git in RStudio
+
+### Overview
+
+Within RStudio, you can choose to manage your repository using the git bash terminal as in the previous sections, use the RStudio GUI elements or use a combination of both. Below we highlight the key things you need to know to get going with a git repository within R.
+
+### Initial set-up
+
+RStudio needs a few small bits of set-up to be able to access git. The first step is to let it know where the git executable can be found.
+
+Using the menu bar in RStudio, go to `Tools` > `Global options...` You should see the window below pop up, where you can select `Git/SVN`.
+
+![RStudio Global options](www/images/chapter2_RStudio_GlobalOptions.PNG)
+
+Assuming it's not entered already, you'll need to provide the location where the Git executable is installed. It will be called git.exe and the likely location is:
+
+`C:/Program Files/Git/bin/git.exe`
+
+Whilst you've got the Global options open, another useful option to set is the default terminal to use in RStudio. The default is the Windows Command Prompt, but git bash is generally easier to use. To update this, keep Global options open and select the `Terminal` options panel just below Git/SVN.
+
+Here you'll see an option labeled `New terminals open with:`. If it isn't already set to `Git Bash`, we recommend changing it to that, even if you're primarily planning on using the RStudio git GUI.
+
+### Cloning an existing project
+
+The easiest way to get set up with a repository in RStudio is to use the `New Project...` option under `File` in the menu bar. When you select `New Project...`, you'll then see three options: `New directory`, `Existing directory` and `Version control`. Assuming you've already got your repository set up on Dev Ops or GitHub, select `Version control` and then `Git` on the next panel that comes up. Once you've done that, you'll see the options below.
+
+![RStudio Clone Git Repository](www/images/chapter2_RStudio_Clone.PNG)
+
+Here you can enter your existing `Repository URL` and choose a root directory for where to keep it locally. The `Project directory name` option will be auto-filled once you provide a `Repository URL`. For the root directory where the repository directory will be cloned, we recommend not using your standard One Drive folder system as this can cause issues if both One Drive and git are trying to manage file changes. Instead it's best to navigate either to `C:\` or `C:\Users\<username>\` and create a suitable root folder (e.g. `my_repos`) to store your repositories in (and pinning this folder to Quick access in File Explorer can help with finding your repository directories and files quickly in Windows).
+
+Once you've entered your repository URL and chosen a directory in which to clone your repository, click `Create Project` and RStudio will do the rest.
+
+### Overview of the RStudio git GUIs
+
+There are three key areas within RStudio for accessing git functionality. The the Git Pane, the terminal and the RStudio menu bar.
+
+#### Terminal (git bash)
+
+The terminal offers all the git bash command line functionality already described. It can be accessed via the terminal pane usually found next to the R console pane.
+
+#### Git pane
+
+The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with `Git`. The image below shows the git pane opened for a local clone of the repo for this guidance. It conssists of it's own menu bar with buttons for each of the options listed above, alongside a viewer window showing any files that have been modified, added or removed since your last commit.
+
+![RStudio Git Panel](www/images/chapter2_RStudio_gitpanel.PNG)
+
+The elements in the git pane menu bar offer the following options:
+
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneDiff.PNG)  Open the [Diff window](#diff-gui)
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneCommit.png) Open the commit window
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpanePull.png) Perform a pull
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpanePush.png) Push the current commits
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneHistory.png) Open the project history window
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneProjectSettings.png) Open the project settings window
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneNewBranch.png) Create a new branch
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneSelectBranch.png) Shows the current branch and allows the user to switch branches via the drop down list
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneRefresh.png) Open the commit window
+
+#### Menu bar access
+
+To access the git functionality via the menu bar, navigate to `Tools` > `Version control`. You should then see the options `Commit...`, `Pull Branches`, `Push Branch`, `Hsitory` and `Project Setup...`
+
+![RStudio - Git in the menu bar](www/images/chapter2_RStudio_MenuBarAccess.PNG)
+
+#### Diff GUI
