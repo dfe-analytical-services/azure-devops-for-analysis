@@ -403,17 +403,17 @@ The terminal offers all the git bash command line functionality already describe
 
 #### Git pane
 
-The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with `Git`. The image below shows the git pane opened for a local clone of the repo for this guidance. It conssists of it's own menu bar with buttons for each of the options listed above, alongside a viewer window showing any files that have been modified, added or removed since your last commit.
+The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with `Git`. The image below shows the git pane opened for a local clone of the repo for this guidance. It conssists of it's own menu bar with buttons for each of the options listed above, alongside a preview pane showing any files that have been modified, added or removed since your last commit.
 
 ![RStudio Git Panel](www/images/chapter2_RStudio_gitpanel.PNG)
 
 The elements in the git pane menu bar offer the following options:
 
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneDiff.PNG)  Open the [Diff window](#diff-gui)
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneCommit.png) Open the commit window
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneDiff.PNG)  Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing)
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneCommit.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing) (no this is not a typo that this does the same as the Diff button!)
 * ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpanePull.png) Perform a pull
 * ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpanePush.png) Push the current commits
-* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneHistory.png) Open the project history window
+* ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneHistory.png) Open the [RStudio review changes window](#branches,-committing,-pulling-and-pushing), defaulting to the History panel
 * ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneProjectSettings.png) Open the project settings window
 * ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneNewBranch.png) Create a new branch
 * ![RStudio Diff Icon](www/images/chapter2_RStudio_gitpaneSelectBranch.png) Shows the current branch and allows the user to switch branches via the drop down list
@@ -425,4 +425,14 @@ To access the git functionality via the menu bar, navigate to `Tools` > `Version
 
 ![RStudio - Git in the menu bar](www/images/chapter2_RStudio_MenuBarAccess.PNG)
 
-#### Diff GUI
+#### Branches, committing, pushing and pushing
+
+The bulk of any adding, committing and pushing activities using the RStudio GUI is done using the Review changes window. It consists of 3 panes, the top left shows a preview of all files that have been added, modified or deleted, the top right pane allows you to add a commit message and the last pane shows the git diff result for any file selected in the file preview pane.
+
+![RStudio Review changes window](www/images/chapter2_RStudio_ReviewChanges.PNG)
+
+To make a commit, review the changes in the diff pane by selecting each file in turn and click the Stage button in the Review changes menu bar (either with mulitple/all files selected at once or eac file selected indivudually). Then add your commit message and click the `Commit` button below the Commit message entry box.
+
+Finally, you can just click the `Push` button above the commit message entry box to sync your changes to the remote repository.
+
+You can switch branches by clicking on the current branch name in the Review changes menu bar, i.e. next to the History button.
