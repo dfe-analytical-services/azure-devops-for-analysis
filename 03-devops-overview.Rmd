@@ -65,12 +65,16 @@ When you open git bash you should do so in the folder where you want the repo to
 Ideally this will be on your C drive, outside of OneDrive of Teams because git repositories don't work well if OneDrive
 or Teams are syncing them.
 There is no need for the additional syncing from OneDrive or Teams because DevOps provides the online back-up that others can access.
+This means that any general rules than work should be on OneDrive or Teams to be backed up does not apply to repos because DevOps provides the back-up *as long as you push your work regularly and at least once a day*.
 
 One you've got git bash open, the clone command will look as follows:
 
 ```sh
 git clone git_repo_url
 ```
+
+If you are working on EDAP, it is best to clone the repo to your P drive.
+
 
 ## Creating a git repository for a project you've been doing on your computer
 
@@ -124,6 +128,15 @@ If you are writing a pull request, it is a good idea to include:
 1. Why you were doing the work you've done.
 2. Any context to the assumptions you've made whilst doing the work.
 3. A list of specific points that you would like your reviewer to check. This should always include that the code is clear enough and whether it requires further comments.
+
+Once you are happy with the code review that's taken place in a pull request:
+
+1. The person reviewing it approves the request to mark that the review is finished.
+2. The person who wrote the code and set the pull request up "completes" it which performs the merge.
+
+DevOps will delete the branch you were working in (the source brancg) once complete the pull request.
+This is good practice because it keeps the repo tidy.
+Deleting branches after you have merged the work elsewhere does not mean you lose work because all that work is on the branch you've merged to.
 
 ## Branch Policies
 
