@@ -17,8 +17,10 @@ The following are examples of interactive services that allow you to manage Git 
 We are using **Azure DevOps** as this is the Department's tool of choice for internal version control. We would use platforms such as GitHub for our more publicly facing projects (such as this book).
 
 To work with internal DevOps Repos you will need an account with Basic access level.
+There is a form to sort out DevOps account levels and access on the IT service portal - search for DevOps.
 You will also need someone to give you permission to see the DevOps project that you're working on.
-There is a form to sort out DevOps account leevls and access on the IT service portal - search for DevOps.
+For information about how to do this, pleae read on.
+If you need a new project area on DevOps, use the same IT service portal form as for account access.
 
 ## Theory 
 
@@ -58,11 +60,11 @@ It is easiest to do this by:
 3. Clicking the clone button in the top right-hand corner.
 4. Copying the URL.
 
-Once you have copied the URL, you need to open git bash on your computer and clone the repository using the URLS.
+Once you have copied the URL, you need to open git bash on your computer and clone the repository using the URL.
 When you open git bash you should do so in the folder where you want the repo to be.
 Ideally this will be on your C drive, outside of OneDrive of Teams because git repositories don't work well if OneDrive
 or Teams are syncing them.
-THere is no need for the additional syncing from OneDrive or Teams because DevOps provides the online back-up that others can access.
+There is no need for the additional syncing from OneDrive or Teams because DevOps provides the online back-up that others can access.
 
 One you've got git bash open, the clone command will look as follows:
 
@@ -76,8 +78,8 @@ If you have already been working on a project locally you may wish to push this 
 
 In this case, create a new repository on DevOps but before you click the "Create" button after giving you repository a name, untick the "Add a README" box. This will give a truly blank repository.
 
-Once you click "Create" you will be take to a scree which sayd your new repository is empty.
-There will be an option to *Push an exsting repository from command line*.
+Once you click "Create" you will be take to a screen which says your new repository is empty.
+There will be an option to *Push an existing repository from command line*.
 
 In order to Push an existing repository you need to do the following:
 
@@ -99,27 +101,6 @@ To add users to a project:
 
 The user will then get a welcome email inviting them to the project.
 
-## Branch Policies
-
-At this point you will have a project that anyone who is a member of has the ability to push directly to the main/master branch. 
-
-This resource is promoting a workflow in which code is reviewed throughout the development life cycle. Pushing to main/master doesn't allow this directly. 
-
-Instead what we do is set **Branch Policies** which force code to be reviewed in DevOps before it can be merged into master. 
-
-This comes with various options which are summarised below:
-
-1. **Requiring a minimum number of reviewers** - how many people need to approve the code before it can be merged.
-2. **Checking for linked work items** - Does the pull request need to have a work item linked
-3. **Checking for comment resolution** - Do all of the comments on the pull request need to be resolved before merging is approved
-4. **Merge Strategy** - Do you want to enforce a merge strategy. 
-5. **Build testing** - not currently explored.
-
-It is recommended that you **enforce all of the first 3 options** and **set the Merge Strategy to Squash**. 
-
-A **squash merge stategy** squashes all commits you made in a branch on your pull request into one for the whole pull request when merged. This ensures a clean working history rather than lots of minor changes.
-
-
 ## Pull Requests
 
 A pull request is a particularly useful bit of DevOps functionality.
@@ -130,5 +111,47 @@ A pull request in effect provides a wrapper for the ```git merge``` command outl
 2. Allow you to assign a colleague to conduct a code review on the changes made
 3. Provide a platform for you to discuss the changes and resolve any requests for changes
 4. Presents the differences between the two branches in a visual manner (added/removed) so that you can easily see exactly what has been changed.
+
+## Branch Policies
+
+At this point you will have a project that anyone who is a member of has the ability to push directly to the main/master branch. 
+
+Best practice ways of working include frequent code reviews v requests to support Quality Assurance.
+Pushing to main/master doesn't allow this directly. 
+
+Instead what we do is set **Branch Policies** which force code to be reviewed in DevOps before it can be merged into main/master.
+If you set any branch policies, changes to main/master have to be made using a pull request.
+
+### How to set branch policies
+
+To set branch policies:
+
+1. Go the the "Branched" page under repos in DevOps. Make sure you are looking at your intended repo by checking the centre top of the page.
+2. Hover your mouse over your main/master branch and click on the three vertical dots that appear at the right hand side of the screen.
+3. Clock on "Branch policies" in the menu that appears.
+
+### The branch policy options
+
+At the time of writing, branch policies offer four options:
+
+1. **Require a minimum number of reviewers** - how many people need to approve the code before it can be merged.
+2. **Check for linked work items** - Does the pull request need to have a work item linked
+3. **Check for comment resolution** - Do all of the comments on the pull request need to be resolved before merging is approved
+4. **Limit merge types** - Do you want to enforce a merge strategy. 
+
+It is recommended that you **enforce at least the first option**. 
+
+When you start to feel confident with Git and DevOps, you may wish to think about limiting the merge types.
+If you limit merge types, you will get a cleaner commit history which is easier to interrogate.
+
+The four options for merge types are:
+
+1. Basic merge (no fast-forward). This is the default and preserves your history exactly as it happened when you wrote your code.
+2. Squash merge. When you complete your pull request just a single commit is created on main/master containing all your work. This is a good approach for big projects where you don't need to be able to see your intermediate steps. It is well suited to software development but may be less suitable for analytical work, especially if any of your code on intermediate steps (commits) was used to produce any form of outputs.
+3. Rebase and fast-forward. This gives your repo a linear history by reworking the commits covered by your pull request so they just cover additional work needed on top of the current state of main/master.
+4. Rebase with merge commit. This is like option 3 but it adds an additional commit which records a pull request has been completed. If you are using pull requests to support QA, this is probably a good thing because it ensures the use of a pull request is logged in your version history.
+
+
+
 
 
