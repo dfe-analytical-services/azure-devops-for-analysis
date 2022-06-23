@@ -165,6 +165,20 @@ We could just make these changes one at a time as before, but if we want someone
 
 So far we've just been working on the "master" branch - that's what the cyan text is all about - which you can think of as more of a trunk than a branch, it's what we'd regard of as the most up to date and complete version of the code. Let's make a new branch for our unit conversion work.
 
+:::: {.infoboxblue .info data-latex=”info”}
+
+**"master" branch vs "main" branch**
+
+We have just referred to the "master" branch. Whilst this is still the git default, conventions are moving towards use of "main" branch instead of "master" branch. Unlike the word master, the word main does not have negative association with the slave trade.
+
+This guide will refer to the "master" branch for specific examples where consistency with the git default is important and the "main" branch in other circumstances.
+Note the two terms refer to the same thing but they are not interchangeable.
+A project will have either a main or a master branch, depending on how it was set-up, but not both.
+You should work out which yours has and use that in place of main/master for all examples in this book.
+
+::::
+
+
 To create a new branch type in
 ```sh
 git branch unit_conversion
