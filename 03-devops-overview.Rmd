@@ -19,8 +19,8 @@ We are using **Azure DevOps** as this is the Department's tool of choice for int
 To work with internal DevOps Repos you will need an account with Basic access level.
 There is a form to sort out DevOps account levels and access on the IT service portal - search for DevOps.
 You will also need someone to give you permission to see the DevOps project that you're working on.
-For information about how to do this, pleae read on.
-If you need a new project area on DevOps, use the same IT service portal form as for account access.
+For information about how to do this, please read on.
+If you need a new project area on DevOps, use the same IT service portal form as above.
 
 ## Theory 
 
@@ -62,10 +62,10 @@ It is easiest to do this by:
 
 Once you have copied the URL, you need to open git bash on your computer and clone the repository using the URL.
 When you open git bash you should do so in the folder where you want the repo to be.
-Ideally this will be on your C drive, outside of OneDrive of Teams because git repositories don't work well if OneDrive
+Ideally this will be on your C drive, outside of OneDrive or Teams, because git repositories don't work well if OneDrive
 or Teams are syncing them.
 There is no need for the additional syncing from OneDrive or Teams because DevOps provides the online back-up that others can access.
-This means that any general rules than work should be on OneDrive or Teams to be backed up does not apply to repos because DevOps provides the back-up *as long as you push your work regularly and at least once a day*.
+*As long as you push your work regularly and at least once a day*, DevOps provides the back-up and any general rules than work should be on OneDrive or Teams to be backed up do not apply.
 
 One you've got git bash open, the clone command will look as follows:
 
