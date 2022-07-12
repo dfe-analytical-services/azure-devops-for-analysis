@@ -397,7 +397,7 @@ Once you've entered your repository URL and chosen a directory in which to clone
 
 ### Overview of the RStudio git GUIs
 
-There are three key areas within RStudio for accessing git functionality. The the Git Pane, the terminal and the RStudio menu bar.
+There are three key areas within RStudio for accessing git functionality. The Git Pane, the terminal and the RStudio menu bar.
 
 #### Terminal ([Git BASH](#opening-git-bash))
 
@@ -405,7 +405,7 @@ The terminal offers all the [Git BASH](#opening-git-bash) command line functiona
 
 #### Git pane
 
-The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with `Git`. The image below shows the git pane opened for a local clone of the repo for this guidance. It conssists of it's own menu bar with buttons for each of the options listed above, alongside a preview pane showing any files that have been modified, added or removed since your last commit.
+The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with `Git`. The image below shows the git pane opened for a local clone of the repo for this guidance. It consists of it's own menu bar with buttons for each of the options listed above, alongside a preview pane showing any files that have been modified, added or removed since your last commit. The Staged column shows whether a given file has been added or staged ready for a commit and the status column shows whether a file has been added (A), modified (M) or removed (R) since the last commit.
 
 ![RStudio Git Panel](www/images/chapter2_RStudio_gitpanel.PNG)
 
