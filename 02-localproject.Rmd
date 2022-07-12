@@ -367,7 +367,7 @@ In non-R projects you can create your own .gitignore file in a text editor and s
 
 ### Overview
 
-Within RStudio, you can choose to manage your repository using the git bash terminal as in the previous sections, use the RStudio GUI elements or use a combination of both. Below we highlight the key things you need to know to get going with a git repository within R.
+Within RStudio, you can choose to manage your repository using the git bash terminal as in the previous sections, use the RStudio GUI (graphical user interface) elements or use a combination of both. Below we highlight the key things you need to know to get going with a git repository within R.
 
 ### Initial set-up
 
@@ -411,19 +411,19 @@ The Git pane offers an excellent quick look at the status of your repository, wh
 
 The elements in the git pane menu bar offer the following options:
 
-* <img src="www/images/chapter2_RStudio_gitpaneDiff.PNG" alt="Git diff icon" height="16"/>  Open the [RStudio review changes window](#branches-committing-and-pushing);
-* <img src="www/images/chapter2_RStudio_gitpaneCommit.png" alt="Git commit icon" height="16"/> Also opens the [RStudio review changes window](#branches-committing-and-pushing);
-* <img src="www/images/chapter2_RStudio_gitpanePull.png" alt="Git pull icon" height="16"/> Perform a pull;
-* <img src="www/images/chapter2_RStudio_gitpanePush.png" alt="Git push icon" height="16"/> Push the current commits;
-* <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="16"/> Open the [RStudio review changes window](#branches-committing-and-pushing), defaulting to the History panel;
-* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project seeings icon" height="16"/> Open the project settings window;
-* <img src="www/images/chapter2_RStudio_gitpaneNewBranch.png" alt="New branch icon" height="16"/> Create a new branch;
-* <img src="www/images/chapter2_RStudio_gitpaneSelectBranch.png" alt="Current branch" height="16"/> Shows the current branch and allows the user to switch branches via the drop down list;
-* <img src="www/images/chapter2_RStudio_gitpaneRefresh.png" alt="Refresh icon" height="16"/> Refresh the git pane preview.
+* <img src="www/images/chapter2_RStudio_gitpaneDiff.PNG" alt="Git diff icon" height="20"/>  Open the [RStudio review changes window](#branches-committing-and-pushing);
+* <img src="www/images/chapter2_RStudio_gitpaneCommit.png" alt="Git commit icon" height="20"/> Also opens the [RStudio review changes window](#branches-committing-and-pushing);
+* <img src="www/images/chapter2_RStudio_gitpanePull.png" alt="Git pull icon" height="20"/> Perform a pull;
+* <img src="www/images/chapter2_RStudio_gitpanePush.png" alt="Git push icon" height="20"/> Push the current commits;
+* <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="20"/> Open the [RStudio review changes window](#branches-committing-and-pushing), defaulting to the History panel;
+* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project seeings icon" height="20"/> Open the project settings window;
+* <img src="www/images/chapter2_RStudio_gitpaneNewBranch.png" alt="New branch icon" height="20"/> Create a new branch;
+* <img src="www/images/chapter2_RStudio_gitpaneSelectBranch.png" alt="Current branch" height="20"/> Shows the current branch and allows the user to switch branches via the drop down list;
+* <img src="www/images/chapter2_RStudio_gitpaneRefresh.png" alt="Refresh icon" height="20"/> Refresh the git pane preview.
 
 #### Menu bar access
 
-To access the git functionality via the menu bar, navigate to `Tools` > `Version control`. You should then see the options `Commit...`, `Pull Branches`, `Push Branch`, `Hsitory` and `Project Setup...`
+To access the git functionality via the menu bar, navigate to `Tools` > `Version control`. You should then see the options `Commit...`, `Pull Branches`, `Push Branch`, `History` and `Project Setup...`
 
 ![RStudio - Git in the menu bar](www/images/chapter2_RStudio_MenuBarAccess.PNG)
 
@@ -435,8 +435,10 @@ The Review Changes window consists of 3 panes, the top left shows a preview of a
 
 ![RStudio Review changes window](www/images/chapter2_RStudio_ReviewChanges.PNG)
 
-To make a commit, review the changes in the diff pane by selecting each file in turn and click the Stage button in the Review changes menu bar (either with mulitple/all files selected at once or eac file selected indivudually). Then add your commit message and click the `Commit` button below the Commit message entry box.
+To make a commit, review the changes in the diff pane by selecting each file in turn and click the Stage button in the Review changes menu bar (either with multiple/all files selected at once or eac file selected indivudually). Then add your commit message and click the `Commit` button below the Commit message entry box.
 
-Finally, you can just click the `Push` button above the commit message entry box to sync your changes to the remote repository.
+Then you can then just click the `Push` button above the commit message entry box to sync your changes to the remote repository.
+
+Also in the review changes window, you can revert a file to its state at the last commit made. Simply select the file(s) you wish to revert and click the revert button.
 
 You can switch branches by clicking on the current branch name in the Review changes menu bar, i.e. next to the History button.
