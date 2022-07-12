@@ -416,7 +416,7 @@ The elements in the git pane menu bar offer the following options:
 * <img src="www/images/chapter2_RStudio_gitpanePull.png" alt="Git pull icon" height="20"/> Perform a pull;
 * <img src="www/images/chapter2_RStudio_gitpanePush.png" alt="Git push icon" height="20"/> Push the current commits;
 * <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="20"/> Open the [RStudio review changes window](#branches-committing-and-pushing), defaulting to the History panel;
-* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project seeings icon" height="20"/> Open the project settings window;
+* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project settings icon" height="20"/> Open the project settings window - this provides the option to revert files to the state at the last commit if you want to undo any recent changes;
 * <img src="www/images/chapter2_RStudio_gitpaneNewBranch.png" alt="New branch icon" height="20"/> Create a new branch;
 * <img src="www/images/chapter2_RStudio_gitpaneSelectBranch.png" alt="Current branch" height="20"/> Shows the current branch and allows the user to switch branches via the drop down list;
 * <img src="www/images/chapter2_RStudio_gitpaneRefresh.png" alt="Refresh icon" height="20"/> Refresh the git pane preview.
