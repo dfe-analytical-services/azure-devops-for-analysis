@@ -416,7 +416,7 @@ The elements in the git pane menu bar offer the following options:
 * <img src="www/images/chapter2_RStudio_gitpanePull.png" alt="Git pull icon" height="20"/> Perform a pull;
 * <img src="www/images/chapter2_RStudio_gitpanePush.png" alt="Git push icon" height="20"/> Push the current commits;
 * <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="20"/> Open the [RStudio review changes window](#branches-committing-and-pushing), defaulting to the History panel;
-* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project settings icon" height="20"/> Open the project settings window - this provides the option to revert files to the state at the last commit if you want to undo any recent changes;
+* <img src="www/images/chapter2_RStudio_gitpaneProjectSettings.png" alt="Project settings icon" height="20"/> Open the project settings window - this provides the option to undo any file saves since the last commit if you want to undo any recent changes (equivelant to running git restore);
 * <img src="www/images/chapter2_RStudio_gitpaneNewBranch.png" alt="New branch icon" height="20"/> Create a new branch;
 * <img src="www/images/chapter2_RStudio_gitpaneSelectBranch.png" alt="Current branch" height="20"/> Shows the current branch and allows the user to switch branches via the drop down list;
 * <img src="www/images/chapter2_RStudio_gitpaneRefresh.png" alt="Refresh icon" height="20"/> Refresh the git pane preview.
@@ -439,6 +439,10 @@ To make a commit, review the changes in the diff pane by selecting each file in 
 
 Then you can then just click the `Push` button above the commit message entry box to sync your changes to the remote repository.
 
-Also in the review changes window, you can revert a file to its state at the last commit made. Simply select the file(s) you wish to revert and click the revert button.
+Also in the review changes window, you can restore a file to its state at the last commit made (i.e. undo any saved edits since your last commit). Simply select the file(s) you wish to restore and click the revert button. Note that this is equivalent to the command git restore and *not* git revert.
 
 You can switch branches by clicking on the current branch name in the Review changes menu bar, i.e. next to the History button.
+
+### Summary
+
+Overall, RStudio provides some useful GUI-based tools for performing the basic git version control tasks: creating and switching branches, add, commit, push and pull, restore and diff. What it won't allow you to do are actions around merging branches or reverting to previous commits. For these, you'll need to use either the git commands in a bash terminal or the features provided by the online platforms Dev Ops or GitHub (depending on which one you're using with your project). 
