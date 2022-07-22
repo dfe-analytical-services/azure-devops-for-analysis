@@ -94,7 +94,8 @@ This will set up the connection to DevOps and push an entire copy of the repo up
 
 ## Adding users to a project
 
-DevOps is a restriced access code environment where users need to first be given permission to access the site as a whole and then individual projects. 
+DevOps is a restriced access code environment where users need to first be given permission to access the site as a whole and then individual projects.
+This section assumes any users added have DevOps access at the Basic account level, as described earlier in this chapter.
 
 To add users to a project:
 
@@ -107,10 +108,13 @@ The user will then get a welcome email inviting them to the project.
 
 ## Pull Requests
 
-A pull request is a particularly useful bit of DevOps functionality.
+A pull request is a particularly useful bit of DevOps functionality when you are working with multiple branches.
+Pull requests facilitate code reviews and QA before your work is accepted into your main/master branch.
 You can access pull requests from the "pull requests" page under DevOps repos section.
 
-A pull request in effect provides a wrapper for the ```git merge``` command outlined in Chapter 2.
+A pull request allows a colleague to review your code before you merge it into another branch.
+Often the branch you are merging your work into is the main/master branch but pull requests can be used on any pair of branches.
+When you "complete" a pull request following a review, it uses the ```git merge``` command outlined in Chapter 2.
 The visual interface allows you to:
 
 1. Give background to the changes made and link any work items
@@ -120,7 +124,10 @@ The visual interface allows you to:
 
 As a pull request ensures someone reviews your code before it is incorporated into the main/master branch it is a good tool for quality assurance. Having another person look over your code before it is accepted reduces the risk of errors being missed.
 
-A good way of working involves all merging of new work is done by pull request to enfore the review process.
+A good way of working involves ensuring all code written is reviewed via a pull request at some point.
+This ensures all code is checked and therefore has some QA.
+To facilitate this it is best to keep your main/master branch exclusively for work which has been through a pull request.
+Any new work should take place in a branch off your main/master branch and once complete you should always use a pull request to merge it into main/master.
 Pull requests are most successful when they contain a smaller number of changes because it is less likely the reviewer will miss something important.
 
 If you are writing a pull request, it is a good idea to include:
@@ -134,7 +141,7 @@ Once you are happy with the code review that's taken place in a pull request:
 1. The person reviewing it approves the request to mark that the review is finished.
 2. The person who wrote the code and set the pull request up "completes" it which performs the merge.
 
-DevOps will delete the branch you were working in (the source brancg) once complete the pull request.
+DevOps will delete the branch you were working in (the source branch) once complete the pull request.
 This is good practice because it keeps the repo tidy.
 Deleting branches after you have merged the work elsewhere does not mean you lose work because all that work is on the branch you've merged to.
 
@@ -142,7 +149,7 @@ Deleting branches after you have merged the work elsewhere does not mean you los
 
 At this point you will have a project that anyone who is a member of has the ability to push directly to the main/master branch. 
 
-Best practice ways of working include frequent code reviews v requests to support Quality Assurance.
+Best practice ways of working include frequent code reviews via pull requests to support Quality Assurance.
 Pushing to main/master doesn't allow this directly. 
 
 Instead what we do is set **Branch Policies** which force code to be reviewed in DevOps before it can be merged into main/master.
@@ -154,16 +161,16 @@ To set branch policies:
 
 1. Go the the "Branched" page under repos in DevOps. Make sure you are looking at your intended repo by checking the centre top of the page.
 2. Hover your mouse over your main/master branch and click on the three vertical dots that appear at the right hand side of the screen.
-3. Clock on "Branch policies" in the menu that appears.
+3. Click on "Branch policies" in the menu that appears.
 
 ### The branch policy options
 
 At the time of writing, branch policies offer four options:
 
 1. **Require a minimum number of reviewers** - how many people need to approve the code before it can be merged.
-2. **Check for linked work items** - Does the pull request need to have a work item linked
+2. **Check for linked work items** - Does the pull request need to have a work item linked (this is relevant if you are using the DevOps boards feature for work planning, otherwise you can ignore this)
 3. **Check for comment resolution** - Do all of the comments on the pull request need to be resolved before merging is approved
-4. **Limit merge types** - Do you want to enforce a merge strategy. 
+4. **Limit merge types** - Do you want to enforce a merge strategy (see below for more information). 
 
 It is recommended that you **enforce at least the first option**. 
 
