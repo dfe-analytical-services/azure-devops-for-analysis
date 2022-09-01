@@ -6,7 +6,7 @@ Git is a program used to version control your files - it can be used for any fil
 
 There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default the Git installation includes a command line interface called Git BASH that you can use Git from. BASH is a command line interface originally for Unix based operating systems that uses a slightly different syntax to the Windows Command Prompt.
 
-Once installed, you can also use Git from Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features and, in my opinion, more intuitive commands.
+Once installed, you can also use Git from Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features and more intuitive commands.
 
 If you would prefer to use a GUI you can choose to install one when installing Git. You can also use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically. This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
 
@@ -313,7 +313,7 @@ If we open speed_dist.R there'll be a line saying ```<<<<<<< HEAD``` then one ve
 
 Thankfully, when Git finds a merge conflict it keeps both versions of the line in question so we can decide which one is right.
 
-I think red is better than blue, so let's get rid of the line that makes the colour blue and all the other extraneous lines.
+Suppose we decide that red is better than blue for this. Let's therefore get rid of the line that makes the colour blue and all the other extraneous lines.
 
 Now all we do the usual `sh git add` and `sh git commit`. Make note of the merge conflict in the commit message, something like "Fixed merge conflict between blue and red".
 
