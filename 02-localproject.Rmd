@@ -315,7 +315,7 @@ Thankfully, when Git finds a merge conflict it keeps both versions of the line i
 
 Suppose we decide that red is better than blue for this. Let's therefore get rid of the line that makes the colour blue and all the other extraneous lines.
 
-Now we do the usual `sh git add` and `sh git commit`. Make note of the merge conflict in the commit message, something like "Fixed merge conflict between blue and red".
+Now we do the usual `git add` and `git commit`. Make note of the merge conflict in the commit message, something like "Fixed merge conflict between blue and red".
 
 For very large and complex merge conflicts it's worth searching for ```< HEAD``` to find all the instances of a conflict.
 

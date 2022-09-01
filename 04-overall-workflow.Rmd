@@ -108,7 +108,8 @@ git merge main
 - Sort out any merge conflicts.
 ```sh 
 git status
-``` will list the files that have merge conflicts. Open the files with 
+``` 
+will list the files that have merge conflicts. Open the files with 
 the conflicts, and search them for "<<<<". Everything from the next line up until 
 a line of "====" will be from the main branch. Everything from the "====" line 
 until ">>>>" will be from your working branch. Work through the code to make sure 
