@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">VSTS for Analysis</a></li>
+        <li><a href="./">Azure DevOps for Analysis</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
   includes:
