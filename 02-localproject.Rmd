@@ -65,7 +65,7 @@ to list everything in your current folder.
 When navigating with Git BASH you can press TAB to autocomplete a folder or file.
 
 ## Setting up a Git repository
-A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some cyan text after the file path. Open Git in a folder you would like to make a project in.
+A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some text after the file path. Open Git in a folder you would like to make a project in.
 
 Next type:
 ```sh
@@ -158,7 +158,7 @@ So far we've made two commits. These commits start building up a history in Git.
 git log
 ```
 
-It will show the date, time, commit message, author and hash (the long list of characters in yellow) for each commit made.
+It will show the date, time, commit message, author and hash for each commit made.
 
 ## Making branches
 There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don't get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.
