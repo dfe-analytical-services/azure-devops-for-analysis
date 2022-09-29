@@ -100,6 +100,14 @@ git add .
 ```
 This tells Git that we want to record the changes to the folder. We could type all the file names that we want to keep track of, but the dot after add adds everything.
 
+::: {.infoboxred .exclamation}
+::: infobox-header
+Using `git add .`
+:::
+
+Be really careful using `git add . `, particularly if you're working with sensitive data as you could accidentally upload this to Azure DevOps. To get around this, make sure you have a .gitignore file (explained below) set up before using `git add .` or add files individually.
+:::
+
 Next we actually commit the change:
 ```sh
 git commit -m "Added speed_dist.R"
