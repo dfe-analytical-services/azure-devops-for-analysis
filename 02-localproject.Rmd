@@ -250,7 +250,7 @@ After the ```geom_point()``` line add
 We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.
 
 ## Merging branches
-Once someone has QA'd our code we can merge our branches into the master branch. 
+Once someone has QA'd our code we can merge our branches into the master branch. We can do this on Azure DevOps or in Git BASH. We'll explain how to do this in Git BASH below. 
 Checkout the master branch. Merge the branches one at a time like this
 
 ```sh
