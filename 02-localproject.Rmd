@@ -15,7 +15,7 @@ If you would prefer to use a GUI you can choose to install one when installing G
 You can download the Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
 
 ## Opening Git BASH
-You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in yellow text - this is the folder that Git is "pointed" at.
+You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in first line of text - this is the folder that Git is "pointed" at.
 
 You run commands in Git BASH by typing them in and pressing enter.
 
@@ -65,13 +65,13 @@ to list everything in your current folder.
 When navigating with Git BASH you can press TAB to autocomplete a folder or file.
 
 ## Setting up a Git repository
-A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some cyan text after the file path. Open Git in a folder you would like to make a project in.
+A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some text after the file path. Open Git in a folder you would like to make a project in.
 
 Next type:
 ```sh
 git init
 ```
-This will turn this normal folder into a Git Repository - some cyan text saying "master" will appear after the yellow file path. This folder is now ready to start a version controlled project!
+This will turn this normal folder into a Git Repository - some text saying "master" will appear after the file path. This folder is now ready to start a version controlled project!
 
 ## Applying Git to a Project
 Let's make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we'll get to this later).
@@ -99,6 +99,14 @@ In Git BASH type
 git add .
 ```
 This tells Git that we want to record the changes to the folder. We could type all the file names that we want to keep track of, but the dot after add adds everything.
+
+::: {.infoboxred .exclamation}
+::: infobox-header
+Using `git add .`
+:::
+
+Be really careful using `git add . `, particularly if you're working with sensitive data as you could accidentally upload this to Azure DevOps. To get around this, make sure you have a .gitignore file (explained below) set up before using `git add .` or add files individually.
+:::
 
 Next we actually commit the change:
 ```sh
@@ -150,7 +158,7 @@ So far we've made two commits. These commits start building up a history in Git.
 git log
 ```
 
-It will show the date, time, commit message, author and hash (the long list of characters in yellow) for each commit made.
+It will show the date, time, commit message, author and hash for each commit made.
 
 ## Making branches
 There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don't get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.
@@ -163,7 +171,7 @@ Let's say we want to make two changes at once to the code above:
 
 We could just make these changes one at a time as before, but if we want someone to review just one change at a time it's easier if we use branches.
 
-So far we've just been working on the "master" branch - that's what the cyan text is all about - which you can think of as more of a trunk than a branch, it's what we'd regard of as the most up to date and complete version of the code. Let's make a new branch for our unit conversion work.
+So far we've just been working on the "master" branch, which you can think of as more of a trunk than a branch, it's what we'd regard of as the most up to date and complete version of the code. Let's make a new branch for our unit conversion work.
 
 :::: {.infoboxblue .info data-latex=”info”}
 
@@ -188,7 +196,7 @@ To switch branches type:
 ```sh
 git checkout unit_conversion
 ```
-The cyan text should now say "unit_conversion".
+The text after the filepath in Git BASH should now say "unit_conversion".
 
 Here we can make changes for converting units and commit them without changing the master branch. 
 
@@ -242,7 +250,7 @@ After the ```geom_point()``` line add
 We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.
 
 ## Merging branches
-Once someone has QA'd our code we can merge our branches into the master branch. 
+Once someone has QA'd our code we can merge our branches into the master branch. We can do this on Azure DevOps or in Git BASH. We'll explain how to do this in Git BASH below. 
 Checkout the master branch. Merge the branches one at a time like this
 
 ```sh
@@ -307,7 +315,7 @@ So far so good.
 git merge blue_is_great
 ```
 
-You'll get some kind of error. Something along the lines of ```CONFLICT... automatic merge failed...``` and the cyan branch text will say ```master|MERGING```.
+You'll get some kind of error. Something along the lines of ```CONFLICT... automatic merge failed...``` and the branch text will say ```master|MERGING```.
 
 If we open speed_dist.R there'll be a line saying ```<<<<<<< HEAD``` then one version of our changed line then a bunch of equals after which we'll see the other version of our line and then ```>>>>>>> blue_is_great```.
 
