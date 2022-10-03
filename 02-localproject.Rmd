@@ -6,7 +6,7 @@ Git is a program used to version control your files - it can be used for any fil
 
 There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default the Git installation includes a command line interface called Git BASH that you can use Git from. BASH is a command line interface originally for Unix based operating systems that uses a slightly different syntax to the Windows Command Prompt.
 
-Once installed, you can also use Git from Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features and, in my opinion, more intuitive commands.
+Once installed, you can also use Git from Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features and more intuitive commands.
 
 If you would prefer to use a GUI you can choose to install one when installing Git. You can also use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically. This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you'll be able to apply your skills to any GUI pretty easily.
 
@@ -17,7 +17,7 @@ There's some specific guidance on using RStudio to manage your git repositories 
 You can download the Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
 
 ## Opening Git BASH
-You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in yellow text - this is the folder that Git is "pointed" at.
+You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in first line of text - this is the folder that Git is "pointed" at.
 
 You run commands in Git BASH by typing them in and pressing enter.
 
@@ -67,13 +67,13 @@ to list everything in your current folder.
 When navigating with Git BASH you can press TAB to autocomplete a folder or file.
 
 ## Setting up a Git repository
-A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some cyan text after the file path. Open Git in a folder you would like to make a project in.
+A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some text after the file path. Open Git in a folder you would like to make a project in.
 
 Next type:
 ```sh
 git init
 ```
-This will turn this normal folder into a Git Repository - some cyan text saying "master" will appear after the yellow file path. This folder is now ready to start a version controlled project!
+This will turn this normal folder into a Git Repository - some text saying "master" will appear after the file path. This folder is now ready to start a version controlled project!
 
 ## Applying Git to a Project
 Let's make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we'll get to this later).
@@ -93,7 +93,7 @@ cars_plot <- ggplot(data,
 
 cars_plot
 ```
-This will make a simple scatter plot (and hopefully convince you not to speed...). This seems like a good place to record our progress: save your file as "speed_dist.R" in your project folder. Now we can use Git to take a record of this save lest we need it in the future.
+This will make a simple scatter plot (and hopefully convince you not to speed...). This seems like a good place to record our progress: save your file as "speed_dist.R" in your project folder. Now we can use Git to take a record of this save in case we need it in the future. 
 
 ## Adding and committing files
 In Git BASH type
@@ -101,6 +101,14 @@ In Git BASH type
 git add .
 ```
 This tells Git that we want to record the changes to the folder. We could type all the file names that we want to keep track of, but the dot after add adds everything.
+
+::: {.infoboxred .exclamation}
+::: infobox-header
+Using `git add .`
+:::
+
+Be really careful using `git add . `, particularly if you're working with sensitive data as you could accidentally upload this to Azure DevOps. To get around this, make sure you have a .gitignore file (explained below) set up before using `git add .` or add files individually.
+:::
 
 Next we actually commit the change:
 ```sh
@@ -152,20 +160,20 @@ So far we've made two commits. These commits start building up a history in Git.
 git log
 ```
 
-It will show the date, time, commit message, author and hash (the long list of characters in yellow) for each commit made.
+It will show the date, time, commit message, author and hash for each commit made.
 
 ## Making branches
 There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don't get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.
 
 Let's say we want to make two changes at once to the code above:
 
-- Currently the speed is in mph and the distance in feet, let's change it to kmp and meters.
+- Currently the speed is in mph and the distance in feet, let's change it to kmph and meters.
 
 - Let's add some labels to the axes on the plot and a title.
 
-We could just make these changes one at a time as before, but if we want someone to review just each change at once it's easier if we use branches.
+We could just make these changes one at a time as before, but if we want someone to review just one change at a time it's easier if we use branches.
 
-So far we've just been working on the "master" branch - that's what the cyan text is all about - which you can think of as more of a trunk than a branch, it's what we'd regard of as the most up to date and complete version of the code. Let's make a new branch for our unit conversion work.
+So far we've just been working on the "master" branch, which you can think of as more of a trunk than a branch, it's what we'd regard of as the most up to date and complete version of the code. Let's make a new branch for our unit conversion work.
 
 :::: {.infoboxblue .info data-latex=”info”}
 
@@ -190,7 +198,7 @@ To switch branches type:
 ```sh
 git checkout unit_conversion
 ```
-The cyan text should now say "unit_conversion".
+The text after the filepath in Git BASH should now say "unit_conversion".
 
 Here we can make changes for converting units and commit them without changing the master branch.
 
@@ -200,7 +208,7 @@ data <- cars
 ```
 copy in the following code:
 ```r
-# convert speed to lph
+# convert speed to kmph
 data$speed <- data$speed*1.609344
 
 # convert distance to meters
@@ -244,7 +252,9 @@ After the ```geom_point()``` line add
 We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.
 
 ## Merging branches
-Once someone has QA'd our code we can merge our branches into the master branch.
+
+Once someone has QA'd our code we can merge our branches into the master branch. We can do this on Azure DevOps or in Git BASH. We'll explain how to do this in Git BASH below. 
+
 Checkout the master branch. Merge the branches one at a time like this
 
 ```sh
@@ -254,7 +264,7 @@ git merge plot_labels
 
 If we look at the log all the changes from both of these branches should be visible.
 
-Note, you log might be getting long enough to run off the page. If so you can go up and down the log with the arrow keys and pressing "q" will allow to you begin typing again.
+Note, your log might be getting long enough to run off the page. If so you can go up and down the log with the arrow keys and pressing "q" will allow to you begin typing again.
 
 You can now delete the other branches.
 ```sh
@@ -309,15 +319,15 @@ So far so good.
 git merge blue_is_great
 ```
 
-You'll get some kind of error. Something along the lines of ```CONFLICT... automatic merge failed...``` and the cyan branch text will say ```master|MERGING```.
+You'll get some kind of error. Something along the lines of ```CONFLICT... automatic merge failed...``` and the branch text will say ```master|MERGING```.
 
 If we open speed_dist.R there'll be a line saying ```<<<<<<< HEAD``` then one version of our changed line then a bunch of equals after which we'll see the other version of our line and then ```>>>>>>> blue_is_great```.
 
 Thankfully, when Git finds a merge conflict it keeps both versions of the line in question so we can decide which one is right.
 
-I think red is better than blue, so let's get rid of the line that makes the colour blue and all the other extraneous lines.
+Suppose we decide that red is better than blue for this. Let's therefore get rid of the line that makes the colour blue and all the other extraneous lines.
 
-Now all we do the usual `sh git add` and `sh git commit`. Make note of the merge conflict in the commit message, something like "Fixed merge conflict between blue and red".
+Now we do the usual `git add` and `git commit`. Make note of the merge conflict in the commit message, something like "Fixed merge conflict between blue and red".
 
 For very large and complex merge conflicts it's worth searching for ```< HEAD``` to find all the instances of a conflict.
 
