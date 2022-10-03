@@ -18,7 +18,7 @@ Any book illustrating the usefulness of Git will start with an example similar t
 
 This approach creates *versioned* files using suffixes with some sort of convention. This can work if you have a small number of iterations but the following questions need to be answered:
 
-1. **Which is the final version?!** - Although conventions attempt to remain standard you will get to a stage when you think you are final, another change will come and your previous convention will be broken. 
+1. **Which is the final version?!** - Despite attempts to use standard naming conventions, you will inevitably reach a stage when you think you have a 'final' version, and then another change will come and your previous convention will be broken. 
 
 2. **What files actually constitute this analysis?** - Folder structure changes over time. Scripts merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed. 
 
@@ -66,7 +66,7 @@ You can think of these sort of systems as wrappers for Git, where merges into th
 
 One of the most well known systems for this is [GitHub](https://github.com). GitHub is popular with open source projects because it provides good functionality for sharing code publicly. Additionally, some companies pay for business accounts. 
 
-For the purposes of this book we look at using Azure DevOps. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you undertaking work which could/should be public, you may wish to consider using GitHub.
+For the purposes of this book we look at using [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/). This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you are undertaking work which could/should be public, you may wish to consider using GitHub.
   
   
 ::::{ .infoboxblue .info}
@@ -81,9 +81,9 @@ A common source of confusion is the assumption that Git and GitHub are somehow t
   
 * **Azure DevOps** is ***a remote repository and code collaboration tool***. It can be communicated with via Git to act as a central code store for a project.
   
-Put another way, Azure DevOps and GitHub do the same job. Git does a different job, and can interact with either of them. In DfE we by default use the combination of Git and Azure DevOps, although Git and GitHub will sometimes be used where appropriate.
+Put another way, Azure DevOps and GitHub do the same job. Git does a different job, and can interact with either of them. In DfE, we use the combination of Git and Azure DevOps by default, although Git and GitHub will sometimes be used where appropriate.
   
-The most important difference between Azure DevOps and Github is that the former is hosted on a private DfE server and access can be controlled; the latter is hosted on public servers and by default code hosted there is publically available.
+The most important difference between Azure DevOps and Github is that the former is hosted on a private DfE server and access can be controlled; the latter is hosted on public servers and, by default, code hosted there is publically available.
 
 ::::
   
@@ -93,4 +93,4 @@ Azure DevOps (DevOps) is a code collaboration tool for managing projects consist
 
 DevOps is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively. 
 
-On top of this, it provides project management functionality that when coupled with a Git workflow encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.
+On top of this, it provides project management functionality that, when coupled with a Git workflow, encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.

@@ -14,7 +14,7 @@ There's some specific guidance on using RStudio to manage your git repositories 
 
 ## Installing Git
 
-You can download the Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
+You can download Git from here https://git-scm.com/downloads by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.
 
 ## Opening Git BASH
 You can open up Git BASH from File Explorer by right clicking in a folder and clicking "Git Bash Here". This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in first line of text - this is the folder that Git is "pointed" at.
@@ -27,11 +27,11 @@ When you first install Git it is advised to perform some set up steps - they are
 
 First of all type
 ```sh
-git config --global user.name <Your Name>
+git config --global user.name "<Your Name>"
 ```
 and then
 ```sh
-git config --global user.email <You Email>
+git config --global user.email "<Your Email>"
 ```
 
 This will add your name and email to each commit you make, which will prove useful when collaborating.
@@ -64,7 +64,7 @@ ls
 ```
 to list everything in your current folder.
 
-When navigating with Git BASH you can press TAB to autocomplete a folder or file.
+When navigating with Git BASH you can press TAB to autocomplete the name of a folder or file.
 
 ## Setting up a Git repository
 A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some text after the file path. Open Git in a folder you would like to make a project in.
@@ -136,7 +136,7 @@ Use
 ```sh
 git add speed_dist.R
 ```
-to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file here).
+to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file hereas we don't want to add the .png file).
 
 As before we want to commit these changes:
 ```sh
@@ -145,7 +145,7 @@ git commit -m "Added save feature to speed_dist.R"
 
 The workflow for making changes is as follows:
 
-- Change you files
+- Change your files
 
 - Save your files
 
@@ -167,7 +167,7 @@ There may come times when you are working to make two (or more) sets of code cha
 
 Let's say we want to make two changes at once to the code above:
 
-- Currently the speed is in mph and the distance in feet, let's change it to kmph and meters.
+- Currently the speed is in mph and the distance in feet. Let's change it to kmph and meters.
 
 - Let's add some labels to the axes on the plot and a title.
 
@@ -415,7 +415,7 @@ The terminal offers all the [Git BASH](#opening-git-bash) command line functiona
 
 #### Git pane
 
-The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with `Git`. The image below shows the git pane opened for a local clone of the repo for this guidance. It consists of it's own menu bar with buttons for each of the options listed above, alongside a preview pane showing any files that have been modified, added or removed since your last commit. The Staged column shows whether a given file has been added or staged ready for a commit and the status column shows whether a file has been added (A), modified (M) or removed (R) since the last commit.
+The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with Git. The image below shows the git pane opened for a local clone of the repo for this guidance. It consists of it's own menu bar with buttons for each of the options listed above, alongside a preview pane showing any files that have been modified, added or removed since your last commit. The Staged column shows whether a given file has been added or staged ready for a commit and the status column shows whether a file has been added (A), modified (M) or removed (R) since the last commit.
 
 ![RStudio Git Panel](www/images/chapter2_RStudio_gitpanel.PNG)
 
@@ -445,7 +445,7 @@ The Review Changes window consists of 3 panes, the top left shows a preview of a
 
 ![RStudio Review changes window](www/images/chapter2_RStudio_ReviewChanges.PNG)
 
-To make a commit, review the changes in the diff pane by selecting each file in turn and click the Stage button in the Review changes menu bar (either with multiple/all files selected at once or eac file selected indivudually). Then add your commit message and click the `Commit` button below the Commit message entry box.
+To make a commit, review the changes in the diff pane by selecting each file in turn and click the Stage button in the Review changes menu bar (either with multiple/all files selected at once or each file selected individually). Then add your commit message and click the `Commit` button below the Commit message entry box.
 
 Then you can then just click the `Push` button above the commit message entry box to sync your changes to the remote repository.
 
