@@ -1,14 +1,18 @@
 --- 
 title: "Azure DevOps for Analysis"
+author: "Department for Education guidance"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects."
+favicon: www/images/qa_logo.png
 ---
 
-# Preface {-}
+# Preface
 
 ## Overview
 

@@ -37,7 +37,7 @@ The above points apply to input data and output data from your code:
 git clone <project_name>
 ```
 
-Cloning is the git actions which makes a copy of your project from DevOps on your computer which allows you to work on the code. It also records the location of your DevOps repository on your computer which allows you to share (push) your changes back to DevOps once you have done some work. This is a bit like OneDrive syncing your files with the cloud apart from the fact it only happens when specifically tell it to.
+Cloning makes a copy of your project from DevOps on your computer which allows you to work on the code. It also records the location of your DevOps repository on your computer which allows you to share (push) your changes back to DevOps once you have done some work. This is a bit like OneDrive syncing your files with the cloud apart from the fact it only happens when you specifically tell it to.
 
 We recommend that, to get the most from DevOps, you use it from the start of a project. This allows a continuous process of making small changes and having them QA'd, instead of doing a huge QA right at the end. However, you may have started a repository locally and wish to put it on DevOps. In that case you can push to DevOps.
 
@@ -54,6 +54,8 @@ git push -u origin --all <repo_URL>
 ## Making Branches
 
 - Work may be assigned to you as a "Work Item". In DevOps use the link to make new branch. To correct a bug, prefix the branch name with "bug/". To add new functionality, prefix the branch name with "feature/".
+
+![Some example work items in DevOps.](www/images/chapter4_work_items.png)
 
 - Make sure your main branch is up to date.
 ```sh 
@@ -89,7 +91,7 @@ Repositories usually have either a "main" or a "master" branch. The two terms re
 ::::
 
 - When you've made enough changes to complete your work item checkout the main 
-branch in your local repository do a pull in case anyone else had made changes.
+branch in your local repository and pull in case anyone else had made changes.
 ```sh 
 git checkout main
 ```
@@ -105,7 +107,7 @@ git checkout <your_branch_name>
 git merge main
 ```
 
-- Sort out any merge conflicts.
+- Sort out any merge conflicts. The command
 ```sh 
 git status
 ``` 
@@ -114,6 +116,9 @@ the conflicts, and search them for "<<<<". Everything from the next line up unti
 a line of "====" will be from the main branch. Everything from the "====" line 
 until ">>>>" will be from your working branch. Work through the code to make sure 
 that you keep all the necessary changes. There may be changes from main and your branch that you want to keep, so don't just idly delete things!
+
+![An example of a merge conflict in DevOps.](www/images/chapter4_merge_conflict.png)
+
 Add and commit the changes.
 ```sh 
 git add <file_to_be_merged>
@@ -141,6 +146,8 @@ git push
 ## Tags
 
 Tags effectively label specific Git commits so you can easily find them again in future. In DevOps they show up in the Repos section under Tags. They are valuable if you've produced some outputs and wanted to label the code which produced them for future reference. If you include "/" in your tag names, they will show up in folders on DevOps.
+
+![An example of using tags within a repository.](www/images/chapter4_tags.png)
 
 To create a tag on your computer:
 
@@ -173,7 +180,7 @@ To create a tag on DevOps:
 
 - Choose what you want your tag to be based on using the drop down menu. If you choose a branch it will be the most recent commit on that branch. If you need an older commit you will need to find the commit reference (SHA) and search for it.
 
-- Add a description to explain why added the tag.
+- Add a description to explain why the tag was added.
 
 If you want to use your tag to access a past version of your code:
 
@@ -183,7 +190,7 @@ If you want to use your tag to access a past version of your code:
 ```sh
 git checkout tag_name
 ```
-- When you checkout a tag it sets all your local files to the version that was tagged. If you do this, you will get a warning message from git saying you are in "detached head state" which essentially means you are not on any branch. If you wish to continue working on these files you will need to put them on a branch: the warning message about "detached head state" explains this. However for reference, you will need a git switch command to put the work on to a new branch:
+- When you checkout a tag it sets all your local files to the version that was tagged. If you do this, you will get a warning message from git saying you are in "detached head state" which essentially means you are not on any branch. If you wish to continue working on these files you will need to put them on a branch: the warning message about "detached head state" explains this. However, for reference, you will need a git switch command to put the work on to a new branch:
 ```sh
 git switch -c new_branch_name
 ```
