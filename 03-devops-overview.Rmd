@@ -130,6 +130,8 @@ The visual interface allows you to:
 
 As a pull request ensures someone reviews your code before it is incorporated into the main/master branch it is a good tool for quality assurance. Having another person look over your code before it is accepted reduces the risk of errors being missed.
 
+![Pull requests facilitate QA by other analysts.](www/images/chapter3_pull_request.png)
+
 A good way of working involves ensuring all code written is reviewed via a pull request at some point.
 This ensures all code is checked and therefore has some QA.
 To facilitate this it is best to keep your main/master branch exclusively for work which has been through a pull request.
@@ -141,6 +143,8 @@ If you are writing a pull request, it is a good idea to include:
 1. Why you were doing the work you've done.
 2. Any context to the assumptions you've made whilst doing the work.
 3. A list of specific points that you would like your reviewer to check. This should always include that the code is clear enough and whether it requires further comments.
+
+![An example pull request, showing the ability to add comments and provide feedback on new pieces of code.](www/images/chapter3_pull_request_example.png)
 
 Once you are happy with the code review that's taken place in a pull request:
 
@@ -165,7 +169,7 @@ If you set any branch policies, changes to main/master have to be made using a p
 
 To set branch policies:
 
-1. Go the the "Branched" page under repos in DevOps. Make sure you are looking at your intended repo by checking the centre top of the page.
+1. Go the the "Branches" page under repos in DevOps. Make sure you are looking at your intended repo by checking the centre top of the page.
 2. Hover your mouse over your main/master branch and click on the three vertical dots that appear at the right hand side of the screen.
 3. Click on "Branch policies" in the menu that appears.
 
