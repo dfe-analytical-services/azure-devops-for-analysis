@@ -136,7 +136,7 @@ Use
 ```sh
 git add speed_dist.R
 ```
-to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file hereas we don't want to add the .png file).
+to add just speed_dist.R (notice how last time we used ```git add .``` to add everything, but explicitly named the file here as we don't want to add the .png file).
 
 As before we want to commit these changes:
 ```sh

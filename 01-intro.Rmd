@@ -14,7 +14,7 @@ Git is widely used software for ensuring version control is done in a standardis
 
 Any book illustrating the usefulness of Git will start with an example similar to the following.
 
-![Poor version control involves duplicating files and no standardised naming process.](www/manual_version_control.png)
+![Poor version control involves duplicating files and no standardised naming process.](www/images/chapter1_manual_version_control.png)
 
 This approach creates *versioned* files using suffixes with some sort of convention. This can work if you have a small number of iterations but the following questions need to be answered:
 
@@ -42,7 +42,7 @@ At its most basic level Git allows the following:
 
 3. **Merge** - Systematically merge these changes back into the main version of the code.
 
-![A diagram to demonstrate branching with Git.](www/branching_diagram.png)
+![A diagram to demonstrate branching with Git.](www/images/chapter1_branching_diagram.png)
 
 Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:
 

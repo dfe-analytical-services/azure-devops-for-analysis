@@ -16,7 +16,7 @@ favicon: www/images/qa_logo.png
 
 ## Overview
 
-This book acts as a resource for analysts on how Git works and why it is useful for collaborative working and version control.
+This book acts as a resource for analysts on how Git works, and why it is useful for collaborative working and version control.
 
 This is in the context of the Department for Education Corporate environment. The documentation focuses on using Git with Azure DevOps (the Department's existing code version control tool of choice). 
 
@@ -38,4 +38,4 @@ On a high level this resource is advocating a new way of working for analytical 
 
 This book is intended to be a living document, and will likely evolve over time. This initial version aims to give a basic overview of how to install and use Git and DevOps. More technical aspects of Git, including best practice tips, will be covered in a later version.
 
-The initial version of this work was created by Rachel Tadd, Beatrice Nixon, Richard Bielby, Thomas Morley, Kester Jarvis, Remi Vergnon and Jonathan Holman. This version is based on previous documentation 'VSTS for analysis', developed by Adam Robinson and Zachary Waller.
+The initial version of this work was created by analysts within DfE. If you have any comments or suggestions for future updates, please contact the QA team Education.QATEAM@education.gov.uk. This version is based on previous documentation 'VSTS for analysis'.

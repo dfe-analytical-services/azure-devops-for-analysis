@@ -53,11 +53,11 @@ git push -u origin --all <repo_URL>
 
 ## Making Branches
 
-- Work may be assigned to you as a "Work Item". In DevOps use the link to make new branch. To correct a bug, prefix the branch name with "bug/". To add new functionality, prefix the branch name with "feature/".
+- To create a new branch in DevOps, go to repos, click on the drop-down menu next to the current branch name, and click 'New Branch'.
 
-![Some example work items in DevOps.](www/images/chapter4_work_items.png)
+![Creating a new branch in DevOps](www/images/chapter4_new_branch.png)
 
-- Make sure your main branch is up to date.
+- Once the branch has been created, you will have to git pull to pull these changes to your local repository.
 ```sh 
 git pull
 ```
@@ -91,7 +91,7 @@ Repositories usually have either a "main" or a "master" branch. The two terms re
 ::::
 
 - When you've made enough changes to complete your work item checkout the main 
-branch in your local repository and pull in case anyone else had made changes.
+branch in your local repository and git pull in case anyone else had made changes.
 ```sh 
 git checkout main
 ```
@@ -117,7 +117,7 @@ a line of "====" will be from the main branch. Everything from the "====" line
 until ">>>>" will be from your working branch. Work through the code to make sure 
 that you keep all the necessary changes. There may be changes from main and your branch that you want to keep, so don't just idly delete things!
 
-![An example of a merge conflict in DevOps.](www/images/chapter4_merge_conflict.png)
+![An example of a merge conflict in DevOps. Image taken from https://stackoverflow.com/questions/64689623](www/images/chapter4_merge_conflict.png)
 
 Add and commit the changes.
 ```sh 
@@ -147,7 +147,7 @@ git push
 
 Tags effectively label specific Git commits so you can easily find them again in future. In DevOps they show up in the Repos section under Tags. They are valuable if you've produced some outputs and wanted to label the code which produced them for future reference. If you include "/" in your tag names, they will show up in folders on DevOps.
 
-![An example of using tags within a repository.](www/images/chapter4_tags.png)
+![An example of using tags within a repository. Image taken from https://leonardo-matsumota.com](www/images/chapter4_tags.png)
 
 To create a tag on your computer:
 
