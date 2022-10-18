@@ -27,11 +27,11 @@ When you first install Git it is advised to perform some set up steps - they are
 
 First of all type
 ```sh
-git config --global user.name "<Your Name>"
+git config --global user.name "Your Name"
 ```
 and then
 ```sh
-git config --global user.email "<Your Email>"
+git config --global user.email "Your Email"
 ```
 
 This will add your name and email to each commit you make, which will prove useful when collaborating.
