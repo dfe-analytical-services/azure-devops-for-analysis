@@ -45,7 +45,7 @@ Use
 
     git reset --hard <commit-hash>
 
-where `<commit-hash>` is the unique hash of the commit you want to go back to (you can find this via `git log`).
+where `commit-hash` is the unique hash of the commit you want to go back to (you can find this via `git log`).
 
 The `--hard` option in this command means that your working directory and staging area will also be reset, which is usually what you want, but **be careful as you will lose any uncommitted changes when you use this command**.
 
