@@ -1,32 +1,41 @@
 --- 
 title: "Azure DevOps for Analysis"
+author: "Department for Education guidance"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects."
+favicon: www/images/qa_logo.png
 ---
 
-# Preface {-}
+# Preface
 
 ## Overview
 
-This book aims act as a resource for analysts on how and why they should use version control.
+This book acts as a resource for analysts on how Git works, and why it is useful for collaborative working and version control.
 
-It is in the context of the Department for Education Corporate environment and focusses on using Git and Azure DevOps (the departments existing code version control tool of choice). 
+This is in the context of the Department for Education Corporate environment. The documentation focuses on using Git with Azure DevOps (the Department's existing code version control tool of choice). 
 
-R and R Studio are used as code base we are version controlling and IDE and the examples will be a mix of using R studio and the command line. 
+Within this book, we will assume the code base being used is R and R Studio. All examples will be a mix of using R Studio and the command line, however all examples should carry over neatly to other coding languages.
 
 ## Ways of Working
 
 On a high level this resource is advocating a new way of working for analytical projects which can be summarised as follows:
   
-1. **Plan your workload up front** - This will help you not only better understand the project but write less, better code to get the job done.
+1. **Plan your workload up front** - This will help you not only better understand the project but write more efficient code to get the job done.
 
-2. **Take one task at a time** - Focus on one specific item of work at a time (substantial enough that it warrants being its own task but not so large that it's not clear what has changed). Once it's complete ask for review and move onto the next one. e.g. create a script that imports and cleans all of the data sources.
+2. **Take one task at a time** - Focus on one specific item of work at a time (substantial enough that it warrants being its own task but not so large that it's not clear what has changed). Once it's complete, ask for review and move onto the next one. e.g. create a script that imports and cleans all of the data sources.
 
 3. **Collaborate** - Distribute distinct items of work across analysts and bring these together to build the final product and enforce code review when there is a proposal to change the main version of the code.
 
 4. **Do this in a systemised manner** - Utilise the de facto tools for the job so that doing this is not a big overhead and can be effectively managed.
 
+## About this version
+
+This book is intended to be a living document, and will likely evolve over time. This initial version aims to give a basic overview of how to install and use Git and DevOps. More technical aspects of Git, including best practice tips, will be covered in a later version.
+
+The initial version of this work was created by analysts within DfE. If you have any comments or suggestions for future updates, please contact the QA team Education.QATEAM@education.gov.uk. This version is based on previous documentation 'VSTS for analysis'.

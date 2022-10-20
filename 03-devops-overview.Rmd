@@ -32,7 +32,7 @@ Having this central repository and the approval processes that DevOps provides m
 
 The following diagram illustrates the concept of server and local copies. 
 
-![](www/distributed_version_control.png)
+![Visual illustrating the concept of server and local copies. Image taken from https://homes.cs.washington.edu](www/images/chapter3_distributed_version_control.png)
 
 ## Creating a DevOps repository for a new project
 
@@ -42,6 +42,8 @@ To set up a repository on DevOps you need to:
 2. Navigate to repositories.
 3. Find the current repository name at the top of page and click on it to bring up a dropdown menu.
 4. Click "add respository" and give it a suitable name.
+
+![Creating a new repository in Azure DevOps](www/images/chapter3_devops_new_repo.PNG)
 
 This will create you a Git repo on DevOps. By default it will give you a main branch and a README file.
 
@@ -60,14 +62,16 @@ It is easiest to do this by:
 3. Clicking the clone button in the top right-hand corner.
 4. Copying the URL.
 
+![A repository can be cloned from DevOps by clicking the 'Clone' button on the right hand side.](www/images/chapter3_devops_clone_repo.PNG)
+
 Once you have copied the URL, you need to open git bash on your computer and clone the repository using the URL.
 When you open git bash you should do so in the folder where you want the repo to be.
 Ideally this will be on your C drive, outside of OneDrive or Teams, because git repositories don't work well if OneDrive
 or Teams are syncing them.
 There is no need for the additional syncing from OneDrive or Teams because DevOps provides the online back-up that others can access.
-*As long as you push your work regularly and at least once a day*, DevOps provides the back-up and any general rules than work should be on OneDrive or Teams to be backed up do not apply.
+*As long as you push your work regularly and at least once a day*, DevOps provides the back-up and any general rules stating that work should be on OneDrive or Teams to be backed up do not apply.
 
-One you've got git bash open, the clone command will look as follows:
+Once you've got git bash open, the clone command will look as follows:
 
 ```sh
 git clone git_repo_url
@@ -80,7 +84,7 @@ If you are working on EDAP, it is best to clone the repo to your P drive.
 
 If you have already been working on a project locally you may wish to push this up and use this as the starting point for the collaborative workflow.
 
-In this case, create a new repository on DevOps but before you click the "Create" button after giving you repository a name, untick the "Add a README" box. This will give a truly blank repository.
+In this case, create a new repository on DevOps but before you click the "Create" button after giving your repository a name, untick the "Add a README" box. This will give a truly blank repository.
 
 Once you click "Create" you will be take to a screen which says your new repository is empty.
 There will be an option to *Push an existing repository from command line*.
@@ -104,6 +108,8 @@ To add users to a project:
 2. Search for user
 3. Click Add
 
+![You can add users to a project by clicking the invite button](www/images/chapter3_add_to_project.png)
+
 The user will then get a welcome email inviting them to the project.
 
 ## Pull Requests
@@ -124,6 +130,8 @@ The visual interface allows you to:
 
 As a pull request ensures someone reviews your code before it is incorporated into the main/master branch it is a good tool for quality assurance. Having another person look over your code before it is accepted reduces the risk of errors being missed.
 
+![Pull requests facilitate QA by other analysts. Image taken from https://www.atlassian.com/blog/bitbucket/5-pull-request-must-haves](www/images/chapter3_pull_request.png)
+
 A good way of working involves ensuring all code written is reviewed via a pull request at some point.
 This ensures all code is checked and therefore has some QA.
 To facilitate this it is best to keep your main/master branch exclusively for work which has been through a pull request.
@@ -136,12 +144,14 @@ If you are writing a pull request, it is a good idea to include:
 2. Any context to the assumptions you've made whilst doing the work.
 3. A list of specific points that you would like your reviewer to check. This should always include that the code is clear enough and whether it requires further comments.
 
+![An example pull request, showing the ability to add comments and provide feedback on new pieces of code. Image taken from https://www.sonarqube.org/microsoft-azure-devops-integration/](www/images/chapter3_pull_request_example.png)
+
 Once you are happy with the code review that's taken place in a pull request:
 
 1. The person reviewing it approves the request to mark that the review is finished.
 2. The person who wrote the code and set the pull request up "completes" it which performs the merge.
 
-DevOps will delete the branch you were working in (the source branch) once complete the pull request.
+DevOps will delete the branch you were working in (the source branch) once you complete the pull request.
 This is good practice because it keeps the repo tidy.
 Deleting branches after you have merged the work elsewhere does not mean you lose work because all that work is on the branch you've merged to.
 
@@ -159,7 +169,7 @@ If you set any branch policies, changes to main/master have to be made using a p
 
 To set branch policies:
 
-1. Go the the "Branched" page under repos in DevOps. Make sure you are looking at your intended repo by checking the centre top of the page.
+1. Go the the "Branches" page under repos in DevOps. Make sure you are looking at your intended repo by checking the centre top of the page.
 2. Hover your mouse over your main/master branch and click on the three vertical dots that appear at the right hand side of the screen.
 3. Click on "Branch policies" in the menu that appears.
 

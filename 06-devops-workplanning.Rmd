@@ -14,4 +14,4 @@ With **features** you can again add lots of metadata but the most useful will be
 
 There are then numerous ways to visualise work allocations across Azure DevOps ranging from individual task assignments to project boards (similar to trello boards).
 
-By utilsing work items you take out the need for tracking tasks manually.
+By utilising work items you take out the need for tracking tasks manually.

@@ -10,7 +10,7 @@ This section outlines some common issues you may run into, and how to fix them, 
 
 If you've just committed some changes but realised a mistake in them you can "amend" the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.
 
-To amend the the commit, correct the file, add the file in Git and then use this command to combine the correction into the previous commit:
+To amend the commit, correct the file, add the file in Git and then use this command to combine the correction into the previous commit:
 
 ``` sh
 git commit --amend
@@ -45,7 +45,7 @@ Use
 
     git reset --hard <commit-hash>
 
-where <commit-hash> is the unique hash of the commit you want to go back to (you can find this via `git log`).
+where `<commit-hash>` is the unique hash of the commit you want to go back to (you can find this via `git log`).
 
 The `--hard` option in this command means that your working directory and staging area will also be reset, which is usually what you want, but **be careful as you will lose any uncommitted changes when you use this command**.
 
@@ -160,7 +160,7 @@ You can customise the log by adding extra arguments. For example, adding the `--
 git log --oneline
 ```
 
-There are a lot of possible argument to add to the log. This example will show the latest commit on each branch, give a rough branching diagram and put the date in a specified format.
+There are a lot of possible arguments to add to the log. This example will show the latest commit on each branch, give a rough branching diagram and put the date in a specified format.
 
 ``` sh
 git log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
