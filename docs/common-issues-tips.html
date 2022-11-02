@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Common issues &amp; tips | Azure DevOps for Analysis</title>
+  <meta name="description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Common issues &amp; tips | Azure DevOps for Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Common issues &amp; tips | Azure DevOps for Analysis" />
+  
+  <meta name="twitter:description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
+  
+
+<meta name="author" content="Department for Education guidance" />
+
+
+<meta name="date" content="2022-11-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="www/images/qa_logo.png" type="image/x-icon" />
+<link rel="prev" href="overall-workflow.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100821064-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100821064-4');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="www/images/qa_logo.png"></a></li>
+<center><a><font size="3"><b>Azure DevOps for Analysis</b></font></a></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#ways-of-working"><i class="fa fa-check"></i><b>1.2</b> Ways of Working</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-this-version"><i class="fa fa-check"></i><b>1.3</b> About this version</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>2.1</b> Background</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#manual-version-control"><i class="fa fa-check"></i><b>2.2</b> Manual Version Control</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#git"><i class="fa fa-check"></i><b>2.3</b> Git</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#collaboration"><i class="fa fa-check"></i><b>2.4</b> Collaboration</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#azure-devops"><i class="fa fa-check"></i><b>2.5</b> Azure DevOps</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html"><i class="fa fa-check"></i><b>3</b> Version Control Using Git - The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#background-1"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#installing-git"><i class="fa fa-check"></i><b>3.2</b> Installing Git</a></li>
+<li class="chapter" data-level="3.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#opening-git-bash"><i class="fa fa-check"></i><b>3.3</b> Opening Git BASH</a></li>
+<li class="chapter" data-level="3.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-git"><i class="fa fa-check"></i><b>3.4</b> Setting up Git</a></li>
+<li class="chapter" data-level="3.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#navigating-with-git-bash"><i class="fa fa-check"></i><b>3.5</b> Navigating with Git BASH</a></li>
+<li class="chapter" data-level="3.6" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-a-git-repository"><i class="fa fa-check"></i><b>3.6</b> Setting up a Git repository</a></li>
+<li class="chapter" data-level="3.7" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#applying-git-to-a-project"><i class="fa fa-check"></i><b>3.7</b> Applying Git to a Project</a></li>
+<li class="chapter" data-level="3.8" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#adding-and-committing-files"><i class="fa fa-check"></i><b>3.8</b> Adding and committing files</a></li>
+<li class="chapter" data-level="3.9" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#viewing-the-history"><i class="fa fa-check"></i><b>3.9</b> Viewing the history</a></li>
+<li class="chapter" data-level="3.10" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#making-branches"><i class="fa fa-check"></i><b>3.10</b> Making branches</a></li>
+<li class="chapter" data-level="3.11" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merging-branches"><i class="fa fa-check"></i><b>3.11</b> Merging branches</a></li>
+<li class="chapter" data-level="3.12" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#branching-workflow"><i class="fa fa-check"></i><b>3.12</b> Branching Workflow</a></li>
+<li class="chapter" data-level="3.13" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merge-conflicts"><i class="fa fa-check"></i><b>3.13</b> Merge conflicts</a></li>
+<li class="chapter" data-level="3.14" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#gitignore"><i class="fa fa-check"></i><b>3.14</b> .gitignore</a></li>
+<li class="chapter" data-level="3.15" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio"><i class="fa fa-check"></i><b>3.15</b> Working with git in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.15.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-1"><i class="fa fa-check"></i><b>3.15.1</b> Overview</a></li>
+<li class="chapter" data-level="3.15.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#initial-set-up"><i class="fa fa-check"></i><b>3.15.2</b> Initial set-up</a></li>
+<li class="chapter" data-level="3.15.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#cloning-an-existing-project"><i class="fa fa-check"></i><b>3.15.3</b> Cloning an existing project</a></li>
+<li class="chapter" data-level="3.15.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-of-the-rstudio-git-guis"><i class="fa fa-check"></i><b>3.15.4</b> Overview of the RStudio git GUIs</a></li>
+<li class="chapter" data-level="3.15.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#summary"><i class="fa fa-check"></i><b>3.15.5</b> Summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="devops---the-basics.html"><a href="devops---the-basics.html"><i class="fa fa-check"></i><b>4</b> DevOps - The Basics</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#background-2"><i class="fa fa-check"></i><b>4.1</b> Background</a></li>
+<li class="chapter" data-level="4.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#theory"><i class="fa fa-check"></i><b>4.2</b> Theory</a></li>
+<li class="chapter" data-level="4.3" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-devops-repository-for-a-new-project"><i class="fa fa-check"></i><b>4.3</b> Creating a DevOps repository for a new project</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#clone-to-your-computer"><i class="fa fa-check"></i><b>4.3.1</b> Clone to your computer</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-git-repository-for-a-project-youve-been-doing-on-your-computer"><i class="fa fa-check"></i><b>4.4</b> Creating a git repository for a project you’ve been doing on your computer</a></li>
+<li class="chapter" data-level="4.5" data-path="devops---the-basics.html"><a href="devops---the-basics.html#adding-users-to-a-project"><i class="fa fa-check"></i><b>4.5</b> Adding users to a project</a></li>
+<li class="chapter" data-level="4.6" data-path="devops---the-basics.html"><a href="devops---the-basics.html#pull-requests"><i class="fa fa-check"></i><b>4.6</b> Pull Requests</a></li>
+<li class="chapter" data-level="4.7" data-path="devops---the-basics.html"><a href="devops---the-basics.html#branch-policies"><i class="fa fa-check"></i><b>4.7</b> Branch Policies</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#how-to-set-branch-policies"><i class="fa fa-check"></i><b>4.7.1</b> How to set branch policies</a></li>
+<li class="chapter" data-level="4.7.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#the-branch-policy-options"><i class="fa fa-check"></i><b>4.7.2</b> The branch policy options</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="overall-workflow.html"><a href="overall-workflow.html"><i class="fa fa-check"></i><b>5</b> Overall Workflow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="overall-workflow.html"><a href="overall-workflow.html#before-you-start---a-note-on-data-storage"><i class="fa fa-check"></i><b>5.1</b> Before you start - a note on data storage</a></li>
+<li class="chapter" data-level="5.2" data-path="overall-workflow.html"><a href="overall-workflow.html#starting-a-devops-project"><i class="fa fa-check"></i><b>5.2</b> Starting a DevOps project</a></li>
+<li class="chapter" data-level="5.3" data-path="overall-workflow.html"><a href="overall-workflow.html#making-branches-1"><i class="fa fa-check"></i><b>5.3</b> Making Branches</a></li>
+<li class="chapter" data-level="5.4" data-path="overall-workflow.html"><a href="overall-workflow.html#making-changes"><i class="fa fa-check"></i><b>5.4</b> Making Changes</a></li>
+<li class="chapter" data-level="5.5" data-path="overall-workflow.html"><a href="overall-workflow.html#merging"><i class="fa fa-check"></i><b>5.5</b> Merging</a></li>
+<li class="chapter" data-level="5.6" data-path="overall-workflow.html"><a href="overall-workflow.html#getting-your-changes-back-on-to-devops"><i class="fa fa-check"></i><b>5.6</b> Getting your changes back on to DevOps</a></li>
+<li class="chapter" data-level="5.7" data-path="overall-workflow.html"><a href="overall-workflow.html#tags"><i class="fa fa-check"></i><b>5.7</b> Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="common-issues-tips.html"><a href="common-issues-tips.html"><i class="fa fa-check"></i><b>6</b> Common issues &amp; tips</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#common-issues-and-how-to-fix-them"><i class="fa fa-check"></i><b>6.1</b> Common issues and how to fix them</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-realised-i-made-an-error-in-my-commit"><i class="fa fa-check"></i><b>6.1.1</b> I’ve realised I made an error in my commit</a></li>
+<li class="chapter" data-level="6.1.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#reset-revert"><i class="fa fa-check"></i><b>6.1.2</b> I want to go back to an earlier commit</a></li>
+<li class="chapter" data-level="6.1.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-but-havent-committed-yet"><i class="fa fa-check"></i><b>6.1.3</b> I’ve worked on the wrong branch (but haven’t committed yet)</a></li>
+<li class="chapter" data-level="6.1.4" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-and-committed-it"><i class="fa fa-check"></i><b>6.1.4</b> I’ve worked on the wrong branch (and committed it)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#other-tips"><i class="fa fa-check"></i><b>6.2</b> Other tips</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#log-customisation-and-aliases"><i class="fa fa-check"></i><b>6.2.1</b> Log Customisation and Aliases</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#work-items"><i class="fa fa-check"></i><b>6.3</b> Work Items</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Azure DevOps for Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<link href="style.css" rel="stylesheet">
+<div class="hero-image-container">
+  <img class= "hero-image" src="www/images/hero_image.png">
+</div>
+<div id="common-issues-tips" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Common issues &amp; tips<a href="common-issues-tips.html#common-issues-tips" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This section outlines some common issues you may run into, and how to fix them, as well as describing a few useful commands to make Git a little more user friendly.</p>
+<div id="common-issues-and-how-to-fix-them" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Common issues and how to fix them<a href="common-issues-tips.html#common-issues-and-how-to-fix-them" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ive-realised-i-made-an-error-in-my-commit" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> I’ve realised I made an error in my commit<a href="common-issues-tips.html#ive-realised-i-made-an-error-in-my-commit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you’ve just committed some changes but realised a mistake in them you can “amend” the commit. However, this should be done before you push your changes! Things can get complicated if you try amending public commits.</p>
+<p>To amend the commit, correct the file, add the file in Git and then use this command to combine the correction into the previous commit:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb57-1"><a href="common-issues-tips.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span></span></code></pre></div>
+<p>(Technically this combines both commits into a new commit that overwrites the last one).</p>
+<p>If you’ve made a typo in your commit message you can also correct it with amend. Say your last commit looks like this:</p>
+<pre><code>109563e Some User | 2018/01/27 10:44 Added mew featuere</code></pre>
+<p>Adding the <code>-m</code> flag to your amend allows you to add a new comment.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb59-1"><a href="common-issues-tips.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">-m</span> <span class="st">&quot;Added new feature&quot;</span></span></code></pre></div>
+<p>Your history will then look like this:</p>
+<pre><code>23237f1 Some User | 2018/01/27 10:44 Added new feature</code></pre>
+</div>
+<div id="reset-revert" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> I want to go back to an earlier commit<a href="common-issues-tips.html#reset-revert" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You’ve made some changes that didn’t work out for whatever reason, and now want to return your code to an earlier state. There are two ways to do this: <em>reset</em> and <em>revert</em>.</p>
+<div id="reset" class="section level4 hasAnchor" number="6.1.2.1">
+<h4><span class="header-section-number">6.1.2.1</span> Reset<a href="common-issues-tips.html#reset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This option will “roll back” your directory to its earlier state, essentially going back in time and removing any changes since the commit you go back to.</p>
+<p>Use</p>
+<pre><code>git reset --hard &lt;commit-hash&gt;</code></pre>
+<p>where <code>&lt;commit-hash&gt;</code> is the unique hash of the commit you want to go back to (you can find this via <code>git log</code>).</p>
+<p>The <code>--hard</code> option in this command means that your working directory and staging area will also be reset, which is usually what you want, but <strong>be careful as you will lose any uncommitted changes when you use this command</strong>.</p>
+</div>
+<div id="revert" class="section level4 hasAnchor" number="6.1.2.2">
+<h4><span class="header-section-number">6.1.2.2</span> Revert<a href="common-issues-tips.html#revert" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This option keeps all the changes you have made, but adds an extra commit with new changes that <em>reverse</em> the previous changes.</p>
+<p>You will usually want to use</p>
+<pre><code>git revert HEAD</code></pre>
+<p>to revert the most recent commit (which is what the <code>HEAD</code> in this command refers to).</p>
+<p>Reverting anything other than the most recent commit is <strong>not recommended</strong>.</p>
+<p>If you want to revert multiple commits at once, you can use something of the form</p>
+<pre><code>git revert --no-commit HEAD~2^..HEAD</code></pre>
+<p>followed by</p>
+<pre><code>git commit -m &quot;Reverted last three commits&quot;</code></pre>
+<p>Walking through this:</p>
+<ul>
+<li><p>The <code>--no-commit</code> part of the command means that the reversion will change the working directory and staged files, but not yet be committed. (You’ll have seen that we commit it afterwards, which is the usual way to work when reverting multiple commits at once).</p></li>
+<li><p><code>HEAD~2^</code> means the commit two commits before <code>HEAD</code> (and e.g. <code>HEAD~4^</code> would be the commit four commits before <code>HEAD</code>)</p></li>
+<li><p><code>..</code> indicates to include all commits between the two specified</p></li>
+</ul>
+<p>So the first command reverts the most recent commit and the two before it - three commits in all - but only makes those changes in the working directory and staging area rather than committing them. Then the second command is a standard commit command which commits them all with a message.</p>
+</div>
+<div id="when-should-i-use-reset-vs-revert" class="section level4 hasAnchor" number="6.1.2.3">
+<h4><span class="header-section-number">6.1.2.3</span> When should I use reset vs revert?<a href="common-issues-tips.html#when-should-i-use-reset-vs-revert" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The two commands will result in a different git history. With <code>reset</code>, any changes you roll back will not appear, giving a shorter history; with <code>revert</code>, everything that happened will be recorded and the history will be longer. So if it’s not necessary for anyone to know about the rolled back changes, <code>reset</code> is probably better; if you need a record of what happened then <code>revert</code> is probably better.</p>
+<p>There are a few other important considerations too:</p>
+<ul>
+<li><p>You need to be a bit more careful when using <code>reset</code>, as it will erase any uncommitted changes and you’ll be unable to recover them.</p></li>
+<li><p>If any of the changes you want to reverse have been pushed to a remote server, you should use <code>revert</code> so that it’s clear to others that changes have been rolled back. Using <code>reset</code> on a shared history will create confusion because it will not be clear what has happened.</p></li>
+<li><p>You can’t (easily) <code>revert</code> past a merge because it’s unclear which merged branch you want to revert to. <code>reset</code> is easier to use when the history you want to roll back includes a merge.</p></li>
+</ul>
+</div>
+</div>
+<div id="ive-worked-on-the-wrong-branch-but-havent-committed-yet" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> I’ve worked on the wrong branch (but haven’t committed yet)<a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-but-havent-committed-yet" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You’ve made some changes to your code, saved them, but realised that you’ve been working on the wrong branch before committing. Fortunately, this is pretty easy to solve. The <strong>git stash</strong> command is your friend here: it allows you to store all your file changes away since the last commit away, and bring them back where you want - usually on a new branch.</p>
+<p>The commands are: store away any changes with</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb65-1"><a href="common-issues-tips.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash</span></code></pre></div>
+<p>(If you check <code>git status</code> at this point you’ll see that your file changes since your last commit no longer appear.)</p>
+<p>Then switch branch with</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb66-1"><a href="common-issues-tips.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>your_branch<span class="op">&gt;</span></span></code></pre></div>
+<p>and use</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb67-1"><a href="common-issues-tips.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash pop</span></code></pre></div>
+<p>to bring your changes back. That’s it!</p>
+<p>Using the <strong>pop</strong> command does <em>not</em> commit your changes - you have simply moved uncommitted changes from one branch to another - and once you have “popped” your changes they will be removed from the stash.</p>
+<p>Occasionally popping changes from the stash will cause a merge conflict. You can resolve this in the same way as a usual merge conflict by editing the files, and then add the result to your next commit. (Note that when a pop causes a merge conflict, your changes will not be removed from the stash like normal so you will still have access to them if needed.)</p>
+<div class="infoboxred exclamation">
+<div class="infobox-header">
+<p>Using the stash</p>
+</div>
+<p>The git stash can technically hold many different sets of changes at once, but it is <em>not</em> good practice to store anything in the stash long-term. It is a temporary store and should only be used to quickly move changes around when needed.</p>
+</div>
+</div>
+<div id="ive-worked-on-the-wrong-branch-and-committed-it" class="section level3 hasAnchor" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> I’ve worked on the wrong branch (and committed it)<a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-and-committed-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you’ve only realised that you’re working on the wrong branch after committing your code, then you’ll need to do two things. The first is to get the code onto the correct branch, and the second is to remove it from the wrong branch you committed it to.</p>
+<p>If you <strong>forgot to create a new branch</strong>, you can create one now that includes the commits you want using</p>
+<pre><code>git branch &lt;new_branch_name&gt;</code></pre>
+<p>then roll back the current branch as described <a href="common-issues-tips.html#reset-revert">here</a>.</p>
+<p>If you <strong>already created a branch but forgot to switch to it</strong>, you’ll need to move the commits to the correct branch. You can do this by checking out the correct branch and copying the commits to it using <strong>cherry-pick</strong>:</p>
+<pre><code>git checkout &lt;correct_branch&gt;
+git cherry-pick &lt;commit-hash&gt;</code></pre>
+<p>where <code>&lt;commit-hash&gt;</code> is the commit you want to copy over. For multiple commits, you can copy them all over using</p>
+<pre><code>git cherry-pick &lt;commit-hash-1&gt;..&lt;commit-hash-n&gt;</code></pre>
+<p>where <code>&lt;commit-hash-1&gt;</code> is the earliest commit you want to copy and <code>&lt;commit-hash-n&gt;</code> is the most recent. Then check out the branch you accidentally committed them to and roll it back as described <a href="common-issues-tips.html#reset-revert">here</a>.</p>
+</div>
+</div>
+<div id="other-tips" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Other tips<a href="common-issues-tips.html#other-tips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="log-customisation-and-aliases" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Log Customisation and Aliases<a href="common-issues-tips.html#log-customisation-and-aliases" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can customise the log by adding extra arguments. For example, adding the <code>--oneline</code> argument the log is cut down to one line per commit.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb71-1"><a href="common-issues-tips.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div>
+<p>There are a lot of possible arguments to add to the log. This example will show the latest commit on each branch, give a rough branching diagram and put the date in a specified format.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb72-1"><a href="common-issues-tips.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--pretty</span><span class="op">=</span>format:<span class="st">&#39;%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d&#39;</span> <span class="at">--graph</span> <span class="at">--all</span> <span class="at">--date</span><span class="op">=</span>format:<span class="st">&#39;%Y/%m/%d %H:%M&#39;</span></span></code></pre></div>
+<p>All the possible arguments to add to <code>git log</code> are in the documentation <a href="https://www.git-scm.com/docs/git-log">here</a>.</p>
+<p>Eventually you’ll have too many arguments to sensibly type, so you can use an alias. An alias allows you to define a new command based on an old command. You define one like this:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb73-1"><a href="common-issues-tips.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.<span class="op">&lt;</span>your_alias_name<span class="op">&gt;</span> = <span class="op">&lt;</span>your_command<span class="op">&gt;</span></span></code></pre></div>
+<p>After this you can type</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb74-1"><a href="common-issues-tips.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="op">&lt;</span>your_alias_name<span class="op">&gt;</span></span></code></pre></div>
+<p>to carry out the command.</p>
+<p>For example, using the long, customised log from above we can define a new command, “hist”.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb75-1"><a href="common-issues-tips.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.hist = log <span class="at">--pretty</span><span class="op">=</span>format:<span class="st">&#39;%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d&#39;</span> <span class="at">--graph</span> <span class="at">--all</span> <span class="at">--date</span><span class="op">=</span>format:<span class="st">&#39;%Y/%m/%d %H:%M&#39;</span></span></code></pre></div>
+<p>Allowing us to type:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb76-1"><a href="common-issues-tips.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> hist</span></code></pre></div>
+<p>to view a fancy version of the log, without having to type out a huge command!</p>
+
+</div>
+</div>
+<div id="work-items" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Work Items<a href="common-issues-tips.html#work-items" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>DevOps has rich project management functionality that can be used to manage projects of all sizes. At it’s most complex you can utilise a mix of <strong>Epics</strong>, <strong>Stories</strong>, <strong>Features</strong>, <strong>Tasks</strong>, <strong>Issues</strong> and <strong>User stories</strong> to manage your project.</p>
+<p>These terms and planning stages for a project come from software development.</p>
+<p>Instead we recommend treating <strong>features</strong> as the main type of work item and breaking your workload down into a number of features. This is similar to what you would do on GitHub with Issues.</p>
+<p>With <strong>features</strong> you can again add lots of metadata but the most useful will be the following:</p>
+<ol style="list-style-type: decimal">
+<li>Name</li>
+<li>Description</li>
+<li>Assigned to</li>
+</ol>
+<p>There are then numerous ways to visualise work allocations across Azure DevOps ranging from individual task assignments to project boards (similar to trello boards).</p>
+<p>By utilising work items you take out the need for tracking tasks manually.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="overall-workflow.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

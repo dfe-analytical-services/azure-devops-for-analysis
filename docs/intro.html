@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Introduction | Azure DevOps for Analysis</title>
+  <meta name="description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Introduction | Azure DevOps for Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduction | Azure DevOps for Analysis" />
+  
+  <meta name="twitter:description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
+  
+
+<meta name="author" content="Department for Education guidance" />
+
+
+<meta name="date" content="2022-11-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="www/images/qa_logo.png" type="image/x-icon" />
+<link rel="prev" href="index.html"/>
+<link rel="next" href="version-control-using-git---the-basics.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100821064-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100821064-4');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="www/images/qa_logo.png"></a></li>
+<center><a><font size="3"><b>Azure DevOps for Analysis</b></font></a></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#ways-of-working"><i class="fa fa-check"></i><b>1.2</b> Ways of Working</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-this-version"><i class="fa fa-check"></i><b>1.3</b> About this version</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>2.1</b> Background</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#manual-version-control"><i class="fa fa-check"></i><b>2.2</b> Manual Version Control</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#git"><i class="fa fa-check"></i><b>2.3</b> Git</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#collaboration"><i class="fa fa-check"></i><b>2.4</b> Collaboration</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#azure-devops"><i class="fa fa-check"></i><b>2.5</b> Azure DevOps</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html"><i class="fa fa-check"></i><b>3</b> Version Control Using Git - The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#background-1"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#installing-git"><i class="fa fa-check"></i><b>3.2</b> Installing Git</a></li>
+<li class="chapter" data-level="3.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#opening-git-bash"><i class="fa fa-check"></i><b>3.3</b> Opening Git BASH</a></li>
+<li class="chapter" data-level="3.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-git"><i class="fa fa-check"></i><b>3.4</b> Setting up Git</a></li>
+<li class="chapter" data-level="3.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#navigating-with-git-bash"><i class="fa fa-check"></i><b>3.5</b> Navigating with Git BASH</a></li>
+<li class="chapter" data-level="3.6" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-a-git-repository"><i class="fa fa-check"></i><b>3.6</b> Setting up a Git repository</a></li>
+<li class="chapter" data-level="3.7" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#applying-git-to-a-project"><i class="fa fa-check"></i><b>3.7</b> Applying Git to a Project</a></li>
+<li class="chapter" data-level="3.8" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#adding-and-committing-files"><i class="fa fa-check"></i><b>3.8</b> Adding and committing files</a></li>
+<li class="chapter" data-level="3.9" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#viewing-the-history"><i class="fa fa-check"></i><b>3.9</b> Viewing the history</a></li>
+<li class="chapter" data-level="3.10" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#making-branches"><i class="fa fa-check"></i><b>3.10</b> Making branches</a></li>
+<li class="chapter" data-level="3.11" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merging-branches"><i class="fa fa-check"></i><b>3.11</b> Merging branches</a></li>
+<li class="chapter" data-level="3.12" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#branching-workflow"><i class="fa fa-check"></i><b>3.12</b> Branching Workflow</a></li>
+<li class="chapter" data-level="3.13" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merge-conflicts"><i class="fa fa-check"></i><b>3.13</b> Merge conflicts</a></li>
+<li class="chapter" data-level="3.14" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#gitignore"><i class="fa fa-check"></i><b>3.14</b> .gitignore</a></li>
+<li class="chapter" data-level="3.15" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio"><i class="fa fa-check"></i><b>3.15</b> Working with git in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.15.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-1"><i class="fa fa-check"></i><b>3.15.1</b> Overview</a></li>
+<li class="chapter" data-level="3.15.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#initial-set-up"><i class="fa fa-check"></i><b>3.15.2</b> Initial set-up</a></li>
+<li class="chapter" data-level="3.15.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#cloning-an-existing-project"><i class="fa fa-check"></i><b>3.15.3</b> Cloning an existing project</a></li>
+<li class="chapter" data-level="3.15.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-of-the-rstudio-git-guis"><i class="fa fa-check"></i><b>3.15.4</b> Overview of the RStudio git GUIs</a></li>
+<li class="chapter" data-level="3.15.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#summary"><i class="fa fa-check"></i><b>3.15.5</b> Summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="devops---the-basics.html"><a href="devops---the-basics.html"><i class="fa fa-check"></i><b>4</b> DevOps - The Basics</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#background-2"><i class="fa fa-check"></i><b>4.1</b> Background</a></li>
+<li class="chapter" data-level="4.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#theory"><i class="fa fa-check"></i><b>4.2</b> Theory</a></li>
+<li class="chapter" data-level="4.3" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-devops-repository-for-a-new-project"><i class="fa fa-check"></i><b>4.3</b> Creating a DevOps repository for a new project</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#clone-to-your-computer"><i class="fa fa-check"></i><b>4.3.1</b> Clone to your computer</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-git-repository-for-a-project-youve-been-doing-on-your-computer"><i class="fa fa-check"></i><b>4.4</b> Creating a git repository for a project you’ve been doing on your computer</a></li>
+<li class="chapter" data-level="4.5" data-path="devops---the-basics.html"><a href="devops---the-basics.html#adding-users-to-a-project"><i class="fa fa-check"></i><b>4.5</b> Adding users to a project</a></li>
+<li class="chapter" data-level="4.6" data-path="devops---the-basics.html"><a href="devops---the-basics.html#pull-requests"><i class="fa fa-check"></i><b>4.6</b> Pull Requests</a></li>
+<li class="chapter" data-level="4.7" data-path="devops---the-basics.html"><a href="devops---the-basics.html#branch-policies"><i class="fa fa-check"></i><b>4.7</b> Branch Policies</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#how-to-set-branch-policies"><i class="fa fa-check"></i><b>4.7.1</b> How to set branch policies</a></li>
+<li class="chapter" data-level="4.7.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#the-branch-policy-options"><i class="fa fa-check"></i><b>4.7.2</b> The branch policy options</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="overall-workflow.html"><a href="overall-workflow.html"><i class="fa fa-check"></i><b>5</b> Overall Workflow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="overall-workflow.html"><a href="overall-workflow.html#before-you-start---a-note-on-data-storage"><i class="fa fa-check"></i><b>5.1</b> Before you start - a note on data storage</a></li>
+<li class="chapter" data-level="5.2" data-path="overall-workflow.html"><a href="overall-workflow.html#starting-a-devops-project"><i class="fa fa-check"></i><b>5.2</b> Starting a DevOps project</a></li>
+<li class="chapter" data-level="5.3" data-path="overall-workflow.html"><a href="overall-workflow.html#making-branches-1"><i class="fa fa-check"></i><b>5.3</b> Making Branches</a></li>
+<li class="chapter" data-level="5.4" data-path="overall-workflow.html"><a href="overall-workflow.html#making-changes"><i class="fa fa-check"></i><b>5.4</b> Making Changes</a></li>
+<li class="chapter" data-level="5.5" data-path="overall-workflow.html"><a href="overall-workflow.html#merging"><i class="fa fa-check"></i><b>5.5</b> Merging</a></li>
+<li class="chapter" data-level="5.6" data-path="overall-workflow.html"><a href="overall-workflow.html#getting-your-changes-back-on-to-devops"><i class="fa fa-check"></i><b>5.6</b> Getting your changes back on to DevOps</a></li>
+<li class="chapter" data-level="5.7" data-path="overall-workflow.html"><a href="overall-workflow.html#tags"><i class="fa fa-check"></i><b>5.7</b> Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="common-issues-tips.html"><a href="common-issues-tips.html"><i class="fa fa-check"></i><b>6</b> Common issues &amp; tips</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#common-issues-and-how-to-fix-them"><i class="fa fa-check"></i><b>6.1</b> Common issues and how to fix them</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-realised-i-made-an-error-in-my-commit"><i class="fa fa-check"></i><b>6.1.1</b> I’ve realised I made an error in my commit</a></li>
+<li class="chapter" data-level="6.1.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#reset-revert"><i class="fa fa-check"></i><b>6.1.2</b> I want to go back to an earlier commit</a></li>
+<li class="chapter" data-level="6.1.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-but-havent-committed-yet"><i class="fa fa-check"></i><b>6.1.3</b> I’ve worked on the wrong branch (but haven’t committed yet)</a></li>
+<li class="chapter" data-level="6.1.4" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-and-committed-it"><i class="fa fa-check"></i><b>6.1.4</b> I’ve worked on the wrong branch (and committed it)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#other-tips"><i class="fa fa-check"></i><b>6.2</b> Other tips</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#log-customisation-and-aliases"><i class="fa fa-check"></i><b>6.2.1</b> Log Customisation and Aliases</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#work-items"><i class="fa fa-check"></i><b>6.3</b> Work Items</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Azure DevOps for Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<link href="style.css" rel="stylesheet">
+<div class="hero-image-container">
+  <img class= "hero-image" src="www/images/hero_image.png">
+</div>
+<div id="intro" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="background" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Background<a href="intro.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Version control is an important part of any project. It allows you to respond reactively to requests for changes, ensure that you can easily reproduce an earlier iteration and provides an audit trail of what work has been done and the decisions that have been made.</p>
+<p>Most people would recognise this and probably are doing some form of their own version control to ensure they are able to respond, albeit not immediately, to these situations.</p>
+<p>As analytical functions move away from software such as Excel, SPSS, etc. towards fully code-based solutions using languages such as R, Python, SQL, etc. there is a wealth of pre-established expertise that can be lifted from traditional software development practices.</p>
+<p>Git is widely used software for ensuring version control is done in a standardised manner and there are a wealth of applications that allow you easily to adapt its use to your needs.</p>
+</div>
+<div id="manual-version-control" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Manual Version Control<a href="intro.html#manual-version-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Any book illustrating the usefulness of Git will start with an example similar to the following.</p>
+<div class="figure">
+<img src="www/images/chapter1_manual_version_control.png" alt="" />
+<p class="caption">Poor version control involves duplicating files and no standardised naming process.</p>
+</div>
+<p>This approach creates <em>versioned</em> files using suffixes with some sort of convention. This can work if you have a small number of iterations but the following questions need to be answered:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Which is the final version?!</strong> - Despite attempts to use standard naming conventions, you will inevitably reach a stage when you think you have a ‘final’ version, and then another change will come and your previous convention will be broken.</p></li>
+<li><p><strong>What files actually constitute this analysis?</strong> - Folder structure changes over time. Scripts merge, are broken down into subscripts and files that may no longer be needed could be sitting in your folder. For a colleague quality assuring your work or anyone (including yourself) picking this up in the future, this structure is not going to help you as it will be unclear what is really needed.</p></li>
+<li><p><strong>What are the differences between these versions?</strong> - Although these versions have different numbers we can’t easily tell what the difference between them are and would have to manually compare differences to see what’s going on. There is no indication that these are linked to specific items of work.</p></li>
+<li><p><strong>How do you collaborate using this structure?</strong> - Collaborating using this sort of versioning means you are going to have to introduce others to this structure and/or manage the process of adding pieces of code, likely passed across via email. Keeping track of this adds to the challenge.</p></li>
+</ol>
+<p>The main take home points from this is that there are lots of challenges that come with this, and these challenges can take away from the task at hand. The bigger your project grows, the more challenging this will be.</p>
+</div>
+<div id="git" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Git<a href="intro.html#git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Git is the <a href="https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-other-tools">widely used version control system</a> for code development in the world today.</p>
+<p>It is command line software, language agnostic and at its root, just looks at differences between plain text files.</p>
+<p>At its most basic level Git allows the following:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Commits</strong> - Create checkpoints in your code development process that you can go back to if required.</p></li>
+<li><p><strong>Branch</strong> - Create exact replicas of your project folder in which you can try out particular ideas without editing the main version.</p></li>
+<li><p><strong>Merge</strong> - Systematically merge these changes back into the main version of the code.</p></li>
+</ol>
+<div class="figure">
+<img src="www/images/chapter1_branching_diagram.png" alt="" />
+<p class="caption">A diagram to demonstrate branching with Git.</p>
+</div>
+<p>Git has the ability to check the differences between 2 versions. This is invaluable information and means that rather than checking the whole project code at an undetermined time in a project the task becomes:</p>
+<p><em>What changed since the last working version, was that done right and does that change impact anywhere else?</em></p>
+<p><strong>Note:</strong> Git is command line software but many development environments (including RStudio) provide the functionality via the graphical user interface.</p>
+</div>
+<div id="collaboration" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Collaboration<a href="intro.html#collaboration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far we have only looked at local version control. This is great for yourself to go back to previous versions of your work but doesn’t really offer a solution to collaborative coding.</p>
+<p>What is needed is a visual platform where central versions of the code can be stored with the following functionality:</p>
+<ol style="list-style-type: decimal">
+<li><p>Users can take copies of the code on their local machine.</p></li>
+<li><p>Users can make changes to the code locally and submit those changes for review.</p></li>
+<li><p>The review process can be managed and if any changes are required they can be made in a systemised manner.</p></li>
+</ol>
+<p>You can think of these sort of systems as wrappers for Git, where merges into the main version of the code are safeguarded.</p>
+<p>One of the most well known systems for this is <a href="https://github.com">GitHub</a>. GitHub is popular with open source projects because it provides good functionality for sharing code publicly. Additionally, some companies pay for business accounts.</p>
+<p>For the purposes of this book we look at using <a href="https://azure.microsoft.com/en-gb/products/devops/">Azure DevOps</a>. This common tool for enterprise for software development provides us a secure set-up which integrates well with our Windows (AAD) log ins. As such, this should be our collaboration tool of choice for private work. If you are undertaking work which could/should be public, you may wish to consider using GitHub.</p>
+<div class="infoboxblue info">
+<div class="infobox-header">
+<p><strong>Git, GitHub and Azure DevOps (a.k.a. Git is not GitHub)</strong></p>
+</div>
+<p>A common source of confusion is the assumption that Git and GitHub are somehow the same. They are not - although the confusion is understandable given the shared naming.</p>
+<ul>
+<li><p><strong>Git</strong> is <strong><em>version control software</em></strong>. It can either be used to manage code locally on a single machine or, much more commonly, to communicate with and manage code on a remote repository. (Other version control software exists, but is not used within DfE)</p></li>
+<li><p><strong>GitHub</strong> is <strong><em>a remote repository and code collaboration tool</em></strong>. It can be communicated with via Git to act as a central code store for a project.</p></li>
+<li><p><strong>Azure DevOps</strong> is <strong><em>a remote repository and code collaboration tool</em></strong>. It can be communicated with via Git to act as a central code store for a project.</p></li>
+</ul>
+<p>Put another way, Azure DevOps and GitHub do the same job. Git does a different job, and can interact with either of them. In DfE, we use the combination of Git and Azure DevOps by default, although Git and GitHub will sometimes be used where appropriate.</p>
+<p>The most important difference between Azure DevOps and Github is that the former is hosted on a private DfE server and access can be controlled; the latter is hosted on public servers and, by default, code hosted there is publically available.</p>
+</div>
+</div>
+<div id="azure-devops" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Azure DevOps<a href="intro.html#azure-devops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Azure DevOps (DevOps) is a code collaboration tool for managing projects consisting of multiple developers.</p>
+<p>DevOps is code agnostic. Although not aimed at R directly, it does provide the functionality to manage any Git-controlled project effectively.</p>
+<p>On top of this, it provides project management functionality that, when coupled with a Git workflow, encourages well planned and executed projects, where each commit is a specific item of work. This functionality is optional but is encouraged.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="version-control-using-git---the-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
