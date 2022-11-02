@@ -1,5 +1,5 @@
 Package: placeholder
-Title: VSTS for Analysis
+Title: Azure DevOps for Analysis
 Version: 0.0.1
 Imports:
   bookdown (>= 0.6)
@@ -14,6 +14,6 @@ BugReports: https://github.com/dfe-analytical-serices/vsts-for-analysis/issues
 Authors@R: c(
     person("Adam", "Robinson", email = "adam.robinson@education.gov.uk", role = c("aut", "cre")),
     person("Zach", "Waller", email = "zachary.waller@education.gov.uk", role = c("aut", "cre")))
-Description: An introduction to using Git and VSTS for Analytical Projects
+Description: An introduction to using Git and Azure DevOps for Analytical Projects
 License: MIT + file LICENSE
 LazyData: TRUE
