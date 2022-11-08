@@ -179,7 +179,7 @@ So far we've just been working on the "master" branch, which you can think of as
 
 **"master" branch vs "main" branch**
 
-We have just referred to the "master" branch. Whilst this is still the git default, conventions are moving towards use of "main" branch instead of "master" branch. Unlike the word master, the word main does not have negative association with the slave trade.
+We have just referred to the "master" branch. Whilst this is still the git default, conventions are moving towards use of "main" branch instead of "master" branch.
 
 This guide will refer to the "master" branch for specific examples where consistency with the git default is important and the "main" branch in other circumstances.
 Note the two terms refer to the same thing but they are not interchangeable.
