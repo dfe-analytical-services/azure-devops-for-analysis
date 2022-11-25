@@ -38,4 +38,6 @@ On a high level this resource is advocating a new way of working for analytical 
 
 This book is intended to be a living document, and will likely evolve over time. This initial version aims to give a basic overview of how to install and use Git and DevOps. More technical aspects of Git, including best practice tips, will be covered in a later version.
 
-The initial version of this work was created by analysts within DfE. If you have any comments or suggestions for future updates, please contact the QA team Education.QATEAM@education.gov.uk. This version is based on previous documentation 'VSTS for analysis'.
+The initial version of this work was created by analysts within DfE. We would love to hear your feedback - please provide any comments here [Feedback form](https://forms.office.com/r/WsRg4tjwUR).
+
+Alternatively, you can contact the QA team Education.QATEAM@education.gov.uk. This version is based on previous documentation 'VSTS for analysis'.
