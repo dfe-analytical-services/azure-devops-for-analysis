@@ -185,7 +185,7 @@ to carry out the command.
 For example, using the long, customised log from above we can define a new command, "hist".
 
 ``` sh
-git config --global alias.hist = log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'
+git config --global alias.hist "log --pretty=format:'%C(yellow)%h%Creset %an| %Cgreen%cd%Creset %s %C(cyan)%d' --graph --all --date=format:'%Y/%m/%d %H:%M'"
 ```
 
 Allowing us to type:
