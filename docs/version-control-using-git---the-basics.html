@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Version Control Using Git - The Basics | Azure DevOps for Analysis</title>
+  <title>Chapter 4 Version Control Using Git - The Basics | Azure DevOps for Analysis</title>
   <meta name="description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Version Control Using Git - The Basics | Azure DevOps for Analysis" />
+  <meta property="og:title" content="Chapter 4 Version Control Using Git - The Basics | Azure DevOps for Analysis" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Version Control Using Git - The Basics | Azure DevOps for Analysis" />
+  <meta name="twitter:title" content="Chapter 4 Version Control Using Git - The Basics | Azure DevOps for Analysis" />
   
   <meta name="twitter:description" content="This is a learning resource for using Git and Azure DevOps (DevOps) for managing Analytical Projects." />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Department for Education guidance" />
 
 
-<meta name="date" content="2022-11-25" />
+<meta name="date" content="2023-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="www/images/qa_logo.png" type="image/x-icon" />
-<link rel="prev" href="intro.html"/>
+<link rel="prev" href="why.html"/>
 <link rel="next" href="devops---the-basics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -128,6 +128,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -146,11 +150,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center><a><font size="3"><b>Azure DevOps for Analysis</b></font></a></center>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a>
+<li class="chapter" data-level="1" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i><b>1</b> Preface</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#ways-of-working"><i class="fa fa-check"></i><b>1.2</b> Ways of Working</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-this-version"><i class="fa fa-check"></i><b>1.3</b> About this version</a></li>
+<li class="chapter" data-level="1.1" data-path="preface.html"><a href="preface.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="preface.html"><a href="preface.html#ways-of-working"><i class="fa fa-check"></i><b>1.2</b> Ways of Working</a></li>
+<li class="chapter" data-level="1.3" data-path="preface.html"><a href="preface.html#about-this-version"><i class="fa fa-check"></i><b>1.3</b> About this version</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
 <ul>
@@ -160,72 +164,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#collaboration"><i class="fa fa-check"></i><b>2.4</b> Collaboration</a></li>
 <li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#azure-devops"><i class="fa fa-check"></i><b>2.5</b> Azure DevOps</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html"><i class="fa fa-check"></i><b>3</b> Version Control Using Git - The Basics</a>
+<li class="chapter" data-level="3" data-path="why.html"><a href="why.html"><i class="fa fa-check"></i><b>3</b> Why is it important?</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#background-1"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
-<li class="chapter" data-level="3.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#installing-git"><i class="fa fa-check"></i><b>3.2</b> Installing Git</a></li>
-<li class="chapter" data-level="3.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#opening-git-bash"><i class="fa fa-check"></i><b>3.3</b> Opening Git BASH</a></li>
-<li class="chapter" data-level="3.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-git"><i class="fa fa-check"></i><b>3.4</b> Setting up Git</a></li>
-<li class="chapter" data-level="3.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#navigating-with-git-bash"><i class="fa fa-check"></i><b>3.5</b> Navigating with Git BASH</a></li>
-<li class="chapter" data-level="3.6" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-a-git-repository"><i class="fa fa-check"></i><b>3.6</b> Setting up a Git repository</a></li>
-<li class="chapter" data-level="3.7" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#applying-git-to-a-project"><i class="fa fa-check"></i><b>3.7</b> Applying Git to a Project</a></li>
-<li class="chapter" data-level="3.8" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#adding-and-committing-files"><i class="fa fa-check"></i><b>3.8</b> Adding and committing files</a></li>
-<li class="chapter" data-level="3.9" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#viewing-the-history"><i class="fa fa-check"></i><b>3.9</b> Viewing the history</a></li>
-<li class="chapter" data-level="3.10" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#making-branches"><i class="fa fa-check"></i><b>3.10</b> Making branches</a></li>
-<li class="chapter" data-level="3.11" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merging-branches"><i class="fa fa-check"></i><b>3.11</b> Merging branches</a></li>
-<li class="chapter" data-level="3.12" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#branching-workflow"><i class="fa fa-check"></i><b>3.12</b> Branching Workflow</a></li>
-<li class="chapter" data-level="3.13" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merge-conflicts"><i class="fa fa-check"></i><b>3.13</b> Merge conflicts</a></li>
-<li class="chapter" data-level="3.14" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#gitignore"><i class="fa fa-check"></i><b>3.14</b> .gitignore</a></li>
-<li class="chapter" data-level="3.15" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio"><i class="fa fa-check"></i><b>3.15</b> Working with git in RStudio</a>
+<li class="chapter" data-level="3.1" data-path="why.html"><a href="why.html#collaboration-1"><i class="fa fa-check"></i><b>3.1</b> Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="why.html"><a href="why.html#branching"><i class="fa fa-check"></i><b>3.2</b> Branching</a></li>
+<li class="chapter" data-level="3.3" data-path="why.html"><a href="why.html#version-control"><i class="fa fa-check"></i><b>3.3</b> Version Control</a></li>
+<li class="chapter" data-level="3.4" data-path="why.html"><a href="why.html#audit-trails-and-accountability"><i class="fa fa-check"></i><b>3.4</b> Audit trails and accountability</a></li>
+<li class="chapter" data-level="3.5" data-path="why.html"><a href="why.html#disaster-recovery"><i class="fa fa-check"></i><b>3.5</b> Disaster recovery</a></li>
+<li class="chapter" data-level="3.6" data-path="why.html"><a href="why.html#skill-development"><i class="fa fa-check"></i><b>3.6</b> Skill Development</a></li>
+<li class="chapter" data-level="3.7" data-path="why.html"><a href="why.html#knowledge-loss-high-turnover"><i class="fa fa-check"></i><b>3.7</b> Knowledge-loss &amp; high turnover</a></li>
+<li class="chapter" data-level="3.8" data-path="why.html"><a href="why.html#summary"><i class="fa fa-check"></i><b>3.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html"><i class="fa fa-check"></i><b>4</b> Version Control Using Git - The Basics</a>
 <ul>
-<li class="chapter" data-level="3.15.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-1"><i class="fa fa-check"></i><b>3.15.1</b> Overview</a></li>
-<li class="chapter" data-level="3.15.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#initial-set-up"><i class="fa fa-check"></i><b>3.15.2</b> Initial set-up</a></li>
-<li class="chapter" data-level="3.15.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#cloning-an-existing-project"><i class="fa fa-check"></i><b>3.15.3</b> Cloning an existing project</a></li>
-<li class="chapter" data-level="3.15.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-of-the-rstudio-git-guis"><i class="fa fa-check"></i><b>3.15.4</b> Overview of the RStudio git GUIs</a></li>
-<li class="chapter" data-level="3.15.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#summary"><i class="fa fa-check"></i><b>3.15.5</b> Summary</a></li>
+<li class="chapter" data-level="4.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#background-1"><i class="fa fa-check"></i><b>4.1</b> Background</a></li>
+<li class="chapter" data-level="4.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#installing-git"><i class="fa fa-check"></i><b>4.2</b> Installing Git</a></li>
+<li class="chapter" data-level="4.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#opening-git-bash"><i class="fa fa-check"></i><b>4.3</b> Opening Git BASH</a></li>
+<li class="chapter" data-level="4.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-git"><i class="fa fa-check"></i><b>4.4</b> Setting up Git</a></li>
+<li class="chapter" data-level="4.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#navigating-with-git-bash"><i class="fa fa-check"></i><b>4.5</b> Navigating with Git BASH</a></li>
+<li class="chapter" data-level="4.6" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#setting-up-a-git-repository"><i class="fa fa-check"></i><b>4.6</b> Setting up a Git repository</a></li>
+<li class="chapter" data-level="4.7" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#applying-git-to-a-project"><i class="fa fa-check"></i><b>4.7</b> Applying Git to a Project</a></li>
+<li class="chapter" data-level="4.8" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#adding-and-committing-files"><i class="fa fa-check"></i><b>4.8</b> Adding and committing files</a></li>
+<li class="chapter" data-level="4.9" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#viewing-the-history"><i class="fa fa-check"></i><b>4.9</b> Viewing the history</a></li>
+<li class="chapter" data-level="4.10" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#making-branches"><i class="fa fa-check"></i><b>4.10</b> Making branches</a></li>
+<li class="chapter" data-level="4.11" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merging-branches"><i class="fa fa-check"></i><b>4.11</b> Merging branches</a></li>
+<li class="chapter" data-level="4.12" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#branching-workflow"><i class="fa fa-check"></i><b>4.12</b> Branching Workflow</a></li>
+<li class="chapter" data-level="4.13" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#merge-conflicts"><i class="fa fa-check"></i><b>4.13</b> Merge conflicts</a></li>
+<li class="chapter" data-level="4.14" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#gitignore"><i class="fa fa-check"></i><b>4.14</b> .gitignore</a></li>
+<li class="chapter" data-level="4.15" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio"><i class="fa fa-check"></i><b>4.15</b> Working with git in RStudio</a>
+<ul>
+<li class="chapter" data-level="4.15.1" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-1"><i class="fa fa-check"></i><b>4.15.1</b> Overview</a></li>
+<li class="chapter" data-level="4.15.2" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#initial-set-up"><i class="fa fa-check"></i><b>4.15.2</b> Initial set-up</a></li>
+<li class="chapter" data-level="4.15.3" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#cloning-an-existing-project"><i class="fa fa-check"></i><b>4.15.3</b> Cloning an existing project</a></li>
+<li class="chapter" data-level="4.15.4" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#overview-of-the-rstudio-git-guis"><i class="fa fa-check"></i><b>4.15.4</b> Overview of the RStudio git GUIs</a></li>
+<li class="chapter" data-level="4.15.5" data-path="version-control-using-git---the-basics.html"><a href="version-control-using-git---the-basics.html#summary-1"><i class="fa fa-check"></i><b>4.15.5</b> Summary</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="devops---the-basics.html"><a href="devops---the-basics.html"><i class="fa fa-check"></i><b>4</b> DevOps - The Basics</a>
+<li class="chapter" data-level="5" data-path="devops---the-basics.html"><a href="devops---the-basics.html"><i class="fa fa-check"></i><b>5</b> DevOps - The Basics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#background-2"><i class="fa fa-check"></i><b>4.1</b> Background</a></li>
-<li class="chapter" data-level="4.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#theory"><i class="fa fa-check"></i><b>4.2</b> Theory</a></li>
-<li class="chapter" data-level="4.3" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-devops-repository-for-a-new-project"><i class="fa fa-check"></i><b>4.3</b> Creating a DevOps repository for a new project</a>
+<li class="chapter" data-level="5.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#background-2"><i class="fa fa-check"></i><b>5.1</b> Background</a></li>
+<li class="chapter" data-level="5.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#theory"><i class="fa fa-check"></i><b>5.2</b> Theory</a></li>
+<li class="chapter" data-level="5.3" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-devops-repository-for-a-new-project"><i class="fa fa-check"></i><b>5.3</b> Creating a DevOps repository for a new project</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#clone-to-your-computer"><i class="fa fa-check"></i><b>4.3.1</b> Clone to your computer</a></li>
+<li class="chapter" data-level="5.3.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#clone-to-your-computer"><i class="fa fa-check"></i><b>5.3.1</b> Clone to your computer</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-git-repository-for-a-project-youve-been-doing-on-your-computer"><i class="fa fa-check"></i><b>4.4</b> Creating a git repository for a project you’ve been doing on your computer</a></li>
-<li class="chapter" data-level="4.5" data-path="devops---the-basics.html"><a href="devops---the-basics.html#adding-users-to-a-project"><i class="fa fa-check"></i><b>4.5</b> Adding users to a project</a></li>
-<li class="chapter" data-level="4.6" data-path="devops---the-basics.html"><a href="devops---the-basics.html#pull-requests"><i class="fa fa-check"></i><b>4.6</b> Pull Requests</a></li>
-<li class="chapter" data-level="4.7" data-path="devops---the-basics.html"><a href="devops---the-basics.html#branch-policies"><i class="fa fa-check"></i><b>4.7</b> Branch Policies</a>
+<li class="chapter" data-level="5.4" data-path="devops---the-basics.html"><a href="devops---the-basics.html#creating-a-git-repository-for-a-project-youve-been-doing-on-your-computer"><i class="fa fa-check"></i><b>5.4</b> Creating a git repository for a project you’ve been doing on your computer</a></li>
+<li class="chapter" data-level="5.5" data-path="devops---the-basics.html"><a href="devops---the-basics.html#adding-users-to-a-project"><i class="fa fa-check"></i><b>5.5</b> Adding users to a project</a></li>
+<li class="chapter" data-level="5.6" data-path="devops---the-basics.html"><a href="devops---the-basics.html#pull-requests"><i class="fa fa-check"></i><b>5.6</b> Pull Requests</a></li>
+<li class="chapter" data-level="5.7" data-path="devops---the-basics.html"><a href="devops---the-basics.html#branch-policies"><i class="fa fa-check"></i><b>5.7</b> Branch Policies</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#how-to-set-branch-policies"><i class="fa fa-check"></i><b>4.7.1</b> How to set branch policies</a></li>
-<li class="chapter" data-level="4.7.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#the-branch-policy-options"><i class="fa fa-check"></i><b>4.7.2</b> The branch policy options</a></li>
+<li class="chapter" data-level="5.7.1" data-path="devops---the-basics.html"><a href="devops---the-basics.html#how-to-set-branch-policies"><i class="fa fa-check"></i><b>5.7.1</b> How to set branch policies</a></li>
+<li class="chapter" data-level="5.7.2" data-path="devops---the-basics.html"><a href="devops---the-basics.html#the-branch-policy-options"><i class="fa fa-check"></i><b>5.7.2</b> The branch policy options</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="overall-workflow.html"><a href="overall-workflow.html"><i class="fa fa-check"></i><b>5</b> Overall Workflow</a>
+<li class="chapter" data-level="6" data-path="overall-workflow.html"><a href="overall-workflow.html"><i class="fa fa-check"></i><b>6</b> Overall Workflow</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="overall-workflow.html"><a href="overall-workflow.html#before-you-start---a-note-on-data-storage"><i class="fa fa-check"></i><b>5.1</b> Before you start - a note on data storage</a></li>
-<li class="chapter" data-level="5.2" data-path="overall-workflow.html"><a href="overall-workflow.html#starting-a-devops-project"><i class="fa fa-check"></i><b>5.2</b> Starting a DevOps project</a></li>
-<li class="chapter" data-level="5.3" data-path="overall-workflow.html"><a href="overall-workflow.html#making-branches-1"><i class="fa fa-check"></i><b>5.3</b> Making Branches</a></li>
-<li class="chapter" data-level="5.4" data-path="overall-workflow.html"><a href="overall-workflow.html#making-changes"><i class="fa fa-check"></i><b>5.4</b> Making Changes</a></li>
-<li class="chapter" data-level="5.5" data-path="overall-workflow.html"><a href="overall-workflow.html#merging"><i class="fa fa-check"></i><b>5.5</b> Merging</a></li>
-<li class="chapter" data-level="5.6" data-path="overall-workflow.html"><a href="overall-workflow.html#getting-your-changes-back-on-to-devops"><i class="fa fa-check"></i><b>5.6</b> Getting your changes back on to DevOps</a></li>
-<li class="chapter" data-level="5.7" data-path="overall-workflow.html"><a href="overall-workflow.html#tags"><i class="fa fa-check"></i><b>5.7</b> Tags</a></li>
+<li class="chapter" data-level="6.1" data-path="overall-workflow.html"><a href="overall-workflow.html#before-you-start---a-note-on-data-storage"><i class="fa fa-check"></i><b>6.1</b> Before you start - a note on data storage</a></li>
+<li class="chapter" data-level="6.2" data-path="overall-workflow.html"><a href="overall-workflow.html#starting-a-devops-project"><i class="fa fa-check"></i><b>6.2</b> Starting a DevOps project</a></li>
+<li class="chapter" data-level="6.3" data-path="overall-workflow.html"><a href="overall-workflow.html#making-branches-1"><i class="fa fa-check"></i><b>6.3</b> Making Branches</a></li>
+<li class="chapter" data-level="6.4" data-path="overall-workflow.html"><a href="overall-workflow.html#making-changes"><i class="fa fa-check"></i><b>6.4</b> Making Changes</a></li>
+<li class="chapter" data-level="6.5" data-path="overall-workflow.html"><a href="overall-workflow.html#merging"><i class="fa fa-check"></i><b>6.5</b> Merging</a></li>
+<li class="chapter" data-level="6.6" data-path="overall-workflow.html"><a href="overall-workflow.html#getting-your-changes-back-on-to-devops"><i class="fa fa-check"></i><b>6.6</b> Getting your changes back on to DevOps</a></li>
+<li class="chapter" data-level="6.7" data-path="overall-workflow.html"><a href="overall-workflow.html#tags"><i class="fa fa-check"></i><b>6.7</b> Tags</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="common-issues-tips.html"><a href="common-issues-tips.html"><i class="fa fa-check"></i><b>6</b> Common issues &amp; tips</a>
+<li class="chapter" data-level="7" data-path="common-issues-tips.html"><a href="common-issues-tips.html"><i class="fa fa-check"></i><b>7</b> Common issues &amp; tips</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#common-issues-and-how-to-fix-them"><i class="fa fa-check"></i><b>6.1</b> Common issues and how to fix them</a>
+<li class="chapter" data-level="7.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#common-issues-and-how-to-fix-them"><i class="fa fa-check"></i><b>7.1</b> Common issues and how to fix them</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-realised-i-made-an-error-in-my-commit"><i class="fa fa-check"></i><b>6.1.1</b> I’ve realised I made an error in my commit</a></li>
-<li class="chapter" data-level="6.1.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#reset-revert"><i class="fa fa-check"></i><b>6.1.2</b> I want to go back to an earlier commit</a></li>
-<li class="chapter" data-level="6.1.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-but-havent-committed-yet"><i class="fa fa-check"></i><b>6.1.3</b> I’ve worked on the wrong branch (but haven’t committed yet)</a></li>
-<li class="chapter" data-level="6.1.4" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-and-committed-it"><i class="fa fa-check"></i><b>6.1.4</b> I’ve worked on the wrong branch (and committed it)</a></li>
+<li class="chapter" data-level="7.1.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-realised-i-made-an-error-in-my-commit"><i class="fa fa-check"></i><b>7.1.1</b> I’ve realised I made an error in my commit</a></li>
+<li class="chapter" data-level="7.1.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#reset-revert"><i class="fa fa-check"></i><b>7.1.2</b> I want to go back to an earlier commit</a></li>
+<li class="chapter" data-level="7.1.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-but-havent-committed-yet"><i class="fa fa-check"></i><b>7.1.3</b> I’ve worked on the wrong branch (but haven’t committed yet)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="common-issues-tips.html"><a href="common-issues-tips.html#ive-worked-on-the-wrong-branch-and-committed-it"><i class="fa fa-check"></i><b>7.1.4</b> I’ve worked on the wrong branch (and committed it)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#other-tips"><i class="fa fa-check"></i><b>6.2</b> Other tips</a>
+<li class="chapter" data-level="7.2" data-path="common-issues-tips.html"><a href="common-issues-tips.html#other-tips"><i class="fa fa-check"></i><b>7.2</b> Other tips</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#log-customisation-and-aliases"><i class="fa fa-check"></i><b>6.2.1</b> Log Customisation and Aliases</a></li>
+<li class="chapter" data-level="7.2.1" data-path="common-issues-tips.html"><a href="common-issues-tips.html#log-customisation-and-aliases"><i class="fa fa-check"></i><b>7.2.1</b> Log Customisation and Aliases</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#work-items"><i class="fa fa-check"></i><b>6.3</b> Work Items</a></li>
+<li class="chapter" data-level="7.3" data-path="common-issues-tips.html"><a href="common-issues-tips.html#work-items"><i class="fa fa-check"></i><b>7.3</b> Work Items</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -250,77 +265,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container">
   <img class= "hero-image" src="www/images/hero_image.png">
 </div>
-<div id="version-control-using-git---the-basics" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Version Control Using Git - The Basics<a href="version-control-using-git---the-basics.html#version-control-using-git---the-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="background-1" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Background<a href="version-control-using-git---the-basics.html#background-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="version-control-using-git---the-basics" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Version Control Using Git - The Basics<a href="version-control-using-git---the-basics.html#version-control-using-git---the-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="background-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Background<a href="version-control-using-git---the-basics.html#background-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Git is a program used to version control your files - it can be used for any files, but works best for flat text files (anything that you can open in Notepad that will show actual text - .txt, .csv, .sql, .R, .Rmd etc.) instead of binary files (anything that shows gibberish when opened in Notepad - .docx, .xlsx etc.).</p>
 <p>There are many ways to use Git, but they fall into two main categories, command line and graphical user interface (GUI). Command line interfaces of Git look like the Windows Command Prompt (or Terminal on Mac). By default the Git installation includes a command line interface called Git BASH that you can use Git from. BASH is a command line interface originally for Unix based operating systems that uses a slightly different syntax to the Windows Command Prompt.</p>
 <p>Once installed, you can also use Git from Command Prompt or Powershell, but Git BASH has a helpful colour scheme that highlights important Git features and more intuitive commands.</p>
 <p>If you would prefer to use a GUI you can choose to install one when installing Git. You can also use RStudio, Sourcetree or a whole host of other GUIs with Git. GUIs can be used by pointing and clicking, whereas the command line involves memorising some commands. Despite this, this tutorial will use the command line - Git BASH specifically. This is because the command line is the most versatile interface (it will get you out of trouble when things mess up!) and, once you learn the command line, you’ll be able to apply your skills to any GUI pretty easily.</p>
 <p>There’s some specific guidance on using RStudio to manage your git repositories <a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio">further down in this chapter</a>.</p>
 </div>
-<div id="installing-git" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Installing Git<a href="version-control-using-git---the-basics.html#installing-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="installing-git" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Installing Git<a href="version-control-using-git---the-basics.html#installing-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can download Git from here <a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a> by clicking on your operating system of choice. Once downloaded, open up the installer and follow it through - the default settings should be fine.</p>
 </div>
-<div id="opening-git-bash" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Opening Git BASH<a href="version-control-using-git---the-basics.html#opening-git-bash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="opening-git-bash" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Opening Git BASH<a href="version-control-using-git---the-basics.html#opening-git-bash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can open up Git BASH from File Explorer by right clicking in a folder and clicking “Git Bash Here”. This will open up a black command window with coloured text. The folder you opened Git BASH in will appear in first line of text - this is the folder that Git is “pointed” at.</p>
 <p>You run commands in Git BASH by typing them in and pressing enter.</p>
 </div>
-<div id="setting-up-git" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Setting up Git<a href="version-control-using-git---the-basics.html#setting-up-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="setting-up-git" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Setting up Git<a href="version-control-using-git---the-basics.html#setting-up-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When you first install Git it is advised to perform some set up steps - they aren’t necessary, but will be useful.</p>
 <p>First of all type</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="version-control-using-git---the-basics.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Your Name&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="version-control-using-git---the-basics.html#cb1-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Your Name&quot;</span></span></code></pre></div>
 <p>and then</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="version-control-using-git---the-basics.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;Your Email&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="version-control-using-git---the-basics.html#cb2-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;Your Email&quot;</span></span></code></pre></div>
 <p>This will add your name and email to each commit you make, which will prove useful when collaborating.</p>
 <p>You can also set the default text editor to Notepad by copying in</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="version-control-using-git---the-basics.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">&quot;C:Windows/system32/notepad.exe&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="version-control-using-git---the-basics.html#cb3-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">&quot;C:Windows/system32/notepad.exe&quot;</span></span></code></pre></div>
 <p>Or, if you have Notepad++ installed you could use that instead by copying in</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="version-control-using-git---the-basics.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">&quot;&#39;C:/Program Files (x86)/Notepad++/notepad++.exe&#39; -multiInst -notabbar -nosession -noPlugin&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="version-control-using-git---the-basics.html#cb4-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">&quot;&#39;C:/Program Files (x86)/Notepad++/notepad++.exe&#39; -multiInst -notabbar -nosession -noPlugin&quot;</span></span></code></pre></div>
 <p>Note, Ctrl+C and Ctrl+V don’t work for copy/pasting in Git BASH, but you can still right click to copy/paste.</p>
 </div>
-<div id="navigating-with-git-bash" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Navigating with Git BASH<a href="version-control-using-git---the-basics.html#navigating-with-git-bash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="navigating-with-git-bash" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Navigating with Git BASH<a href="version-control-using-git---the-basics.html#navigating-with-git-bash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once in Git you can navigate through folders from the command line. Typing</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="version-control-using-git---the-basics.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>path<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="version-control-using-git---the-basics.html#cb5-1" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>path<span class="op">&gt;</span></span></code></pre></div>
 <p>and pressing enter will navigate to a folder path of your choice. Use doubles quotes for files paths with spaces in. You can use</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="version-control-using-git---the-basics.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="version-control-using-git---the-basics.html#cb6-1" tabindex="-1"></a><span class="bu">cd</span> ..</span></code></pre></div>
 <p>to move “up” one folder and</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="version-control-using-git---the-basics.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="version-control-using-git---the-basics.html#cb7-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 <p>to list everything in your current folder.</p>
 <p>When navigating with Git BASH you can press TAB to autocomplete the name of a folder or file.</p>
 </div>
-<div id="setting-up-a-git-repository" class="section level2 hasAnchor" number="3.6">
-<h2><span class="header-section-number">3.6</span> Setting up a Git repository<a href="version-control-using-git---the-basics.html#setting-up-a-git-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="setting-up-a-git-repository" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Setting up a Git repository<a href="version-control-using-git---the-basics.html#setting-up-a-git-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A Git repository is simply a folder that Git is tracking the changes in - it looks just like any other folder in File Explorer, but in Git BASH there will be some text after the file path. Open Git in a folder you would like to make a project in.</p>
 <p>Next type:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="version-control-using-git---the-basics.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="version-control-using-git---the-basics.html#cb8-1" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre></div>
 <p>This will turn this normal folder into a Git Repository - some text saying “master” will appear after the file path. This folder is now ready to start a version controlled project!</p>
 </div>
-<div id="applying-git-to-a-project" class="section level2 hasAnchor" number="3.7">
-<h2><span class="header-section-number">3.7</span> Applying Git to a Project<a href="version-control-using-git---the-basics.html#applying-git-to-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="applying-git-to-a-project" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Applying Git to a Project<a href="version-control-using-git---the-basics.html#applying-git-to-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s make a toy R project that we can version control. Make an R project in the same folder as the Git repository from above. The folder will now have an .Rproj file and a .gitignore file (we’ll get to this later).</p>
 <p>Let’s create some code to plot the stopping distance of cars at different speeds - this data is pre-installed in a data set called “cars”.</p>
 <p>The code should look something like this:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="version-control-using-git---the-basics.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb9-2"><a href="version-control-using-git---the-basics.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="version-control-using-git---the-basics.html#cb9-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> cars</span>
-<span id="cb9-4"><a href="version-control-using-git---the-basics.html#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="version-control-using-git---the-basics.html#cb9-5" aria-hidden="true" tabindex="-1"></a>cars_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data,</span>
-<span id="cb9-6"><a href="version-control-using-git---the-basics.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> speed, <span class="at">y =</span> dist)) <span class="sc">+</span></span>
-<span id="cb9-7"><a href="version-control-using-git---the-basics.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb9-8"><a href="version-control-using-git---the-basics.html#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="version-control-using-git---the-basics.html#cb9-9" aria-hidden="true" tabindex="-1"></a>cars_plot</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="version-control-using-git---the-basics.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-2"><a href="version-control-using-git---the-basics.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="version-control-using-git---the-basics.html#cb9-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> cars</span>
+<span id="cb9-4"><a href="version-control-using-git---the-basics.html#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="version-control-using-git---the-basics.html#cb9-5" tabindex="-1"></a>cars_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data,</span>
+<span id="cb9-6"><a href="version-control-using-git---the-basics.html#cb9-6" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> speed, <span class="at">y =</span> dist)) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="version-control-using-git---the-basics.html#cb9-7" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb9-8"><a href="version-control-using-git---the-basics.html#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="version-control-using-git---the-basics.html#cb9-9" tabindex="-1"></a>cars_plot</span></code></pre></div>
 <p>This will make a simple scatter plot (and hopefully convince you not to speed…). This seems like a good place to record our progress: save your file as “speed_dist.R” in your project folder. Now we can use Git to take a record of this save in case we need it in the future.</p>
 </div>
-<div id="adding-and-committing-files" class="section level2 hasAnchor" number="3.8">
-<h2><span class="header-section-number">3.8</span> Adding and committing files<a href="version-control-using-git---the-basics.html#adding-and-committing-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="adding-and-committing-files" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Adding and committing files<a href="version-control-using-git---the-basics.html#adding-and-committing-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In Git BASH type</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="version-control-using-git---the-basics.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="version-control-using-git---the-basics.html#cb10-1" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div>
 <p>This tells Git that we want to record the changes to the folder. We could type all the file names that we want to keep track of, but the dot after add adds everything.</p>
 <div class="infoboxred exclamation">
 <div class="infobox-header">
@@ -329,21 +344,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Be really careful using <code>git add .</code>, particularly if you’re working with sensitive data as you could accidentally upload this to Azure DevOps. To get around this, make sure you have a .gitignore file (explained below) set up before using <code>git add .</code> or add files individually.</p>
 </div>
 <p>Next we actually commit the change:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="version-control-using-git---the-basics.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Added speed_dist.R&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="version-control-using-git---the-basics.html#cb11-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Added speed_dist.R&quot;</span></span></code></pre></div>
 <p>Here <code>-m</code> means we want to add a comment and <code>"Added speed_dist.R"</code> is our comment to tell us what the commit involved - you could write anything you wanted for the comment.</p>
 <p>Let’s make a change to the code. Add</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="version-control-using-git---the-basics.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;cars_plot.png&quot;</span>, cars_plot)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="version-control-using-git---the-basics.html#cb12-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;cars_plot.png&quot;</span>, cars_plot)</span></code></pre></div>
 <p>to the end of your code in speed_dist.R. When run, this will save your plot as cars_plot.png in your project folder.</p>
 <p>Let’s use Git to record these changes.
 First type</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="version-control-using-git---the-basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="version-control-using-git---the-basics.html#cb13-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <p>this will show us all the files that have changed, or been created since your last commit. It should say that speed_dist.R has been modified and cars_plot.png is “untracked”.</p>
 <p>As mentioned earlier, Git deals best with flat text files, of which a .png file is not. Because of this, we won’t tell Git about the .png file, only the changes to the speed_dist.R code. This is okay though, because so long as we have the code we can always recreate the image.</p>
 <p>Use</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="version-control-using-git---the-basics.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add speed_dist.R</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="version-control-using-git---the-basics.html#cb14-1" tabindex="-1"></a><span class="fu">git</span> add speed_dist.R</span></code></pre></div>
 <p>to add just speed_dist.R (notice how last time we used <code>git add .</code> to add everything, but explicitly named the file here as we don’t want to add the .png file).</p>
 <p>As before we want to commit these changes:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="version-control-using-git---the-basics.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Added save feature to speed_dist.R&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="version-control-using-git---the-basics.html#cb15-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Added save feature to speed_dist.R&quot;</span></span></code></pre></div>
 <p>The workflow for making changes is as follows:</p>
 <ul>
 <li><p>Change your files</p></li>
@@ -352,14 +367,14 @@ First type</p>
 <li><p>Commit the changes in Git</p></li>
 </ul>
 </div>
-<div id="viewing-the-history" class="section level2 hasAnchor" number="3.9">
-<h2><span class="header-section-number">3.9</span> Viewing the history<a href="version-control-using-git---the-basics.html#viewing-the-history" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="viewing-the-history" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Viewing the history<a href="version-control-using-git---the-basics.html#viewing-the-history" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>So far we’ve made two commits. These commits start building up a history in Git. We can view a log of this history using:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="version-control-using-git---the-basics.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="version-control-using-git---the-basics.html#cb16-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
 <p>It will show the date, time, commit message, author and hash for each commit made.</p>
 </div>
-<div id="making-branches" class="section level2 hasAnchor" number="3.10">
-<h2><span class="header-section-number">3.10</span> Making branches<a href="version-control-using-git---the-basics.html#making-branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="making-branches" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Making branches<a href="version-control-using-git---the-basics.html#making-branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There may come times when you are working to make two (or more) sets of code changes at the same time. To make sure that you don’t get confused about which change you are making Git has a feature called branches. Branches are also very useful when collaborating with others, when multiple people are making changes at once.</p>
 <p>Let’s say we want to make two changes at once to the code above:</p>
 <ul>
@@ -377,54 +392,54 @@ A project will have either a main or a master branch, depending on how it was se
 You should work out which yours has and use that in place of main/master for all examples in this book.</p>
 </div>
 <p>To create a new branch type in</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="version-control-using-git---the-basics.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch unit_conversion</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="version-control-using-git---the-basics.html#cb17-1" tabindex="-1"></a><span class="fu">git</span> branch unit_conversion</span></code></pre></div>
 <p>We can type <code>git branch</code> again to see all the available branches. There should now be two, “master” and “unit_conversion”.
 To switch branches type:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="version-control-using-git---the-basics.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout unit_conversion</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb18-1"><a href="version-control-using-git---the-basics.html#cb18-1" tabindex="-1"></a><span class="fu">git</span> checkout unit_conversion</span></code></pre></div>
 <p>The text after the filepath in Git BASH should now say “unit_conversion”.</p>
 <p>Here we can make changes for converting units and commit them without changing the master branch.</p>
 <p>After the line</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="version-control-using-git---the-basics.html#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> cars</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="version-control-using-git---the-basics.html#cb19-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> cars</span></code></pre></div>
 <p>copy in the following code:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="version-control-using-git---the-basics.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert speed to kmph</span></span>
-<span id="cb20-2"><a href="version-control-using-git---the-basics.html#cb20-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>speed <span class="ot">&lt;-</span> data<span class="sc">$</span>speed<span class="sc">*</span><span class="fl">1.609344</span></span>
-<span id="cb20-3"><a href="version-control-using-git---the-basics.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="version-control-using-git---the-basics.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># convert distance to meters</span></span>
-<span id="cb20-5"><a href="version-control-using-git---the-basics.html#cb20-5" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>dist <span class="ot">&lt;-</span> data<span class="sc">$</span>dist<span class="sc">*</span><span class="fl">0.3048</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="version-control-using-git---the-basics.html#cb20-1" tabindex="-1"></a><span class="co"># convert speed to kmph</span></span>
+<span id="cb20-2"><a href="version-control-using-git---the-basics.html#cb20-2" tabindex="-1"></a>data<span class="sc">$</span>speed <span class="ot">&lt;-</span> data<span class="sc">$</span>speed<span class="sc">*</span><span class="fl">1.609344</span></span>
+<span id="cb20-3"><a href="version-control-using-git---the-basics.html#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="version-control-using-git---the-basics.html#cb20-4" tabindex="-1"></a><span class="co"># convert distance to meters</span></span>
+<span id="cb20-5"><a href="version-control-using-git---the-basics.html#cb20-5" tabindex="-1"></a>data<span class="sc">$</span>dist <span class="ot">&lt;-</span> data<span class="sc">$</span>dist<span class="sc">*</span><span class="fl">0.3048</span></span></code></pre></div>
 <p>We can now add and commit these changes as before.</p>
 <p>Use</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="version-control-using-git---the-basics.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="version-control-using-git---the-basics.html#cb21-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
 <p>to see the log with these new changes.</p>
 <p>Let’s switch back to the master branch:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="version-control-using-git---the-basics.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb22-1"><a href="version-control-using-git---the-basics.html#cb22-1" tabindex="-1"></a><span class="fu">git</span> checkout master</span></code></pre></div>
 <p>and look at the log</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="version-control-using-git---the-basics.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="version-control-using-git---the-basics.html#cb23-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
 <p>Our unit_conversion changes aren’t there! Don’t worry this is what we want - we’ll come back to this later.</p>
 <p>For now, let’s make a new branch for the plot labels.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="version-control-using-git---the-basics.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch plot_labels</span>
-<span id="cb24-2"><a href="version-control-using-git---the-basics.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout plot_labels</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb24-1"><a href="version-control-using-git---the-basics.html#cb24-1" tabindex="-1"></a><span class="fu">git</span> branch plot_labels</span>
+<span id="cb24-2"><a href="version-control-using-git---the-basics.html#cb24-2" tabindex="-1"></a><span class="fu">git</span> checkout plot_labels</span></code></pre></div>
 <p>After the <code>geom_point()</code> line add</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="version-control-using-git---the-basics.html#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Speed (mph)&quot;</span>,</span>
-<span id="cb25-2"><a href="version-control-using-git---the-basics.html#cb25-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Stopping Distance (m)&quot;</span>,</span>
-<span id="cb25-3"><a href="version-control-using-git---the-basics.html#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Stopping distance against speed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-4"><a href="version-control-using-git---the-basics.html#cb25-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="version-control-using-git---the-basics.html#cb25-1" tabindex="-1"></a>  <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Speed (mph)&quot;</span>,</span>
+<span id="cb25-2"><a href="version-control-using-git---the-basics.html#cb25-2" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Stopping Distance (m)&quot;</span>,</span>
+<span id="cb25-3"><a href="version-control-using-git---the-basics.html#cb25-3" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Stopping distance against speed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="version-control-using-git---the-basics.html#cb25-4" tabindex="-1"></a>       <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p>and add and commit these changes (remember, only add speed_dist.R!).</p>
 <p>We now have two separate branches with different changes. We could ask people to review each of these separate branches individually.</p>
 </div>
-<div id="merging-branches" class="section level2 hasAnchor" number="3.11">
-<h2><span class="header-section-number">3.11</span> Merging branches<a href="version-control-using-git---the-basics.html#merging-branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="merging-branches" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> Merging branches<a href="version-control-using-git---the-basics.html#merging-branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once someone has QA’d our code we can merge our branches into the master branch. We can do this on Azure DevOps or in Git BASH. We’ll explain how to do this in Git BASH below.</p>
 <p>Checkout the master branch. Merge the branches one at a time like this</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="version-control-using-git---the-basics.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge unit_conversion</span>
-<span id="cb26-2"><a href="version-control-using-git---the-basics.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge plot_labels</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb26-1"><a href="version-control-using-git---the-basics.html#cb26-1" tabindex="-1"></a><span class="fu">git</span> merge unit_conversion</span>
+<span id="cb26-2"><a href="version-control-using-git---the-basics.html#cb26-2" tabindex="-1"></a><span class="fu">git</span> merge plot_labels</span></code></pre></div>
 <p>If we look at the log all the changes from both of these branches should be visible.</p>
 <p>Note, your log might be getting long enough to run off the page. If so you can go up and down the log with the arrow keys and pressing “q” will allow to you begin typing again.</p>
 <p>You can now delete the other branches.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="version-control-using-git---the-basics.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> plot_labels</span>
-<span id="cb27-2"><a href="version-control-using-git---the-basics.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> unit_conversions</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb27-1"><a href="version-control-using-git---the-basics.html#cb27-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> plot_labels</span>
+<span id="cb27-2"><a href="version-control-using-git---the-basics.html#cb27-2" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> unit_conversions</span></code></pre></div>
 </div>
-<div id="branching-workflow" class="section level2 hasAnchor" number="3.12">
-<h2><span class="header-section-number">3.12</span> Branching Workflow<a href="version-control-using-git---the-basics.html#branching-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="branching-workflow" class="section level2 hasAnchor" number="4.12">
+<h2><span class="header-section-number">4.12</span> Branching Workflow<a href="version-control-using-git---the-basics.html#branching-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The branching workflow goes like this:</p>
 <ul>
 <li><p>For each large scale change make a branch</p></li>
@@ -436,22 +451,22 @@ To switch branches type:</p>
 <li><p>Start all over again for the next change</p></li>
 </ul>
 </div>
-<div id="merge-conflicts" class="section level2 hasAnchor" number="3.13">
-<h2><span class="header-section-number">3.13</span> Merge conflicts<a href="version-control-using-git---the-basics.html#merge-conflicts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="merge-conflicts" class="section level2 hasAnchor" number="4.13">
+<h2><span class="header-section-number">4.13</span> Merge conflicts<a href="version-control-using-git---the-basics.html#merge-conflicts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sometimes, after trying to merge two branches Git will say there are “merge conflicts”. This means that both branches changed the same line of code and Git doesn’t know which one to keep.</p>
 <p>To understand how to handle merge conflicts we’ll create one!</p>
 <p>Make a new branch called “blue_is_great” and another called “red_is_great”.</p>
 <p>Checkout out the “blue_is_great” branch and change the line with <code>geom_point()</code> in to</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="version-control-using-git---the-basics.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_points</span>(<span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="version-control-using-git---the-basics.html#cb28-1" tabindex="-1"></a><span class="fu">geom_points</span>(<span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p>Save, add and commit these changes.</p>
 <p>Checkout the “red_is_great” branch and change the same line to</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="version-control-using-git---the-basics.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_points</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="version-control-using-git---the-basics.html#cb29-1" tabindex="-1"></a><span class="fu">geom_points</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p>Save, add and commit these changes.</p>
 <p>Let’s try to merge these into the master branch</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="version-control-using-git---the-basics.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master</span>
-<span id="cb30-2"><a href="version-control-using-git---the-basics.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge red_is_great</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb30-1"><a href="version-control-using-git---the-basics.html#cb30-1" tabindex="-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb30-2"><a href="version-control-using-git---the-basics.html#cb30-2" tabindex="-1"></a><span class="fu">git</span> merge red_is_great</span></code></pre></div>
 <p>So far so good.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="version-control-using-git---the-basics.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge blue_is_great</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb31-1"><a href="version-control-using-git---the-basics.html#cb31-1" tabindex="-1"></a><span class="fu">git</span> merge blue_is_great</span></code></pre></div>
 <p>You’ll get some kind of error. Something along the lines of <code>CONFLICT... automatic merge failed...</code> and the branch text will say <code>master|MERGING</code>.</p>
 <p>If we open speed_dist.R there’ll be a line saying <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> then one version of our changed line then a bunch of equals after which we’ll see the other version of our line and then <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; blue_is_great</code>.</p>
 <p>Thankfully, when Git finds a merge conflict it keeps both versions of the line in question so we can decide which one is right.</p>
@@ -459,12 +474,12 @@ To switch branches type:</p>
 <p>Now we do the usual <code>git add</code> and <code>git commit</code>. Make note of the merge conflict in the commit message, something like “Fixed merge conflict between blue and red”.</p>
 <p>For very large and complex merge conflicts it’s worth searching for <code>&lt; HEAD</code> to find all the instances of a conflict.</p>
 </div>
-<div id="gitignore" class="section level2 hasAnchor" number="3.14">
-<h2><span class="header-section-number">3.14</span> .gitignore<a href="version-control-using-git---the-basics.html#gitignore" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="gitignore" class="section level2 hasAnchor" number="4.14">
+<h2><span class="header-section-number">4.14</span> .gitignore<a href="version-control-using-git---the-basics.html#gitignore" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As the number of files in our project increases it will become tiresome typing in each file we would like to track.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="version-control-using-git---the-basics.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add file1.txt file2.txt ... file37.txt ...</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb32-1"><a href="version-control-using-git---the-basics.html#cb32-1" tabindex="-1"></a><span class="fu">git</span> add file1.txt file2.txt ... file37.txt ...</span></code></pre></div>
 <p>We could just use</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="version-control-using-git---the-basics.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb33-1"><a href="version-control-using-git---the-basics.html#cb33-1" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div>
 <p>but that would include files that we don’t want to track (like the .png we saved). The .gitignore file is a list of files that Git will ignore (hence the name), no matter how they change, allowing us to use <code>git add .</code> without worrying about files we don’t want to add.</p>
 <p>As mentioned earlier, a .gitignore file was created with our R Project. You can view this file in any text editor (including RStudio) and, if you do, you will see something like this:</p>
 <pre><code>.Rproj.user
@@ -480,52 +495,52 @@ To switch branches type:</p>
 <p>Using the second method will be more robust in the long run because we won’t need to update it if new images are added.</p>
 <p>Add a new line to .gitignore that says “*.png” and save it.</p>
 <p>In Git BASH, typing</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="version-control-using-git---the-basics.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb35-1"><a href="version-control-using-git---the-basics.html#cb35-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <p>will no longer show the image!</p>
 <p>In non-R projects you can create your own .gitignore file in a text editor and save it in your project folder.</p>
 </div>
-<div id="working-with-git-in-rstudio" class="section level2 hasAnchor" number="3.15">
-<h2><span class="header-section-number">3.15</span> Working with git in RStudio<a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="overview-1" class="section level3 hasAnchor" number="3.15.1">
-<h3><span class="header-section-number">3.15.1</span> Overview<a href="version-control-using-git---the-basics.html#overview-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="working-with-git-in-rstudio" class="section level2 hasAnchor" number="4.15">
+<h2><span class="header-section-number">4.15</span> Working with git in RStudio<a href="version-control-using-git---the-basics.html#working-with-git-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overview-1" class="section level3 hasAnchor" number="4.15.1">
+<h3><span class="header-section-number">4.15.1</span> Overview<a href="version-control-using-git---the-basics.html#overview-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Within RStudio, you can choose to manage your repository using the git bash terminal as in the previous sections, use the RStudio GUI (graphical user interface) elements or use a combination of both. Below we highlight the key things you need to know to get going with a git repository within R.</p>
 </div>
-<div id="initial-set-up" class="section level3 hasAnchor" number="3.15.2">
-<h3><span class="header-section-number">3.15.2</span> Initial set-up<a href="version-control-using-git---the-basics.html#initial-set-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="initial-set-up" class="section level3 hasAnchor" number="4.15.2">
+<h3><span class="header-section-number">4.15.2</span> Initial set-up<a href="version-control-using-git---the-basics.html#initial-set-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>RStudio needs a few small bits of set-up to be able to access git. The first step is to let it know where the git executable can be found.</p>
 <p>Using the menu bar in RStudio, go to <code>Tools</code> &gt; <code>Global options...</code> You should see the window below pop up, where you can select <code>Git/SVN</code>.</p>
-<div class="figure">
-<img src="www/images/chapter2_RStudio_GlobalOptions.PNG" alt="" />
-<p class="caption">RStudio Global options</p>
+<div class="float">
+<img src="www/images/chapter2_RStudio_GlobalOptions.PNG" alt="RStudio Global options" />
+<div class="figcaption">RStudio Global options</div>
 </div>
 <p>Assuming it’s not entered already, you’ll need to provide the location where the Git executable is installed. It will be called git.exe and the likely location is:</p>
 <p><code>C:/Program Files/Git/bin/git.exe</code></p>
 <p>Whilst you’ve got the Global options open, another useful option to set is the default terminal to use in RStudio. The default is the Windows Command Prompt, but <a href="version-control-using-git---the-basics.html#opening-git-bash">Git BASH</a> is generally easier to use. To update this, keep Global options open and select the <code>Terminal</code> options panel just below Git/SVN.</p>
 <p>Here you’ll see an option labeled <code>New terminals open with:</code>. If it isn’t already set to <code>Git Bash</code>, we recommend changing it to that, even if you’re primarily planning on using the RStudio git GUI.</p>
 </div>
-<div id="cloning-an-existing-project" class="section level3 hasAnchor" number="3.15.3">
-<h3><span class="header-section-number">3.15.3</span> Cloning an existing project<a href="version-control-using-git---the-basics.html#cloning-an-existing-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="cloning-an-existing-project" class="section level3 hasAnchor" number="4.15.3">
+<h3><span class="header-section-number">4.15.3</span> Cloning an existing project<a href="version-control-using-git---the-basics.html#cloning-an-existing-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The easiest way to get set up with a repository in RStudio is to use the <code>New Project...</code> option under <code>File</code> in the menu bar. When you select <code>New Project...</code>, you’ll then see three options: <code>New directory</code>, <code>Existing directory</code> and <code>Version control</code>. Assuming you’ve already got your repository set up on Dev Ops or GitHub, select <code>Version control</code> and then <code>Git</code> on the next panel that comes up. Once you’ve done that, you’ll see the options below.</p>
-<div class="figure">
-<img src="www/images/chapter2_RStudio_Clone.PNG" alt="" />
-<p class="caption">RStudio Clone Git Repository</p>
+<div class="float">
+<img src="www/images/chapter2_RStudio_Clone.PNG" alt="RStudio Clone Git Repository" />
+<div class="figcaption">RStudio Clone Git Repository</div>
 </div>
 <p>Here you can enter your existing <code>Repository URL</code> and choose a root directory for where to keep it locally. The <code>Project directory name</code> option will be auto-filled once you provide a <code>Repository URL</code>. For the root directory where the repository directory will be cloned, we recommend not using your standard One Drive folder system as this can cause issues if both One Drive and git are trying to manage file changes. Instead it’s best to navigate either to <code>C:\</code> or <code>C:\Users\&lt;username&gt;\</code> and create a suitable root folder (e.g. <code>my_repos</code>) to store your repositories in (and pinning this folder to Quick access in File Explorer can help with finding your repository directories and files quickly in Windows).</p>
 <p>Once you’ve entered your repository URL and chosen a directory in which to clone your repository, click <code>Create Project</code> and RStudio will do the rest.</p>
 </div>
-<div id="overview-of-the-rstudio-git-guis" class="section level3 hasAnchor" number="3.15.4">
-<h3><span class="header-section-number">3.15.4</span> Overview of the RStudio git GUIs<a href="version-control-using-git---the-basics.html#overview-of-the-rstudio-git-guis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="overview-of-the-rstudio-git-guis" class="section level3 hasAnchor" number="4.15.4">
+<h3><span class="header-section-number">4.15.4</span> Overview of the RStudio git GUIs<a href="version-control-using-git---the-basics.html#overview-of-the-rstudio-git-guis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are three key areas within RStudio for accessing git functionality. The Git Pane, the terminal and the RStudio menu bar.</p>
-<div id="terminal-git-bash" class="section level4 hasAnchor" number="3.15.4.1">
-<h4><span class="header-section-number">3.15.4.1</span> Terminal (<a href="version-control-using-git---the-basics.html#opening-git-bash">Git BASH</a>)<a href="version-control-using-git---the-basics.html#terminal-git-bash" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="terminal-git-bash" class="section level4 hasAnchor" number="4.15.4.1">
+<h4><span class="header-section-number">4.15.4.1</span> Terminal (<a href="version-control-using-git---the-basics.html#opening-git-bash">Git BASH</a>)<a href="version-control-using-git---the-basics.html#terminal-git-bash" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The terminal offers all the <a href="version-control-using-git---the-basics.html#opening-git-bash">Git BASH</a> command line functionality already described. It can be accessed via the terminal pane usually found next to the R console pane.</p>
 </div>
-<div id="git-pane" class="section level4 hasAnchor" number="3.15.4.2">
-<h4><span class="header-section-number">3.15.4.2</span> Git pane<a href="version-control-using-git---the-basics.html#git-pane" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="git-pane" class="section level4 hasAnchor" number="4.15.4.2">
+<h4><span class="header-section-number">4.15.4.2</span> Git pane<a href="version-control-using-git---the-basics.html#git-pane" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The Git pane offers an excellent quick look at the status of your repository, whilst offering quick links for viewing or committing changes, pulling and pushing, viewing the history, accessing the project settings, and creating and switching branches. Effectively all the common things you need to do with Git. The image below shows the git pane opened for a local clone of the repo for this guidance. It consists of it’s own menu bar with buttons for each of the options listed above, alongside a preview pane showing any files that have been modified, added or removed since your last commit. The Staged column shows whether a given file has been added or staged ready for a commit and the status column shows whether a file has been added (A), modified (M) or removed (R) since the last commit.</p>
-<div class="figure">
-<img src="www/images/chapter2_Rstudio_gitpanel.PNG" alt="" />
-<p class="caption">RStudio Git Panel</p>
+<div class="float">
+<img src="www/images/chapter2_RStudio_gitpanel.PNG" alt="RStudio Git Panel" />
+<div class="figcaption">RStudio Git Panel</div>
 </div>
 <p>The elements in the git pane menu bar offer the following options:</p>
 <ul>
@@ -540,21 +555,21 @@ To switch branches type:</p>
 <li><img src="www/images/chapter2_RStudio_gitpaneRefresh.png" alt="Refresh icon" height="20"/> Refresh the git pane preview.</li>
 </ul>
 </div>
-<div id="menu-bar-access" class="section level4 hasAnchor" number="3.15.4.3">
-<h4><span class="header-section-number">3.15.4.3</span> Menu bar access<a href="version-control-using-git---the-basics.html#menu-bar-access" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="menu-bar-access" class="section level4 hasAnchor" number="4.15.4.3">
+<h4><span class="header-section-number">4.15.4.3</span> Menu bar access<a href="version-control-using-git---the-basics.html#menu-bar-access" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To access the git functionality via the menu bar, navigate to <code>Tools</code> &gt; <code>Version control</code>. You should then see the options <code>Commit...</code>, <code>Pull Branches</code>, <code>Push Branch</code>, <code>History</code> and <code>Project Setup...</code></p>
-<div class="figure">
-<img src="www/images/chapter2_RStudio_MenuBarAccess.PNG" alt="" />
-<p class="caption">RStudio - Git in the menu bar</p>
+<div class="float">
+<img src="www/images/chapter2_RStudio_MenuBarAccess.PNG" alt="RStudio - Git in the menu bar" />
+<div class="figcaption">RStudio - Git in the menu bar</div>
 </div>
 </div>
-<div id="branches-committing-and-pushing" class="section level4 hasAnchor" number="3.15.4.4">
-<h4><span class="header-section-number">3.15.4.4</span> Branches, committing and pushing<a href="version-control-using-git---the-basics.html#branches-committing-and-pushing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="branches-committing-and-pushing" class="section level4 hasAnchor" number="4.15.4.4">
+<h4><span class="header-section-number">4.15.4.4</span> Branches, committing and pushing<a href="version-control-using-git---the-basics.html#branches-committing-and-pushing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The bulk of any adding, committing and pushing activities using the RStudio GUI is done using the Review changes window. This can be opened either by selecting <code>File</code> &gt; <code>Commit...</code> from the RStudio menu bar, or clicking <code>Diff</code>, <code>Commit</code> or <img src="www/images/chapter2_RStudio_gitpaneHistory.png" alt="Git history icon" height="16"/> in the RStudio git pane.</p>
 <p>The Review Changes window consists of 3 panes, the top left shows a preview of all files that have been added, modified or deleted, the top right pane allows you to add a commit message and the last pane shows the git diff result for any file selected in the file preview pane.</p>
-<div class="figure">
-<img src="www/images/chapter2_RStudio_ReviewChanges.PNG" alt="" />
-<p class="caption">RStudio Review changes window</p>
+<div class="float">
+<img src="www/images/chapter2_RStudio_ReviewChanges.PNG" alt="RStudio Review changes window" />
+<div class="figcaption">RStudio Review changes window</div>
 </div>
 <p>To make a commit, review the changes in the diff pane by selecting each file in turn and click the Stage button in the Review changes menu bar (either with multiple/all files selected at once or each file selected individually). Then add your commit message and click the <code>Commit</code> button below the Commit message entry box.</p>
 <p>Then you can then just click the <code>Push</code> button above the commit message entry box to sync your changes to the remote repository.</p>
@@ -562,8 +577,8 @@ To switch branches type:</p>
 <p>You can switch branches by clicking on the current branch name in the Review changes menu bar, i.e. next to the History button.</p>
 </div>
 </div>
-<div id="summary" class="section level3 hasAnchor" number="3.15.5">
-<h3><span class="header-section-number">3.15.5</span> Summary<a href="version-control-using-git---the-basics.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="summary-1" class="section level3 hasAnchor" number="4.15.5">
+<h3><span class="header-section-number">4.15.5</span> Summary<a href="version-control-using-git---the-basics.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Overall, RStudio provides some useful GUI-based tools for performing the basic git version control tasks: creating and switching branches, add, commit, push and pull, restore and diff. What it won’t allow you to do are actions around merging branches or reverting to previous commits. For these, you’ll need to use either the git commands in a bash terminal or the features provided by the online platforms Dev Ops or GitHub (depending on which one you’re using with your project).</p>
 
 </div>
@@ -574,7 +589,7 @@ To switch branches type:</p>
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="why.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="devops---the-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
