@@ -1,6 +1,8 @@
 # Why is it important? {#why}
 
-In the dynamic landscape of civil service analysis, Git emerges as a pivotal tool with multifaceted benefits. It addresses the unique challenges faced by analysts by offering a comprehensive solution for collaborative work, version control, accountability, disaster recovery, and knowledge retention. Using Git as a tool strengthens [QA practices](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7BCE688250-04F4-41A2-9951-230577A8F129%7D&file=DfE%20Quality%20Assurance%20Framework.docx&action=default&mobileredirect=true) and ensures you're working in line with [RAP principles](https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-expectations.html). Here's why Git holds particular importance for analysts in the civil service:
+Using git and Azure DevOps provides a several significant benefits for analysts working with code in the DfE, offering a functionality around collaborative work, version control, accountability, disaster recovery, and knowledge retention. Using Git as a tool strengthens [QA practices](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7BCE688250-04F4-41A2-9951-230577A8F129%7D&file=DfE%20Quality%20Assurance%20Framework.docx&action=default&mobileredirect=true) and ensures you're working in line with [RAP principles](https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-expectations.html). 
+
+Here's why Git holds particular importance for analysts in the civil service:
 
 ## Collaboration
 
