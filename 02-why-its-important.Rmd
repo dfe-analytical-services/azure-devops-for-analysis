@@ -1,0 +1,37 @@
+# Why is it important? {#why}
+
+Using git and Azure DevOps provides a several significant benefits for analysts working with code in the DfE, offering a functionality around collaborative work, version control, accountability, disaster recovery, and knowledge retention. Using Git as a tool strengthens [QA practices](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7BCE688250-04F4-41A2-9951-230577A8F129%7D&file=DfE%20Quality%20Assurance%20Framework.docx&action=default&mobileredirect=true) and ensures you're working in line with [RAP principles](https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-expectations.html). 
+
+Here's why Git holds particular importance for analysts in the civil service:
+
+## Collaboration
+
+Civil service analysts often work in multidisciplinary teams, collaborating on projects that can involve data analysis, policy research, and report generation. Git enables seamless collaboration by allowing multiple team members to work on the same project simultaneously from any location. It provides a structured framework for tracking changes made by each contributor, avoiding conflicts, and merging contributions into a unified final product. The ability to collaboratively work on multiple branches simultaneously saves analysts time (no waiting for colleagues to finish one part before moving on). Cloud-hosted repositories also enable other analysts to view your code (with the correct permissions), providing routes for collaborative problem-solving and help with errors or bugs when needed. Git not only saves time but also minimizes the risk of errors that can occur with manual coordination. Git's collaborative features and features of online repository platforms enable automated checks and code quality assurance through peer reviews, ensuring the highest standards in the analytical work produced.
+
+## Branching
+
+In the civil service, the need for innovative problem-solving is constant. Git's branching system empowers analysts with methodological agility. Each branch can be dedicated to a unique methodology, different analytical approach, or potential new feature, allowing analysts to experiment and adapt without disrupting the core workflow. This flexibility promotes a culture of continuous improvement and innovation, ensuring that the civil service stays at the forefront of data-driven decision-making.
+
+## Version Control
+
+In the civil service, accuracy and accountability are paramount. Git provides a robust version control system that allows analysts to keep a historical record of all changes made to their work. This capability is especially important when dealing with sensitive government data or policy documents. Analysts can easily revert to previous versions/past methodologies, compare changes, and identify the source of any issues, thus ensuring data integrity and transparency. Git best practices (regular commits, useful branch names and commit messages) ensure that analysts can easily track and manage changes, allowing them to focus more on analysis and less on document management.
+
+## Audit trails and accountability
+
+Government departments/agencies require a high level of accountability and transparency. Git's commit history and branching system create an audit trail of every change made to a project. This audit trail helps analysts demonstrate the evolution of their work, which is essential when justifying decisions, responding to inquiries, or conducting internal reviews. Git's ability to attribute changes to specific contributors adds an extra layer of accountability. The visible history of your colleagues' work removes uncertainty and again saves time otherwise spent figuring out about changes other people have made. Git's detailed commit messages and audit trails simplify the process of justifying decisions, responding to inquiries, and conducting internal reviews, streamlining daily tasks. This also aids quality assurance as it links closely to the key outcomes of the [DfE QA framework](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7BCE688250-04F4-41A2-9951-230577A8F129%7D&file=DfE%20Quality%20Assurance%20Framework.docx&action=default&mobileredirect=true) (i.e. analysis is transparent and accountable).
+
+## Disaster recovery
+
+Data loss or file corruption can have severe consequences in the civil service, where data integrity is critical. I'm sure we've all had tech-disasters where we've lost the files/code scripts we spent the whole day working on! Git repositories can be hosted on remote servers or cloud platforms, ensuring that project data is safely stored and backed up. Committing work regularly (every 30 minutes) ensures it never gets lost, as every commit is recoverable. In DfE we use Azure DevOps for internal/sensitive repositories and GitHub for public repositories. This redundancy minimizes the risk of data loss due to hardware failures or other unforeseen events, providing peace of mind for analysts and their supervisors, knowing that their work is safeguarded against corruption or unforeseen events.
+
+## Skill Development
+
+Git is a widely used tool in the tech industry and beyond in both public and private sectors. Learning Git not only benefits analysts in their current roles but also enhances their marketability and career prospects. As the civil service increasingly incorporates technology and data-driven approaches, proficiency in Git can open doors to a broader range of opportunities within and outside the government sector.
+
+## Knowledge-loss & high turnover
+
+High-turnover rates and knowledge loss are common challenges in the civil service. Git's audit trails and detailed commit messages play a pivotal role in addressing this issue. They serve as a knowledge repository, preserving the history of decisions, methodologies, and insights. When new analysts join the team, this historical context proves invaluable in expediting their onboarding process and reducing the knowledge gap.
+
+## Summary
+
+In summary, Git is an essential tool for analysts in the civil service because it facilitates collaborative work, ensures version control, maintains accountability and audit trails, supports disaster recovery, and promotes skill development. Embracing Git as part of their toolkit empowers civil service analysts to work more efficiently, maintain data integrity, and adapt to the evolving demands of the modern public sector.
