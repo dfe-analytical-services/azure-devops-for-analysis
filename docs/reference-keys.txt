@@ -8,6 +8,15 @@ manual-version-control
 git
 collaboration
 azure-devops
+why
+collaboration-1
+branching
+version-control
+audit-trails-and-accountability
+disaster-recovery
+skill-development
+knowledge-loss-high-turnover
+summary
 version-control-using-git---the-basics
 background-1
 installing-git
@@ -32,7 +41,7 @@ terminal-git-bash
 git-pane
 menu-bar-access
 branches-committing-and-pushing
-summary
+summary-1
 devops---the-basics
 background-2
 theory
