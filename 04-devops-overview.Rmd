@@ -34,6 +34,22 @@ The following diagram illustrates the concept of server and local copies.
 
 ![Visual illustrating the concept of server and local copies. Image taken from https://homes.cs.washington.edu](www/images/chapter3_distributed_version_control.png)
 
+## Getting a DevOps account
+
+In order to use DevOps, you need an account with the right access levels. To get a DevOps account, you need to [submit an Azure DevOps request on the service portal.](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=5447e6e91bdbbb802fe864606e4bcba4)
+
+If you are requesting access to an existing area, you need to know the name and URL's of the project you need access to. If you do not currently have an existing area and would like to create a new one, you can select 'New project/sub-project' in the 'Request type' dropdown rather than 'New Account access to Azure DevOps'. Note that even if you need a new project creating, you will need to know which instance of Azure DevOps the project should live on. 
+
+The request must be approved by your line manager, and can take up to 5 days to be fulfilled. When submitting your request you will need to know the following: 
+
+- Instance required: Different areas of the department use different instances and will be the first part of the URL for any projects in your area. Most areas use https://dfe-gov-uk.visualstudio.com/ and any new areas should be created using this instance, however there are other instances used throughout the department for historical reasons so be sure to check!
+
+- Do you have a Visual Studio Enterprise Subscription (Formerly MSDN)?: If you don't know what this means, the answer is probably no!
+
+- The account level you require: If need access to see repositories, then you need a **Basic account**. 
+
+- Project URL: Copy and paste the URL of the project you are requesting access to! 
+
 ## Creating a DevOps repository for a new project
 
 To set up a repository on DevOps you need to:
