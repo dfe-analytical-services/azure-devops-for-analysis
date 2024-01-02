@@ -45,6 +45,7 @@ summary-1
 devops---the-basics
 background-2
 theory
+getting-a-devops-account
 creating-a-devops-repository-for-a-new-project
 clone-to-your-computer
 creating-a-git-repository-for-a-project-youve-been-doing-on-your-computer
